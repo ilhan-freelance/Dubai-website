@@ -42,7 +42,7 @@ export const CustomCursor: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    /* ── Pure Rose Cursor (No Circles/Borders) ── */
+    /* ── Website Theme Tulip Cursor ── */
     <motion.div
       className="fixed top-0 left-0 pointer-events-none z-50 flex items-center justify-center"
       animate={{
@@ -56,10 +56,10 @@ export const CustomCursor: React.FC = () => {
       <span
         className="text-2xl select-none leading-none"
         style={{
-          filter: 'drop-shadow(0 2px 8px rgba(148,76,94,0.6)) drop-shadow(0 0 10px rgba(212,175,55,0.4))',
+          filter: 'drop-shadow(0 2px 8px rgba(122,136,100,0.5)) drop-shadow(0 0 10px rgba(212,175,55,0.4))',
         }}
       >
-        🌹
+        🌷
       </span>
     </motion.div>
   );
