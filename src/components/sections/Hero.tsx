@@ -12,12 +12,6 @@ const PETALS = Array.from({ length: 12 });
 export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const handleScrollDown = () => {
-    const next = scrollRef.current?.nextElementSibling as HTMLElement | null;
-    if (next) next.scrollIntoView({ behavior: 'smooth' });
-    else window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
-  };
-
   return (
     <section ref={scrollRef} className="relative w-full min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
 
