@@ -59,7 +59,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       <FeatureIconsSection />
 
       {/* 9. Our Commitment Section */}
-      <CommitmentSection onLearnMore={() => onNavigate('about')} />
+      <CommitmentSection
+        onExplorePackages={() => onNavigate('packages')}
+        onOpenEnquiry={onOpenEnquiry}
+      />
 
       {/* 10. Client Testimonials Section: Love Stories & Celebrations */}
       <Testimonials />
