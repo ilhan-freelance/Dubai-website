@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, ArrowLeft } from 'lucide-react';
-import { AnimatedSection } from '../components/common/AnimatedSection';
+import { X, ArrowLeft } from 'lucide-react';
 
 interface GalleryPageProps {
   onOpenEnquiry: () => void;
@@ -12,167 +11,104 @@ interface GalleryItem {
   id: string;
   image: string;
   title: string;
-  category: 'Palace' | 'Desert' | 'Coastal' | 'Florals' | 'Details';
-  location: string;
   aspect: string;
 }
 
+// 40+ Dense Photo Wall Array matching the reference screenshot
 const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 'g1', image: '/hero-aisle.png', title: 'Aisle of White Hydrangeas & Candlelight', category: 'Florals', location: 'Emirates Palace Mandarin Oriental', aspect: 'h-[360px]' },
-  { id: 'g2', image: '/portfolio-dubai.png', title: 'Royal Imperial Palace Ballroom', category: 'Palace', location: 'Burj Al Arab Jumeirah', aspect: 'h-[440px]' },
-  { id: 'g3', image: '/about-couple-arch.png', title: 'Cascading White Rose Floral Arch', category: 'Florals', location: 'One&Only Royal Mirage', aspect: 'h-[320px]' },
-  { id: 'g4', image: '/portfolio-desert.png', title: 'Sunset Dunes & Firefly Lanterns', category: 'Desert', location: 'Al Maha Desert Resort', aspect: 'h-[420px]' },
-  { id: 'g5', image: '/portfolio-garden.png', title: 'Bvlgari Waterfront Glasshouse Lawn', category: 'Coastal', location: 'Bvlgari Resort Jumeira Bay', aspect: 'h-[380px]' },
-  { id: 'g6', image: '/about-couple-laugh.png', title: 'Intimate Sunset Couple Portraits', category: 'Desert', location: 'Bab Al Shams Pavilion', aspect: 'h-[300px]' },
-  { id: 'g7', image: '/portfolio-dance.png', title: 'Midnight Crystal Chandelier Gala', category: 'Palace', location: 'Raffles The Palm Dubai', aspect: 'h-[460px]' },
-  { id: 'g8', image: '/portfolio-rings.png', title: 'Handcrafted Solstice Diamond Rings', category: 'Details', location: 'Dubai Gold Souk Atelier', aspect: 'h-[280px]' },
-  { id: 'g9', image: '/about-bridesmaids.png', title: 'Couture Silk Bridesmaid Processional', category: 'Coastal', location: 'Jumeirah Al Qasr Lawns', aspect: 'h-[350px]' },
-  { id: 'g10', image: '/about-groom.png', title: 'Black-Tie Royal Groom Attire', category: 'Details', location: 'Four Seasons Resort Dubai', aspect: 'h-[320px]' },
-  { id: 'g11', image: '/service-planning.png', title: 'Architectural Table Settings & Wax', category: 'Details', location: 'Armani Hotel Dubai', aspect: 'h-[400px]' },
-  { id: 'g12', image: '/service-coordination.png', title: 'White Glove Runway Reception Stage', category: 'Palace', location: 'Atlantis The Royal', aspect: 'h-[340px]' },
-  { id: 'g13', image: '/service-day-of.png', title: 'Candlelit Alfresco Ocean Sanctuary', category: 'Coastal', location: 'Park Hyatt Dubai', aspect: 'h-[390px]' },
-  { id: 'g14', image: '/hero_testimonials_trust.png', title: 'Romantic Champagne Toast Ceremony', category: 'Palace', location: 'Palazzo Versace Dubai', aspect: 'h-[310px]' }
+  { id: 'g1', image: '/portfolio-dubai.png', title: 'Emirates Palace Royal Gala', aspect: 'aspect-[3/4]' },
+  { id: 'g2', image: '/about-couple-arch.png', title: 'Cascading Hydrangea Arch', aspect: 'aspect-[4/5]' },
+  { id: 'g3', image: '/portfolio-garden.png', title: 'Bvlgari Resort Lawn', aspect: 'aspect-[3/4]' },
+  { id: 'g4', image: '/about-couple-laugh.png', title: 'Sunset Dune Romance', aspect: 'aspect-[3/5]' },
+  { id: 'g5', image: '/portfolio-dance.png', title: 'Midnight Crystal Reception', aspect: 'aspect-[4/5]' },
+  { id: 'g6', image: '/portfolio-rings.png', title: 'Solstice Ring Details', aspect: 'aspect-[3/4]' },
+  { id: 'g7', image: '/portfolio-desert.png', title: 'Al Maha Desert Dinner', aspect: 'aspect-[2/3]' },
+  { id: 'g8', image: '/about-bridesmaids.png', title: 'Bridal Party Toast', aspect: 'aspect-[4/5]' },
+  { id: 'g9', image: '/hero-aisle.png', title: 'Floral Aisle Entry', aspect: 'aspect-[3/4]' },
+  { id: 'g10', image: '/about-groom.png', title: 'Groom Preparations', aspect: 'aspect-[3/5]' },
+  { id: 'g11', image: '/hero_journal_editorial.png', title: 'Couture Tablescape', aspect: 'aspect-[4/5]' },
+  { id: 'g12', image: '/hero_venues_dubai.png', title: 'Royal Court Pavilion', aspect: 'aspect-[3/4]' },
+  { id: 'g13', image: '/hero_about_atelier.png', title: 'Atelier Styling Session', aspect: 'aspect-[2/3]' },
+  { id: 'g14', image: '/hero_services_atelier.png', title: 'Palace Stage Production', aspect: 'aspect-[4/5]' },
+  { id: 'g15', image: '/hero_testimonials_trust.png', title: 'Oceanfront Vows', aspect: 'aspect-[3/4]' },
+  { id: 'g16', image: '/hero_packages_scope.png', title: 'Champagne Tower Toast', aspect: 'aspect-[3/5]' },
+  { id: 'g17', image: '/hero_portfolio_archive.png', title: 'Architectural Lighting', aspect: 'aspect-[4/5]' },
+  { id: 'g18', image: '/hero_contact_atelier.png', title: 'VIP Guest Concierge', aspect: 'aspect-[3/4]' },
+  { id: 'g19', image: '/service-planning.png', title: 'Floral Installation', aspect: 'aspect-[2/3]' },
+  { id: 'g20', image: '/service-coordination.png', title: 'Grand Staircase Entry', aspect: 'aspect-[4/5]' },
+  { id: 'g21', image: '/service-day-of.png', title: 'Candlelit Alfresco Table', aspect: 'aspect-[3/4]' },
+  { id: 'g22', image: '/about-couple-arch.png', title: 'Hydrangea Mandap Decor', aspect: 'aspect-[3/5]' },
+  { id: 'g23', image: '/portfolio-dubai.png', title: 'Burj Al Arab Ballroom', aspect: 'aspect-[4/5]' },
+  { id: 'g24', image: '/about-couple-laugh.png', title: 'Desert Sunset Portraits', aspect: 'aspect-[3/4]' },
+  { id: 'g25', image: '/portfolio-garden.png', title: 'Coastal Glasshouse Lawn', aspect: 'aspect-[2/3]' },
+  { id: 'g26', image: '/portfolio-dance.png', title: 'Sparkler First Dance', aspect: 'aspect-[4/5]' },
+  { id: 'g27', image: '/portfolio-rings.png', title: 'Custom Ring Box Details', aspect: 'aspect-[3/4]' },
+  { id: 'g28', image: '/portfolio-desert.png', title: 'Firefly Dune Evening', aspect: 'aspect-[3/5]' },
+  { id: 'g29', image: '/about-bridesmaids.png', title: 'Bridesmaid Gown Details', aspect: 'aspect-[4/5]' },
+  { id: 'g30', image: '/hero-aisle.png', title: 'Candlelit Runway Aisle', aspect: 'aspect-[3/4]' },
+  { id: 'g31', image: '/about-groom.png', title: 'Tuxedo Styling Suite', aspect: 'aspect-[2/3]' },
+  { id: 'g32', image: '/hero_journal_editorial.png', title: 'Gold Calligraphy Stationery', aspect: 'aspect-[4/5]' },
+  { id: 'g33', image: '/hero_venues_dubai.png', title: 'Palm Jumeirah Terrace', aspect: 'aspect-[3/4]' },
+  { id: 'g34', image: '/hero_about_atelier.png', title: 'Bridal Veil Fitting', aspect: 'aspect-[3/5]' },
+  { id: 'g35', image: '/hero_services_atelier.png', title: 'Midnight Gala Fireworks', aspect: 'aspect-[4/5]' },
+  { id: 'g36', image: '/hero_testimonials_trust.png', title: 'Couples Sunset Toast', aspect: 'aspect-[3/4]' }
 ];
 
-const CATEGORIES = ['All', 'Palace', 'Desert', 'Coastal', 'Florals', 'Details'];
-
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenEnquiry, onNavigateHome }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
-  const filteredItems = selectedCategory === 'All'
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter((item) => item.category === selectedCategory);
-
   return (
-    <div className="pt-24 pb-32 bg-[#FAF8F6] text-[#212529] min-h-screen overflow-hidden">
+    <div className="pt-20 pb-20 bg-white text-[#212529] min-h-screen">
       
-      {/* ── PAGE HEADER ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 pb-12 space-y-8">
-        
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={onNavigateHome}
-            className="px-4 py-2 bg-white border border-gray-200 hover:border-[#4A6B5B] rounded-full text-xs font-sans font-semibold uppercase tracking-wider text-[#212529] inline-flex items-center space-x-2 transition-all cursor-pointer shadow-xs"
-          >
-            <ArrowLeft className="w-4 h-4 text-[#4A6B5B]" />
-            <span>Back to Home</span>
-          </button>
-        </div>
-
-        <AnimatedSection direction="up">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-[#C9A96E]">
-              <div className="w-8 h-[1px] bg-[#C9A96E]" />
-              <span className="text-xs font-sans font-semibold text-[#C9A96E] tracking-[0.25em] uppercase">
-                THE ATELIER GALLERY
-              </span>
-            </div>
-
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-[#1A1A1A] leading-[1.1] tracking-tight">
-              Mosaic of Moments <br />
-              <span className="italic font-normal text-[#4A6B5B]">
-                Dubai Wedding Gallery
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg text-[#212529]/75 font-sans max-w-3xl leading-relaxed font-light">
-              Explore our full collection of high-fashion celebrations, royal palace galas, desert candlelit vows, and bespoke architectural florals across the United Arab Emirates.
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap gap-3 pt-4 border-b border-gray-200 pb-6">
-          {CATEGORIES.map((cat) => {
-            const isSelected = cat === selectedCategory;
-            return (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-6 py-2.5 rounded-full text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer ${
-                  isSelected
-                    ? 'bg-[#3B5649] text-white shadow-md border border-[#C9A96E]'
-                    : 'bg-white text-[#212529] hover:bg-[#EAF0EC] border border-gray-200'
-                }`}
-              >
-                {cat === 'All' ? 'All Moments' : cat}
-              </button>
-            );
-          })}
-        </div>
-
-      </section>
-
-      {/* ── STAGGERED MASONRY GALLERY GRID ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16">
-        <motion.div
-          layout
-          className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+      {/* ── MINIMAL TOP HEADER (Matching User Screenshot) ── */}
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 pb-6 flex items-center justify-between border-b border-gray-100 mb-4">
+        <button
+          onClick={onNavigateHome}
+          className="px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-full text-xs font-sans font-semibold uppercase tracking-wider text-[#212529] inline-flex items-center space-x-2 transition-all cursor-pointer border border-gray-200"
         >
-          <AnimatePresence>
-            {filteredItems.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                onClick={() => setLightboxItem(item)}
-                className={`break-inside-avoid rounded-3xl overflow-hidden border border-gray-200 shadow-md relative group cursor-pointer bg-white gold-border-glow ${item.aspect}`}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700"
-                />
+          <ArrowLeft className="w-4 h-4 text-[#3B5649]" />
+          <span>Back to Home</span>
+        </button>
 
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+        <h1 className="font-['Playfair_Display'] text-2xl sm:text-4xl font-normal text-[#212529] tracking-tight">
+          Client Diaries
+        </h1>
 
-                {/* Zoom Icon Button */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/30 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ZoomIn className="w-5 h-5 text-[#E8D4A8]" />
-                </div>
+        <button
+          onClick={onOpenEnquiry}
+          className="px-5 py-2 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
+        >
+          Inquire
+        </button>
+      </header>
 
-                {/* Tag Pill */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full text-[10px] font-sans font-semibold text-[#1F382B] border border-gray-200 uppercase tracking-widest">
-                  {item.category}
-                </div>
-
-                {/* Title Overlay */}
-                <div className="absolute bottom-5 left-5 right-5 text-white space-y-1 z-10">
-                  <span className="text-[10px] font-sans uppercase tracking-widest text-[#E8D4A8] font-semibold block">
-                    {item.location}
-                  </span>
-                  <h3 className="font-display text-xl font-normal text-white group-hover:text-[#E8D4A8] transition-colors leading-snug">
-                    {item.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </section>
-
-      {/* ── FOOTER CALLOUT ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-24 text-center">
-        <div className="bg-white p-12 rounded-3xl border border-gray-200 shadow-xl space-y-6 max-w-3xl mx-auto">
-          <span className="font-['Great_Vibes'] text-4xl text-[#C9A96E] block leading-none">
-            Ready to compose your narrative?
-          </span>
-          <h2 className="font-display text-3xl font-normal text-[#212529]">
-            Let’s Begin Designing Your Celebration
-          </h2>
-          <button
-            onClick={onOpenEnquiry}
-            className="px-8 py-3.5 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full transition-all text-xs font-sans font-semibold uppercase tracking-widest cursor-pointer shadow-md hover:scale-105"
-          >
-            Inquire With Atelier
-          </button>
+      {/* ── DENSE 4-COLUMN MASONRY PHOTO WALL (Exact Match with Reference Image) ── */}
+      <main className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-2 sm:gap-2.5 space-y-2 sm:space-y-2.5">
+          {GALLERY_ITEMS.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setLightboxItem(item)}
+              className="break-inside-avoid overflow-hidden rounded-lg sm:rounded-xl relative group cursor-pointer bg-gray-100 border border-gray-100"
+            >
+              <motion.img
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
+                src={item.image}
+                alt={item.title}
+                className="w-full h-auto object-cover block"
+              />
+              
+              {/* Soft Subtle Hover Vignette & Title */}
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                <span className="font-['Playfair_Display'] text-xs font-normal text-white drop-shadow-md">
+                  {item.title}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+      </main>
 
       {/* ── LIGHTBOX ZOOM MODAL ── */}
       <AnimatePresence>
@@ -181,24 +117,23 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenEnquiry, onNavig
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
             onClick={() => setLightboxItem(null)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl max-h-[90vh] bg-black rounded-3xl overflow-hidden shadow-2xl border border-[#C9A96E]/40 flex flex-col justify-between"
+              className="relative max-w-4xl max-h-[90vh] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col justify-between"
             >
-              {/* Close Button */}
               <button
                 onClick={() => setLightboxItem(null)}
-                className="absolute top-4 right-4 z-30 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30 hover:bg-white hover:text-black transition-all cursor-pointer"
+                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30 hover:bg-white hover:text-black transition-all cursor-pointer"
                 aria-label="Close Lightbox"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
               <div className="w-full max-h-[75vh] overflow-hidden flex items-center justify-center bg-gray-950">
@@ -209,22 +144,15 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenEnquiry, onNavig
                 />
               </div>
 
-              {/* Lightbox Footer Bar */}
-              <div className="p-6 bg-black/90 border-t border-white/10 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-sans uppercase tracking-widest text-[#E8D4A8] font-semibold">
-                    {lightboxItem.category} · {lightboxItem.location}
-                  </span>
-                  <h3 className="font-display text-2xl font-normal text-white">
-                    {lightboxItem.title}
-                  </h3>
-                </div>
-
+              <div className="p-4 bg-black/90 text-white flex items-center justify-between border-t border-white/10">
+                <h3 className="font-['Playfair_Display'] text-lg font-normal text-white">
+                  {lightboxItem.title}
+                </h3>
                 <button
                   onClick={() => { setLightboxItem(null); onOpenEnquiry(); }}
-                  className="px-6 py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#C9A96E] text-[#111] rounded-full text-xs font-sans font-semibold uppercase tracking-wider cursor-pointer shadow-md hover:scale-105 shrink-0"
+                  className="px-5 py-2 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider cursor-pointer"
                 >
-                  Plan A Celebration Like This
+                  Book Atelier
                 </button>
               </div>
 
