@@ -1,9 +1,12 @@
 import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { AboutSection } from '../components/sections/AboutSection';
+import { FounderStorySection } from '../components/sections/FounderStorySection';
 import { PhotoStripSection } from '../components/sections/PhotoStripSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 import { PortfolioSection } from '../components/sections/PortfolioSection';
+import { WeddingGallerySection } from '../components/sections/WeddingGallerySection';
+import { Testimonials } from '../components/sections/Testimonials';
 import { FeatureIconsSection } from '../components/sections/FeatureIconsSection';
 import { CommitmentSection } from '../components/sections/CommitmentSection';
 import { WhyChooseUsSection } from '../components/sections/WhyChooseUsSection';
@@ -34,34 +37,43 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 2. About Section: The Minds Behind Your Perfect Day */}
       <AboutSection onLearnMore={() => onNavigate('about')} />
 
-      {/* 3. Photo Collage Strip Section */}
+      {/* 3. Founder Story Section: Architects of Romance (With Video Placeholder & Modal) */}
+      <FounderStorySection onOpenEnquiry={onOpenEnquiry} />
+
+      {/* 4. Photo Collage Strip Section */}
       <PhotoStripSection />
 
-      {/* 4. Services Section: Bespoke Planning For Your Special Day (Circular Badges 1, 2, 3) */}
+      {/* 5. Services Section: Bespoke Planning For Your Special Day */}
       <ServicesSection onSelectService={() => onNavigate('services')} />
 
-      {/* 5. Portfolio Section: Visualizing Your Dreams Into Reality */}
+      {/* 6. Portfolio Section: Visualizing Your Dreams Into Reality */}
       <PortfolioSection
         onSelectProject={onSelectProject}
         onViewAll={() => onNavigate('portfolio')}
       />
 
-      {/* 6. Feature Icons Grid Section: And more! */}
+      {/* 7. Wedding Gallery Section: Mosaic of Moments */}
+      <WeddingGallerySection onOpenFullGallery={() => onNavigate('gallery')} />
+
+      {/* 8. Feature Icons Grid Section */}
       <FeatureIconsSection />
 
-      {/* 7. Our Commitment Section: Your Vision, Our Flawless Execution */}
+      {/* 9. Our Commitment Section */}
       <CommitmentSection onLearnMore={() => onNavigate('about')} />
 
-      {/* 8. Why Choose Us Section: Floating Photo Bubbles & Circular Feature Cards */}
+      {/* 10. Client Testimonials Section: Love Stories & Celebrations */}
+      <Testimonials />
+
+      {/* 11. Why Choose Us Section */}
       <WhyChooseUsSection />
 
-      {/* 9. Dark Container Section: Dubai Palace & Desert Weddings */}
+      {/* 12. Dark Container Section: Dubai Palace & Desert Weddings */}
       <DarkPalaceSection onOpenEnquiry={onOpenEnquiry} />
 
-      {/* 10. FAQ Accordion Section: You may be wondering... */}
+      {/* 13. FAQ Accordion Section */}
       <FAQSection onOpenEnquiry={onOpenEnquiry} />
 
-      {/* 11. Newsletter Strip: Get on the list */}
+      {/* 14. Newsletter Strip */}
       <NewsletterSection />
     </main>
   );

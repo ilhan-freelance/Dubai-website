@@ -2,35 +2,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Dusty Rose & Mauve (Reference Image Palette) ── */
-  --color-mauve-deep: #944C5E;
-  --color-mauve-mid: #A65B6F;
-  --color-mauve-light: #B86B7D;
-  --color-blush-soft: #F7ECEE;
-  --color-blush-warm: #EBD3D7;
-  --color-dark-box: #2B1D24;
+  /* ── 70% Pure White Base ── */
+  --color-white-pure: #FFFFFF;
 
-  /* ── Baby Pink & Rose ── */
-  --color-blush: #F9E8E8;
+  /* ── 10% Warm Ivory & Cream ── */
+  --color-ivory: #FAF8F5;
+  --color-ivory-warm: #F5EDDF;
+  --color-cream: #FAF6F0;
+
+  /* ── 10% Delicate Soft Pink & Rose (Romantic Accents) ── */
+  --color-blush-soft: #FDF2F4;
+  --color-blush: #F8E7E9;
   --color-blush-mid: #F2D4D4;
   --color-blush-deep: #E8B4B8;
-  --color-blush-rose: #D4888F;
-  --color-rose-dark: #A85A62;
+  --color-rose-dark: #C86B7B;
 
-  /* ── Liquid Gold ── */
+  /* ── 10% Eucalyptus & Sage Green (Botanical Nature Accent) ── */
+  --color-sage-light: #EAF0EC;
+  --color-sage-soft: #D5E2D9;
+  --color-sage: #8DA999;
+  --color-sage-deep: #4A6B5B;
+  --color-emerald-luxury: #1F382B;
+
+  /* ── Muted Champagne Gold Accent (Subtle & Understated) ── */
   --color-gold: #C9A96E;
   --color-gold-light: #E8D4A8;
-  --color-gold-pale: #F5EDD8;
+  --color-gold-pale: #F9F5EC;
   --color-gold-dark: #9E7B45;
 
-  /* ── Champagne & Cream ── */
-  --color-champagne: #F5EDDF;
-  --color-ivory: #FAF8F6;
-  --color-cream: #FAF8F6;
-
-  /* ── Dark Drama ── */
-  --color-midnight: #1C1A2E;
-  --color-charcoal: #2A2226;
+  /* ── Neutral & Charcoal ── */
+  --color-midnight: #16181B;
+  --color-charcoal: #212529;
 
   /* ── Fonts ── */
   --font-script: 'Great Vibes', 'Alex Brush', cursive;
@@ -42,7 +44,7 @@
 @layer base {
   html {
     font-family: var(--font-sans);
-    background-color: var(--color-ivory);
+    background-color: #FFFFFF;
     color: var(--color-charcoal);
     scroll-behavior: smooth;
   }
@@ -88,21 +90,54 @@
 }
 
 /* ═══════════════════════════════════════
-   GOLD GRADIENT TEXT
+   SUBTLE TEXT GRADIENTS (MUTED & ELEGANT)
 ═══════════════════════════════════════ */
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #E8D4A8 0%, #C9A96E 35%, #9E7B45 65%, #C9A96E 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A96E 50%, #9E7B45 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gold-gradient-light {
-  background: linear-gradient(135deg, #F5EDD8 0%, #E8D4A8 40%, #C9A96E 100%);
+  background: linear-gradient(135deg, #F9F5EC 0%, #E8D4A8 50%, #C9A96E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.text-sage-gradient {
+  background: linear-gradient(135deg, #8DA999 0%, #4A6B5B 50%, #1F382B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════
+   SILKY SMOOTH MARQUEE TICKER (GPU ACCELERATED, ZERO GLITCH)
+═══════════════════════════════════════ */
+
+@keyframes smooth-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track,
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: smooth-marquee 32s linear infinite !important;
+  will-change: transform;
+}
+
+.marquee-track:hover,
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* ═══════════════════════════════════════
@@ -110,50 +145,31 @@
 ═══════════════════════════════════════ */
 
 .glass-dark {
-  background: rgba(28, 26, 46, 0.75);
+  background: rgba(22, 24, 27, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 169, 110, 0.15);
+  border: 1px solid rgba(201, 169, 110, 0.2);
 }
 
 .glass-light {
-  background: rgba(250, 248, 245, 0.80);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 169, 110, 0.25);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.glass-sage {
+  background: rgba(234, 240, 236, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(74, 107, 91, 0.2);
 }
 
 .glass-blush {
-  background: rgba(249, 232, 232, 0.70);
+  background: rgba(253, 242, 244, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(232, 180, 184, 0.30);
-}
-
-/* ═══════════════════════════════════════
-   GOLD SHIMMER ANIMATION
-═══════════════════════════════════════ */
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.shimmer-gold {
-  background: linear-gradient(
-    90deg,
-    #C9A96E 0%,
-    #F5EDD8 20%,
-    #E8D4A8 40%,
-    #C9A96E 60%,
-    #9E7B45 80%,
-    #C9A96E 100%
-  );
-  background-size: 200% auto;
-  animation: shimmer 4s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  border: 1px solid rgba(248, 231, 233, 0.6);
 }
 
 /* ═══════════════════════════════════════
@@ -173,19 +189,6 @@
   }
 }
 
-@keyframes float-petal-2 {
-  0% {
-    transform: translateY(-10px) translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% { opacity: 0.4; }
-  90% { opacity: 0.2; }
-  100% {
-    transform: translateY(110vh) translateX(-80px) rotate(-270deg);
-    opacity: 0;
-  }
-}
-
 .petal {
   position: absolute;
   pointer-events: none;
@@ -195,140 +198,55 @@
 }
 
 /* ═══════════════════════════════════════
-   GOLD PARTICLE GLOW
-═══════════════════════════════════════ */
-
-@keyframes particle-float {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-  50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
-}
-
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 8px rgba(201, 169, 110, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(201, 169, 110, 0.8), 0 0 40px rgba(201, 169, 110, 0.3); }
-}
-
-/* ═══════════════════════════════════════
-   MARQUEE / TICKER
-═══════════════════════════════════════ */
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  animation: marquee 30s linear infinite;
-  display: flex;
-  width: max-content;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-/* ═══════════════════════════════════════
-   MARQUEE / TICKER
-═══════════════════════════════════════ */
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  animation: marquee 28s linear infinite;
-  display: flex;
-  width: max-content;
-  align-items: center;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-
-
-/* ═══════════════════════════════════════
-   GRADIENT BACKGROUNDS
-═══════════════════════════════════════ */
-
-.bg-midnight-gradient {
-  background: linear-gradient(145deg, #1C1A2E 0%, #14122A 50%, #201E35 100%);
-}
-
-.bg-blush-gradient {
-  background: linear-gradient(135deg, #F9E8E8 0%, #F5EDD8 50%, #F9E8E8 100%);
-}
-
-.bg-gold-subtle {
-  background: linear-gradient(135deg, #F5EDD8 0%, #FAF8F5 40%, #F5EDD8 100%);
-}
-
-/* ═══════════════════════════════════════
-   IMAGE ZOOM CONTAINER
-═══════════════════════════════════════ */
-
-.image-zoom-container { overflow: hidden; }
-.image-zoom-container img {
-  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.image-zoom-container:hover img { transform: scale(1.06); }
-
-/* ═══════════════════════════════════════
-   GOLD BORDER GLOW
-═══════════════════════════════════════ */
-
-.gold-border-glow {
-  border: 1px solid rgba(201, 169, 110, 0.4);
-  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.1), inset 0 0 20px rgba(201, 169, 110, 0.03);
-  transition: all 0.5s ease;
-}
-.gold-border-glow:hover {
-  border-color: rgba(201, 169, 110, 0.7);
-  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.2), 0 8px 40px rgba(201, 169, 110, 0.15);
-}
-
-/* ═══════════════════════════════════════
-   SUBTLE DIVIDERS
+   DIVIDERS
 ═══════════════════════════════════════ */
 
 .subtle-divider-gold {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.5) 30%, rgba(201, 169, 110, 0.7) 50%, rgba(201, 169, 110, 0.5) 70%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.3) 30%, rgba(201, 169, 110, 0.5) 50%, rgba(201, 169, 110, 0.3) 70%, transparent);
 }
 
-.subtle-divider-blush {
+.subtle-divider-sage {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232, 180, 184, 0.5) 30%, rgba(212, 136, 143, 0.7) 50%, rgba(232, 180, 184, 0.5) 70%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(141, 169, 153, 0.3) 30%, rgba(74, 107, 91, 0.5) 50%, rgba(141, 169, 153, 0.3) 70%, transparent);
 }
 
 /* ═══════════════════════════════════════
    CUSTOM SCROLLBAR
 ═══════════════════════════════════════ */
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #FAF8F5; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFFFF; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #C9A96E, #E8B4B8);
+  background: linear-gradient(180deg, #C9A96E, #4A6B5B);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover { background: #9E7B45; }
 
 /* ═══════════════════════════════════════
-   CARD 3D TILT
+   CARD HOVER LIFT & GLOW
 ═══════════════════════════════════════ */
 
 .card-hover-lift {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
 }
 .card-hover-lift:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 24px 60px rgba(28, 26, 46, 0.15), 0 4px 20px rgba(201, 169, 110, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(201, 169, 110, 0.1);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.05);
+  transition: all 0.4s ease;
+}
+.gold-border-glow:hover {
+  border-color: rgba(201, 169, 110, 0.6);
+  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.12);
 }
 
 /* ═══════════════════════════════════════
-   GOLD DOT PATTERN
+   BACKGROUND PATTERNS
 ═══════════════════════════════════════ */
 
 .bg-dot-gold {
@@ -336,9 +254,9 @@
   background-size: 28px 28px;
 }
 
-.bg-dot-blush {
-  background-image: radial-gradient(rgba(232, 180, 184, 0.1) 1px, transparent 0);
-  background-size: 24px 24px;
+.bg-dot-sage {
+  background-image: radial-gradient(rgba(74, 107, 91, 0.08) 1px, transparent 0);
+  background-size: 26px 26px;
 }
 
 /* ═══════════════════════════════════════
@@ -346,46 +264,14 @@
 ═══════════════════════════════════════ */
 
 ::selection {
-  background: rgba(201, 169, 110, 0.3);
-  color: #1C1A2E;
+  background: rgba(201, 169, 110, 0.25);
+  color: #1F382B;
 }
 
 /* ═══════════════════════════════════════
-   GRAIN TEXTURE
-═══════════════════════════════════════ */
-
-.bg-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-}
-
-/* ═══════════════════════════════════════
-   WORD REVEAL ANIMATION
-═══════════════════════════════════════ */
-
-@keyframes word-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px) rotateX(-20deg);
-    filter: blur(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0deg);
-    filter: blur(0px);
-  }
-}
-
-.word-reveal {
-  display: inline-block;
-  animation: word-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
-}
-
-/* ═══════════════════════════════════════
-   STAR RATING
+   STAR RATING & ACCENTS
 ═══════════════════════════════════════ */
 
 .star-gold {
   color: #C9A96E;
-  filter: drop-shadow(0 0 4px rgba(201, 169, 110, 0.5));
 }

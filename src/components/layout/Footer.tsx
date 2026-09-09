@@ -12,11 +12,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
   };
 
   return (
-    <footer className="bg-[#FAF8F6] text-[#2A2226] pt-16 pb-10 border-t border-[#EBD3D7] relative overflow-hidden">
+    <footer className="bg-[#FAF8F5] text-[#212529] pt-16 pb-10 border-t border-[#C9A96E]/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
         
         {/* Main 4 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#EBD3D7]/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#C9A96E]/20">
           
           {/* Col 1: Brand & Logo */}
           <div className="space-y-4">
@@ -25,11 +25,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                 src="/logo-transparent.png"
                 alt="Love Details Dubai"
                 className="h-12 w-auto object-contain transition-all hover:scale-105"
-                style={{ filter: 'drop-shadow(0 2px 6px rgba(148,76,94,0.3))' }}
+                style={{ filter: 'drop-shadow(0 2px 6px rgba(201,169,110,0.3))' }}
               />
             </div>
 
-            <p className="text-xs text-[#2A2226]/80 font-sans leading-relaxed">
+            <p className="text-xs text-[#212529]/75 font-sans leading-relaxed">
               Dubai’s premier luxury wedding & event atelier. Crafting timeless, romantic celebrations across the UAE.
             </p>
 
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-[#F7ECEE] border border-[#EBD3D7] text-[#944C5E] flex items-center justify-center hover:bg-[#944C5E] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full bg-[#EAF0EC] border border-[#8DA999]/30 text-[#4A6B5B] flex items-center justify-center hover:bg-[#4A6B5B] hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-[#F7ECEE] border border-[#EBD3D7] text-[#944C5E] flex items-center justify-center hover:bg-[#944C5E] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full bg-[#EAF0EC] border border-[#8DA999]/30 text-[#4A6B5B] flex items-center justify-center hover:bg-[#4A6B5B] hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                 href="https://pinterest.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-[#F7ECEE] border border-[#EBD3D7] text-[#944C5E] flex items-center justify-center hover:bg-[#944C5E] hover:text-white transition-colors"
+                className="w-8 h-8 rounded-full bg-[#EAF0EC] border border-[#8DA999]/30 text-[#4A6B5B] flex items-center justify-center hover:bg-[#4A6B5B] hover:text-white transition-colors"
                 aria-label="Pinterest"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -73,33 +73,38 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
 
           {/* Col 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#944C5E]">
+            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#4A6B5B]">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-xs font-sans text-[#2A2226]/80">
+            <ul className="space-y-2 text-xs font-sans text-[#212529]/80">
               <li>
-                <button onClick={() => handleNav('home')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('home')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
                   Home
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('about')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
-                  About Us
+                <button onClick={() => handleNav('about')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
+                  Philosophy
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
-                  Services
+                <button onClick={() => handleNav('services')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
+                  Offerings
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('portfolio')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
-                  Portfolio
+                <button onClick={() => handleNav('portfolio')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
+                  Experience
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('contact')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
-                  Contact Us
+                <button onClick={() => handleNav('venues')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
+                  Destinations
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('contact')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
+                  Connect
                 </button>
               </li>
             </ul>
@@ -107,27 +112,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
 
           {/* Col 3: Services */}
           <div className="space-y-3">
-            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#944C5E]">
+            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#4A6B5B]">
               Services
             </h4>
-            <ul className="space-y-2 text-xs font-sans text-[#2A2226]/80">
+            <ul className="space-y-2 text-xs font-sans text-[#212529]/80">
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
                   Full Wedding Planning
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
                   Partial Coordination
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
                   Day-of Management
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('services')} className="hover:text-[#944C5E] transition-colors cursor-pointer">
+                <button onClick={() => handleNav('services')} className="hover:text-[#C9A96E] transition-colors cursor-pointer">
                   Destination Weddings
                 </button>
               </li>
@@ -136,18 +141,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
 
           {/* Col 4: Contact Us */}
           <div className="space-y-3">
-            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#944C5E]">
+            <h4 className="text-xs uppercase tracking-widest font-sans font-semibold text-[#4A6B5B]">
               Contact Us
             </h4>
-            <div className="space-y-2 text-xs font-sans text-[#2A2226]/80">
+            <div className="space-y-2 text-xs font-sans text-[#212529]/80">
               <p>Jumeirah Bay & Downtown Atelier</p>
               <p>Dubai, United Arab Emirates</p>
-              <p className="pt-1 font-semibold text-[#944C5E]">+971 4 000 0000</p>
+              <p className="pt-1 font-semibold text-[#C9A96E]">+971 4 000 0000</p>
               <p>enquiries@lovedetails.ae</p>
               <div className="pt-2">
                 <button
                   onClick={onOpenEnquiry}
-                  className="px-4 py-2 bg-[#944C5E] hover:bg-[#7A3D4D] text-white rounded-full text-[10px] font-sans font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#C9A96E] hover:from-[#C9A96E] hover:to-[#9E7B45] text-[#111] rounded-full text-[10px] font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-sm hover:scale-105"
                 >
                   Book Consultation
                 </button>
@@ -158,7 +163,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
         </div>
 
         {/* Bottom Copyright */}
-        <div className="text-center text-xs text-[#2A2226]/60 font-sans">
+        <div className="text-center text-xs text-[#212529]/60 font-sans">
           <p>© {new Date().getFullYear()} Love Details Atelier. All rights reserved.</p>
         </div>
 

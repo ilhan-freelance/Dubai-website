@@ -40,9 +40,15 @@ export const DubaiPositioning: React.FC<DubaiPositioningProps> = ({ onExploreVen
           {/* Copy Block - 5 cols */}
           <div className="lg:col-span-5 space-y-6">
             <AnimatedSection direction="left" delay={0.2}>
-              <span className="micro-label text-[#7A8864]">DESTINATION EXPERTISE</span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#262822] leading-tight mt-2">
-                Dubai, Beautifully Celebrated.
+              <div className="flex items-center gap-2 text-[#7A8864] mb-2">
+                <div className="w-6 h-[1px] bg-[#7A8864]" />
+                <span className="text-xs font-sans font-semibold tracking-[0.25em] uppercase">
+                  DESTINATION EXPERTISE
+                </span>
+              </div>
+
+              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#262822] leading-tight">
+                Dubai &amp; UAE Destination Weddings
               </h2>
               <p className="text-sm md:text-base text-[#262822]/80 leading-relaxed font-light mt-4">
                 We navigate the complex tapestry of UAE luxury hospitality with grace. From private island resorts in Jumeirah Bay to moonlit desert dunes in conservation reserves and palatial ballrooms in Abu Dhabi, we connect you with the region’s finest spaces.

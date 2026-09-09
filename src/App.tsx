@@ -13,6 +13,7 @@ import { VenuesPage } from './pages/VenuesPage';
 import { JournalPage } from './pages/JournalPage';
 import { TestimonialsPage } from './pages/TestimonialsPage';
 import { ContactPage } from './pages/ContactPage';
+import { GalleryPage } from './pages/GalleryPage';
 
 import { ProjectModal } from './components/modals/ProjectModal';
 import { ArticleModal } from './components/modals/ArticleModal';
@@ -36,7 +37,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F6] text-[#2A2226] selection:bg-[#944C5E] selection:text-white relative font-sans flex flex-col justify-between overflow-x-hidden">
+    <div className="min-h-screen bg-white text-[#212529] selection:bg-[#C9A96E]/30 selection:text-[#1F382B] relative font-sans flex flex-col justify-between overflow-x-hidden">
       {/* Luxury Custom Interactive Cursor */}
       <CustomCursor />
 
@@ -72,6 +73,13 @@ export function App() {
         {currentTab === 'portfolio' && (
           <PortfolioPage
             onSelectProject={(project) => setSelectedProject(project)}
+          />
+        )}
+
+        {currentTab === 'gallery' && (
+          <GalleryPage
+            onOpenEnquiry={() => handleOpenEnquiry('Weddings')}
+            onNavigateHome={() => handleNavigate('home')}
           />
         )}
 

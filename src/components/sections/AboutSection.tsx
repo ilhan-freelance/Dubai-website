@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles, ArrowUpRight } from 'lucide-react';
 
 interface AboutSectionProps {
   onLearnMore: () => void;
@@ -7,108 +8,203 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
   return (
-    <section className="py-20 md:py-32 bg-[#FAF8F6] text-[#2A2226] relative overflow-hidden px-6 z-20">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 md:py-32 bg-[#FAF8F5] text-[#212529] relative overflow-hidden px-6 z-20">
+      
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-[#E8D4A8]/20 rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute top-10 right-10 w-80 h-80 rounded-full bg-[#8DA999]/15 blur-[140px] pointer-events-none" />
 
-        {/* 3-column layout: left photos | center text | right photos */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+      {/* Decorative Background Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.03] w-full text-center overflow-hidden">
+        <span className="font-display text-[180px] sm:text-[260px] md:text-[340px] tracking-[0.15em] uppercase text-[#212529] block leading-none font-light">
+          ATELIER
+        </span>
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full relative z-10 space-y-16">
+        
+        {/* ── HIGH-IMPACT 6-PHOTO EDITORIAL GALLERY LAYOUT ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column - 2 stacked/overlapping photos */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-end gap-4 relative">
+          {/* ── LEFT COLUMN: 3 LARGE OVERLAPPING WEDDING PHOTOS (4 cols) ── */}
+          <div className="lg:col-span-4 relative flex flex-col items-center lg:items-end gap-5">
+            
+            {/* Photo 1: Top Hero Arch Frame */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30, rotate: -2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: -2 }}
+              whileHover={{ rotate: 0, scale: 1.04 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-52 sm:w-60 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#C5D1BD] shadow-xl bg-white"
+              transition={{ duration: 0.7 }}
+              className="w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white ring-2 ring-[#C9A96E]/40 shadow-2xl relative bg-white group gold-border-glow"
             >
               <img
                 src="/about-couple-arch.png"
-                alt="Couple at wedding arch"
-                className="w-full h-full object-cover"
+                alt="Grand Floral Wedding Arch"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              
+              <div className="absolute bottom-4 left-4 right-4 text-white flex items-center justify-between z-10">
+                <span className="text-[10px] font-sans font-semibold uppercase tracking-widest text-[#E8D4A8]">
+                  One&amp;Only Royal Mirage
+                </span>
+                <span className="text-[9px] font-serif italic text-white/80">Floral Arch</span>
+              </div>
             </motion.div>
-            
+
+            {/* Photo 2: Middle Desert Sunset Card */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -30, y: 15 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              whileHover={{ scale: 1.05 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="w-60 sm:w-72 aspect-[16/10] rounded-3xl overflow-hidden border-4 border-[#C5D1BD] shadow-xl bg-white -mt-6 lg:-mr-8 z-10"
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="w-4/5 max-w-xs aspect-[16/10] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-16 sm:-mt-20 lg:-mr-6 z-20 relative group"
             >
               <img
-                src="/about-couple-laugh.png"
-                alt="Happy couple laughing"
-                className="w-full h-full object-cover"
+                src="/portfolio-desert.png"
+                alt="Dubai Desert Sunset Wedding"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+              <div className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[9px] font-sans font-bold text-[#1F382B] shadow-xs border border-gray-200 uppercase tracking-wider flex items-center gap-1">
+                <Sparkles className="w-3 h-3 text-[#C9A96E]" />
+                <span>Desert Dunes</span>
+              </div>
             </motion.div>
-          </div>
 
-          {/* Center Text Block */}
-          <div className="lg:col-span-4 text-center space-y-5 px-2">
-            <span className="font-['Great_Vibes'] text-4xl sm:text-5xl text-[#6B7956] block leading-none">
-              About Love Details
-            </span>
-
-            <h2 className="font-['Playfair_Display'] text-3xl sm:text-5xl font-normal text-[#2A2226] tracking-tight leading-tight">
-              The Minds Behind <br />
-              Your Perfect Day
-            </h2>
-
-            <p className="text-xs sm:text-sm text-[#2A2226]/80 font-sans leading-relaxed max-w-sm mx-auto font-normal">
-              We believe every love story deserves a breathtaking celebration. Our dedicated team blends visionary creative direction with flawless logistics to curate bespoke luxury weddings tailored uniquely to your style. From initial concept sketch to the final grand exit, we handle every intricate detail seamlessly, allowing you to immerse yourself fully in the magic of your moments.
-            </p>
-
-            <div className="pt-2 flex items-center justify-center gap-4">
-              <button
-                onClick={onLearnMore}
-                className="px-7 py-2.5 bg-[#6B7956] hover:bg-[#586745] text-white rounded-full transition-all text-xs font-sans font-semibold uppercase tracking-wider cursor-pointer shadow-sm"
-              >
-                Book a service
-              </button>
-              <button
-                onClick={onLearnMore}
-                className="px-7 py-2.5 bg-white border border-[#6B7956] text-[#6B7956] hover:bg-[#EAEFE6] rounded-full transition-all text-xs font-sans font-semibold uppercase tracking-wider cursor-pointer shadow-sm"
-              >
-                Read more
-              </button>
-            </div>
-          </div>
-
-          {/* Right Column - 2 stacked/overlapping photos */}
-          <div className="lg:col-span-4 flex flex-col items-center lg:items-start gap-4 relative">
+            {/* Photo 3: Bottom Bridesmaids Photo */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-52 sm:w-60 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#C5D1BD] shadow-xl bg-white"
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="w-3/4 max-w-[240px] aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-12 lg:-mr-12 z-30 relative group"
             >
               <img
                 src="/about-bridesmaids.png"
-                alt="Elegant bridesmaids"
-                className="w-full h-full object-cover"
+                alt="Bridal Party Elegance"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
+
+          </div>
+
+          {/* ── CENTER COLUMN: EDITORIAL COPY & CALL TO ACTION (4 cols) ── */}
+          <div className="lg:col-span-4 text-center space-y-6 px-2">
             
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-10 h-[1px] bg-[#C9A96E]" />
+              <span className="text-xs font-sans font-semibold tracking-[0.3em] uppercase text-[#C9A96E]">
+                ABOUT LOVE DETAILS
+              </span>
+              <div className="w-10 h-[1px] bg-[#C9A96E]" />
+            </div>
+
+            <h2 className="font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1A1A1A] tracking-tight leading-[1.12]">
+              The Minds Behind <br />
+              <span className="italic font-normal text-[#3B5649]">Your Perfect Day</span>
+            </h2>
+
+            <p className="text-sm md:text-base text-[#212529]/80 font-sans leading-relaxed max-w-md mx-auto font-light">
+              Every love story deserves a breathtaking celebration. Our atelier blends visionary creative direction, spatial architecture, and white-glove Dubai logistics to curate modern luxury weddings tailored uniquely to your style.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="pt-4 flex items-center justify-center gap-4">
+              <button
+                onClick={onLearnMore}
+                className="px-8 py-3.5 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full transition-all text-xs font-sans font-semibold uppercase tracking-widest cursor-pointer shadow-md hover:scale-105 inline-flex items-center gap-2"
+              >
+                <span>Book Atelier Service</span>
+                <ArrowUpRight className="w-4 h-4 text-[#E8D4A8]" />
+              </button>
+
+              <button
+                onClick={onLearnMore}
+                className="px-7 py-3.5 bg-white border border-gray-300 text-[#212529] hover:bg-[#EAF0EC] hover:border-[#3B5649] rounded-full transition-all text-xs font-sans font-semibold uppercase tracking-widest cursor-pointer shadow-xs hover:scale-105"
+              >
+                Our Story
+              </button>
+            </div>
+
+          </div>
+
+          {/* ── RIGHT COLUMN: 3 LARGE OVERLAPPING WEDDING PHOTOS (4 cols) ── */}
+          <div className="lg:col-span-4 relative flex flex-col items-center lg:items-start gap-5">
+            
+            {/* Photo 4: Top Hero Ballroom Frame */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30, rotate: 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 2 }}
+              whileHover={{ rotate: 0, scale: 1.04 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="w-52 sm:w-60 aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#C5D1BD] shadow-xl bg-white -mt-6 lg:-ml-6 z-10"
+              transition={{ duration: 0.7 }}
+              className="w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white ring-2 ring-[#C9A96E]/40 shadow-2xl relative bg-white group gold-border-glow"
+            >
+              <img
+                src="/portfolio-dubai.png"
+                alt="Bvlgari Resort Waterfront Gala"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              
+              <div className="absolute bottom-4 left-4 right-4 text-white flex items-center justify-between z-10">
+                <span className="text-[10px] font-sans uppercase tracking-widest text-[#E8D4A8] font-semibold">
+                  Bvlgari Resort Dubai
+                </span>
+                <span className="text-[9px] font-serif italic text-white/80">Waterfront Gala</span>
+              </div>
+            </motion.div>
+
+            {/* Photo 5: Middle Dance Celebration Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30, y: 15 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="w-4/5 max-w-xs aspect-[16/10] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-16 sm:-mt-20 lg:-ml-6 z-20 relative group"
+            >
+              <img
+                src="/portfolio-dance.png"
+                alt="Midnight Dance Gala"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+              <div className="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[9px] font-sans font-bold text-[#1F382B] shadow-xs border border-gray-200 uppercase tracking-wider flex items-center gap-1">
+                <Sparkles className="w-3 h-3 text-[#C9A96E]" />
+                <span>500+ Celebrations</span>
+              </div>
+            </motion.div>
+
+            {/* Photo 6: Bottom Groom Attire Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="w-3/4 max-w-[240px] aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-12 lg:-ml-12 z-30 relative group"
             >
               <img
                 src="/about-groom.png"
-                alt="Elegant groom"
-                className="w-full h-full object-cover"
+                alt="Black-Tie Royal Groom"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
+
           </div>
 
         </div>
+
       </div>
     </section>
   );
 };
-

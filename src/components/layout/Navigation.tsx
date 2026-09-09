@@ -32,19 +32,19 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   const leftNavItems = [
     { label: 'Home', id: 'home' },
-    { label: 'About Us', id: 'about' },
-    { label: 'Services', id: 'services' },
+    { label: 'Philosophy', id: 'about' },
+    { label: 'Offerings', id: 'services' },
   ];
 
   const rightNavItems = [
-    { label: 'Portfolio', id: 'portfolio' },
-    { label: 'Venues', id: 'venues' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Experience', id: 'portfolio' },
+    { label: 'Destinations', id: 'venues' },
+    { label: 'Connect', id: 'contact' },
   ];
 
   return (
     <header
-      className={`w-full z-50 sticky top-0 transition-all duration-300 bg-white/98 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-[0_4px_20px_rgba(0,0,0,0.06)] ${
+      className={`w-full z-50 sticky top-0 transition-all duration-300 bg-white/98 backdrop-blur-md border-b border-[#C9A96E]/25 shadow-[0_4px_20px_rgba(0,0,0,0.04)] ${
         isScrolled ? 'py-2.5 sm:py-3' : 'py-3.5 sm:py-4'
       }`}
     >
@@ -54,7 +54,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         {/* ── MOBILE MENU TOGGLE (LEFT ON MOBILE) ── */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 focus:outline-none text-[#8C2D42] hover:text-[#9B741A] transition-colors z-20"
+          className="lg:hidden p-2 focus:outline-none text-[#212529] hover:text-[#C9A96E] transition-colors z-20"
           aria-label="Toggle Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,9 +68,9 @@ export const Navigation: React.FC<NavigationProps> = ({
           <img
             src="/logo-real-emblem.png"
             alt="Love Details Monogram Emblem"
-            className="h-12 w-auto object-contain drop-shadow-[0_2px_8px_rgba(148,107,0,0.25)]"
+            className="h-12 w-auto object-contain drop-shadow-[0_2px_8px_rgba(201,169,110,0.25)]"
           />
-          <span className="font-['Bodoni_Moda'] text-xs font-black tracking-[0.38em] uppercase text-[#946B00] mt-1 text-center ml-[0.38em]">
+          <span className="font-['Bodoni_Moda'] text-xs font-black tracking-[0.38em] uppercase text-[#9E7B45] mt-1 text-center ml-[0.38em]">
             LOVE DETAILS
           </span>
         </div>
@@ -86,8 +86,8 @@ export const Navigation: React.FC<NavigationProps> = ({
                   onClick={() => handleItemClick(item.id)}
                   className={`py-1.5 transition-colors duration-200 cursor-pointer ${
                     isActive
-                      ? 'text-[#801B34] font-black scale-105'
-                      : 'text-[#801B34]/85 hover:text-[#946B00]'
+                      ? 'text-[#4A6B5B] font-black scale-105 border-b-2 border-[#C9A96E]'
+                      : 'text-[#212529]/85 hover:text-[#C9A96E]'
                   }`}
                 >
                   {item.label}
@@ -105,10 +105,10 @@ export const Navigation: React.FC<NavigationProps> = ({
           <img
             src="/logo-real-emblem.png"
             alt="Love Details Monogram Emblem"
-            className="h-13 md:h-15 lg:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_3px_12px_rgba(148,107,0,0.28)]"
+            className="h-13 md:h-15 lg:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_3px_12px_rgba(201,169,110,0.28)]"
           />
 
-          <span className="font-['Bodoni_Moda'] text-xs sm:text-[15px] md:text-[16.5px] font-black tracking-[0.38em] uppercase mt-1 ml-[0.38em] text-[#946B00] group-hover:text-[#801B34] transition-colors text-center">
+          <span className="font-['Bodoni_Moda'] text-xs sm:text-[15px] md:text-[16.5px] font-black tracking-[0.38em] uppercase mt-1 ml-[0.38em] text-[#9E7B45] group-hover:text-[#4A6B5B] transition-colors text-center">
             LOVE DETAILS
           </span>
         </div>
@@ -124,8 +124,8 @@ export const Navigation: React.FC<NavigationProps> = ({
                   onClick={() => handleItemClick(item.id)}
                   className={`py-1.5 transition-colors duration-200 cursor-pointer ${
                     isActive
-                      ? 'text-[#801B34] font-black scale-105'
-                      : 'text-[#801B34]/85 hover:text-[#946B00]'
+                      ? 'text-[#4A6B5B] font-black scale-105 border-b-2 border-[#C9A96E]'
+                      : 'text-[#212529]/85 hover:text-[#C9A96E]'
                   }`}
                 >
                   {item.label}
@@ -144,16 +144,16 @@ export const Navigation: React.FC<NavigationProps> = ({
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            className="lg:hidden absolute top-full left-4 right-4 mt-3 bg-white border border-[#D4AF37]/35 rounded-2xl px-6 py-6 space-y-4 shadow-[0_15px_40px_rgba(0,0,0,0.12)] z-50"
+            className="lg:hidden absolute top-full left-4 right-4 mt-3 bg-white border border-[#C9A96E]/30 rounded-2xl px-6 py-6 space-y-4 shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-50"
           >
             {[...leftNavItems, ...rightNavItems].map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleItemClick(item.id)}
-                className={`block w-full text-left py-2.5 text-xs uppercase tracking-[0.24em] font-['Montserrat'] font-bold border-b border-[#801B34]/10 transition-colors ${
+                className={`block w-full text-left py-2.5 text-xs uppercase tracking-[0.24em] font-['Montserrat'] font-bold border-b border-gray-100 transition-colors ${
                   currentTab === item.id
-                    ? 'text-[#801B34] font-black pl-2 border-l-2 border-l-[#801B34]'
-                    : 'text-[#801B34]/90 hover:text-[#946B00]'
+                    ? 'text-[#4A6B5B] font-black pl-2 border-l-2 border-l-[#C9A96E]'
+                    : 'text-[#212529]/90 hover:text-[#C9A96E]'
                 }`}
               >
                 {item.label}
@@ -164,10 +164,10 @@ export const Navigation: React.FC<NavigationProps> = ({
                 if (onOpenEnquiry) onOpenEnquiry();
                 else handleItemClick('contact');
               }}
-              className="w-full py-3 rounded-full font-sans text-xs font-bold uppercase tracking-[0.15em] text-white shadow-md mt-2 cursor-pointer transition-transform hover:scale-[1.02]"
+              className="w-full py-3 rounded-full font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#111] shadow-md mt-2 cursor-pointer transition-transform hover:scale-[1.02]"
               style={{
-                background: 'linear-gradient(135deg, #943B50 0%, #7A2338 100%)',
-                boxShadow: '0 6px 18px rgba(140,45,66,0.3)',
+                background: 'linear-gradient(135deg, #D4AF37 0%, #C9A96E 100%)',
+                boxShadow: '0 6px 18px rgba(201,169,110,0.3)',
               }}
             >
               Plan My Wedding
@@ -178,5 +178,3 @@ export const Navigation: React.FC<NavigationProps> = ({
     </header>
   );
 };
-
-

@@ -45,15 +45,10 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ onLearnMore }) =
 
         {/* Micro header */}
         <AnimatedSection direction="up">
-          <div className="flex items-center space-x-4 mb-20">
-            <motion.div
-              animate={{ scaleX: [0, 1] }}
-              transition={{ duration: 1 }}
-              className="w-12 h-px"
-              style={{ background: 'linear-gradient(90deg, #C9A96E, #E8D4A8)' }}
-            />
-            <span className="micro-label tracking-[0.32em]" style={{ color: '#C9A96E' }}>
-              ✦ &nbsp;THE LOVE DETAILS MANIFESTO
+          <div className="flex items-center space-x-3 mb-16">
+            <div className="w-8 h-px bg-[#C9A96E]" />
+            <span className="text-xs font-sans font-semibold tracking-[0.25em] text-[#C9A96E] uppercase">
+              THE ATELIER MANIFESTO
             </span>
           </div>
         </AnimatedSection>
@@ -65,19 +60,11 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ onLearnMore }) =
           <div className="lg:col-span-7 space-y-10">
 
             <AnimatedSection direction="up" delay={0.1}>
-              <h2 className="font-display-luxury text-4xl sm:text-6xl md:text-7xl font-light leading-[1.06] tracking-tight">
-                <span className="text-white">Every celebration </span>
-                <br />
-                <span className="italic" style={{
-                  background: 'linear-gradient(135deg, #F2D4D4 0%, #E8B4B8 30%, #C9A96E 70%, #E8D4A8 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  begins with an emotion.
+              <h2 className="font-display-luxury text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight">
+                <span className="text-white font-bold block mb-2">Every Celebration Begins With Emotion.</span>
+                <span className="italic font-light text-[#E8D4A8]">
+                  We turn that emotion into architecture.
                 </span>
-                <br />
-                <span className="text-white/80 text-3xl sm:text-4xl md:text-5xl">We turn that emotion into architecture.</span>
               </h2>
             </AnimatedSection>
 

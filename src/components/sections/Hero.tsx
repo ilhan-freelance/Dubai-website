@@ -66,17 +66,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
           transition={{ duration: 0.85, delay: 0.1 }}
           className="flex items-center justify-center gap-3 sm:gap-6"
         >
-          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]/80" />
+          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]" />
           <span
-            className="font-['Great_Vibes'] text-4xl sm:text-5xl md:text-6xl font-normal block leading-tight tracking-wide text-[#F5EDD8]"
-            style={{
-              textShadow: '0 2px 12px rgba(0,0,0,0.95), 0 0 20px rgba(212,175,55,0.4)',
-              filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.95))',
-            }}
+            className="font-['Great_Vibes'] text-3xl sm:text-4xl md:text-5xl font-normal block leading-tight text-[#E8D4A8]"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}
           >
-            Dubai's Finest Wedding Atelier
+            Dubai's Premier Luxury Wedding Atelier
           </span>
-          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]/80" />
+          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]" />
         </motion.div>
 
         {/* Main Royal Headline */}
@@ -84,31 +81,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.22 }}
-          className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl md:text-[76px] font-normal tracking-tight leading-[1.08] max-w-4xl mx-auto"
+          className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto drop-shadow-2xl"
         >
-          <span
-            className="block font-['Cormorant_Garamond'] font-medium text-3xl sm:text-5xl md:text-[62px] pb-1"
-            style={{
-              background: 'linear-gradient(90deg, #FFFFFF 0%, #F5EDD8 35%, #D4AF37 70%, #FFFDF7 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              filter: 'drop-shadow(0 4px 22px rgba(0,0,0,0.95))',
-            }}
-          >
-            Crafting Unforgettable
-          </span>
-          <span
-            className="font-['Cormorant_Garamond'] italic font-normal block text-4xl sm:text-6xl md:text-[78px]"
-            style={{
-              background: 'linear-gradient(90deg, #FFFFFF 0%, #F5EDD8 35%, #D4AF37 70%, #FFFDF7 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              filter: 'drop-shadow(0 4px 22px rgba(0,0,0,0.95))',
-            }}
-          >
-            Love Stories in Dubai.
+          Crafting Unforgettable <br />
+          <span className="italic font-normal text-[#E8D4A8]">
+            Love Stories in Dubai
           </span>
         </motion.h1>
 
@@ -120,18 +97,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
           transition={{ duration: 0.9, delay: 0.48 }}
           className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          {/* Gold gradient primary CTA */}
           <button
             onClick={onOpenEnquiry}
             className="group relative px-9 py-3.5 rounded-full font-sans text-xs font-bold uppercase tracking-wider cursor-pointer shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105"
             style={{
-              background: 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #C9A96E 100%)',
+              background: 'linear-gradient(135deg, #D4AF37 0%, #E8D4A8 50%, #C9A96E 100%)',
               color: '#121019',
-              boxShadow: '0 8px 30px rgba(212,175,55,0.4)',
+              boxShadow: '0 8px 25px rgba(212, 175, 55, 0.35)',
             }}
           >
             <span className="relative z-10">Plan My Dubai Wedding</span>
-            <div className="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
           {/* White outlined pill */}
