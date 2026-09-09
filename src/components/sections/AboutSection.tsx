@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface AboutSectionProps {
   onLearnMore: () => void;
@@ -43,14 +43,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Grand Floral Wedding Arch"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-4 left-4 right-4 text-white flex items-center justify-between z-10">
-                <span className="text-[10px] font-sans font-semibold uppercase tracking-widest text-[#E8D4A8]">
-                  One&amp;Only Royal Mirage
-                </span>
-                <span className="text-[9px] font-serif italic text-white/80">Floral Arch</span>
-              </div>
             </motion.div>
 
             {/* Photo 2: Middle Desert Sunset Card */}
@@ -67,12 +59,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Dubai Desert Sunset Wedding"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-
-              <div className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[9px] font-sans font-bold text-[#1F382B] shadow-xs border border-gray-200 uppercase tracking-wider flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-[#C9A96E]" />
-                <span>Desert Dunes</span>
-              </div>
             </motion.div>
 
             {/* Photo 3: Bottom Bridesmaids Photo */}
@@ -89,7 +75,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Bridal Party Elegance"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
           </div>
@@ -151,14 +136,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Bvlgari Resort Waterfront Gala"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-4 left-4 right-4 text-white flex items-center justify-between z-10">
-                <span className="text-[10px] font-sans uppercase tracking-widest text-[#E8D4A8] font-semibold">
-                  Bvlgari Resort Dubai
-                </span>
-                <span className="text-[9px] font-serif italic text-white/80">Waterfront Gala</span>
-              </div>
             </motion.div>
 
             {/* Photo 5: Middle Dance Celebration Card */}
@@ -175,12 +152,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Midnight Dance Gala"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-
-              <div className="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[9px] font-sans font-bold text-[#1F382B] shadow-xs border border-gray-200 uppercase tracking-wider flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-[#C9A96E]" />
-                <span>500+ Celebrations</span>
-              </div>
             </motion.div>
 
             {/* Photo 6: Bottom Groom Attire Card */}
@@ -197,7 +168,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
                 alt="Black-Tie Royal Groom"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
           </div>
