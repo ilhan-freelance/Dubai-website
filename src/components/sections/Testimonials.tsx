@@ -149,7 +149,7 @@ export const Testimonials: React.FC = () => {
         
         {/* Header */}
         <AnimatedSection direction="up">
-          <div className="text-center space-y-2 max-w-2xl mx-auto">
+          <div className="text-center space-y-2 max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-2 text-[#C9A96E]">
               <div className="w-8 h-[1px] bg-[#C9A96E]" />
               <span className="text-[11px] font-sans font-semibold tracking-[0.25em] uppercase text-[#E8D4A8]">
@@ -158,7 +158,7 @@ export const Testimonials: React.FC = () => {
               <div className="w-8 h-[1px] bg-[#C9A96E]" />
             </div>
 
-            <h2 className="font-['Playfair_Display'] text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h2 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight sm:whitespace-nowrap">
               Words of Love from Our Couples
             </h2>
           </div>
