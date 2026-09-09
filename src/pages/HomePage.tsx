@@ -58,17 +58,21 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 8. Feature Icons Grid Section */}
       <FeatureIconsSection />
 
-      {/* 9. Our Commitment Section */}
+      {/* 9. Client Testimonials Section: Love Stories & Celebrations */}
+      <Testimonials />
+
+      {/* 10. Our Commitment Section: The Atelier Promise */}
       <CommitmentSection
         onExplorePackages={() => onNavigate('packages')}
         onOpenEnquiry={onOpenEnquiry}
       />
 
-      {/* 10. Client Testimonials Section: Love Stories & Celebrations */}
-      <Testimonials />
-
       {/* 11. Why Choose Us Section */}
-      <WhyChooseUsSection />
+      <WhyChooseUsSection
+        onNavigate={onNavigate}
+        onLearnMore={() => onNavigate('about')}
+        onOpenEnquiry={onOpenEnquiry}
+      />
 
       {/* 12. Dark Container Section: Dubai Palace & Desert Weddings */}
       <DarkPalaceSection onOpenEnquiry={onOpenEnquiry} />

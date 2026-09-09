@@ -29,7 +29,7 @@ export function App() {
 
   const handleNavigate = (tab: string) => {
     setCurrentTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   };
 
   const handleOpenEnquiry = (_category: string = 'Weddings') => {
