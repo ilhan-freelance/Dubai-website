@@ -32,12 +32,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
             className="w-full h-full object-cover object-center"
           />
         </video>
-        {/* Deep cinematic gradient — dark at top/bottom, subtle dark tint in middle for maximum text pop */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
-        {/* Radial vignette overlay focusing lighting on center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/70" />
-        {/* Warm rose gold ambient tint */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#2B0E18]/40 via-transparent to-[#C9A96E]/15 mix-blend-overlay" />
+        {/* Light cinematic gradient overlay for bright, vibrant video & readable text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/50" />
+        {/* Subtle bottom vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
       </div>
 
       {/* ── FLOATING GOLD PETALS ── */}
