@@ -11,7 +11,7 @@ export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onOpen
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section className="py-12 md:py-16 lg:min-h-[85vh] bg-[#FAF8F6] text-[#212529] relative overflow-hidden px-6 border-t border-gray-200 flex items-center">
+    <section className="pt-12 md:pt-16 pb-4 md:pb-6 bg-[#FAF8F6] text-[#212529] relative overflow-hidden px-6 border-t border-gray-200 flex flex-col justify-center">
       
       {/* Background Watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.025] w-full text-center">

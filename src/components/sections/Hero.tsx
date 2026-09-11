@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
     <section ref={scrollRef} className="relative w-full min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
 
       {/* ── BACKGROUND: Dubai luxury wedding video ── */}
-      <div className="absolute -top-[130px] left-0 right-0 bottom-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
@@ -57,45 +57,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
       ))}
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-8 pt-16 sm:pt-24 md:pt-32">
 
-        {/* Calligraphic Eyebrow with delicate gold rules */}
+        {/* Cursive Single Line Headline in White */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.1 }}
-          className="flex items-center justify-center gap-3 sm:gap-6"
+          className="flex items-center justify-center gap-2 sm:gap-5 w-full overflow-hidden"
         >
-          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]" />
+          <div className="hidden sm:block w-8 sm:w-20 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-white/90 shrink-0" />
           <span
-            className="font-['Great_Vibes'] text-3xl sm:text-4xl md:text-5xl font-normal block leading-tight text-[#E8D4A8]"
-            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}
+            className="font-['Great_Vibes'] text-2xl sm:text-4xl md:text-5xl font-normal text-white whitespace-nowrap drop-shadow-xl tracking-wide leading-none py-1"
+            style={{ textShadow: '0 2px 14px rgba(0,0,0,0.95)' }}
           >
             Dubai's Premier Luxury Wedding Atelier
           </span>
-          <div className="hidden sm:block w-12 sm:w-24 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]" />
+          <div className="hidden sm:block w-8 sm:w-20 h-[1px] bg-gradient-to-l from-transparent via-white/50 to-white/90 shrink-0" />
         </motion.div>
-
-        {/* Main Royal Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.22 }}
-          className="font-['Cormorant_Garamond'] text-4xl sm:text-6xl md:text-7xl lg:text-[80px] font-semibold text-white tracking-tight leading-[1.1] max-w-4xl mx-auto drop-shadow-2xl"
-        >
-          Crafting Unforgettable <br />
-          <span className="italic font-normal text-[#E8D4A8]">
-            Love Stories in Dubai
-          </span>
-        </motion.h1>
-
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.48 }}
-          className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.9, delay: 0.3 }}
+          className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button
             onClick={onOpenEnquiry}
@@ -118,7 +104,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
             View Our Work
           </button>
         </motion.div>
-
 
       </div>
 

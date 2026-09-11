@@ -74,8 +74,11 @@ export const HomePage: React.FC<HomePageProps> = ({
         onOpenEnquiry={onOpenEnquiry}
       />
 
-      {/* 12. Dark Container Section: Dubai Palace & Desert Weddings */}
-      <DarkPalaceSection onOpenEnquiry={onOpenEnquiry} />
+      {/* 12. Destination Elegance Section: Palaces, Islands & Desert Sanctuaries */}
+      <DarkPalaceSection
+        onNavigateVenues={() => onNavigate('venues')}
+        onOpenEnquiry={onOpenEnquiry}
+      />
 
       {/* 13. FAQ Accordion Section */}
       <FAQSection onOpenEnquiry={onOpenEnquiry} />

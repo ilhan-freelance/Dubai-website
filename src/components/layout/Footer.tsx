@@ -22,9 +22,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
           <div className="space-y-4">
             <div className="flex flex-col items-start cursor-pointer" onClick={() => handleNav('home')}>
               <img
-                src="/logo-transparent.png"
+                src="/logo-trimmed-v2.png?v=3"
                 alt="Love Details Dubai"
-                className="h-12 w-auto object-contain transition-all hover:scale-105"
+                className="h-14 w-auto object-contain transition-all hover:scale-105"
                 style={{ filter: 'drop-shadow(0 2px 6px rgba(201,169,110,0.3))' }}
               />
             </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation } from './components/layout/Navigation';
 import { Footer } from './components/layout/Footer';
 import { WhatsAppWidget } from './components/layout/WhatsAppWidget';
@@ -22,14 +22,58 @@ import type { PortfolioProject } from './data/portfolioData';
 import type { JournalArticle } from './data/journalData';
 import { TopAnnouncementBar } from './components/layout/TopAnnouncementBar';
 
+const VALID_TABS = ['home', 'about', 'services', 'portfolio', 'gallery', 'packages', 'venues', 'journal', 'testimonials', 'contact'];
+
+function getTabFromHash(): string {
+  const hash = window.location.hash.replace('#', '').trim().toLowerCase();
+  return VALID_TABS.includes(hash) ? hash : 'home';
+}
+
 export function App() {
-  const [currentTab, setCurrentTab] = useState<string>('home');
+  const [currentTab, setCurrentTab] = useState<string>(getTabFromHash);
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<JournalArticle | null>(null);
 
+  // Sync state with browser History & Back/Forward buttons
+  useEffect(() => {
+    // Replace initial state so initial entry has history state
+    const initialTab = getTabFromHash();
+    window.history.replaceState({ tab: initialTab }, '', `#${initialTab}`);
+
+    const handlePopState = (event: PopStateEvent) => {
+      // Close open modals on back button if any
+      setSelectedProject(null);
+      setSelectedArticle(null);
+
+      // Determine target tab from popstate or hash
+      const targetTab = event.state?.tab || getTabFromHash();
+      setCurrentTab(targetTab);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   const handleNavigate = (tab: string) => {
-    setCurrentTab(tab);
-    window.scrollTo(0, 0);
+    if (tab !== currentTab) {
+      window.history.pushState({ tab }, '', `#${tab}`);
+      setCurrentTab(tab);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectProject = (project: PortfolioProject | null) => {
+    if (project) {
+      window.history.pushState({ modal: 'project', tab: currentTab }, '');
+    }
+    setSelectedProject(project);
+  };
+
+  const handleSelectArticle = (article: JournalArticle | null) => {
+    if (article) {
+      window.history.pushState({ modal: 'article', tab: currentTab }, '');
+    }
+    setSelectedArticle(article);
   };
 
   const handleOpenEnquiry = (_category: string = 'Weddings') => {
@@ -56,7 +100,7 @@ export function App() {
           <HomePage
             onNavigate={handleNavigate}
             onOpenEnquiry={() => handleOpenEnquiry('Weddings')}
-            onSelectProject={(project) => setSelectedProject(project)}
+            onSelectProject={handleSelectProject}
           />
         )}
 
@@ -72,7 +116,7 @@ export function App() {
 
         {currentTab === 'portfolio' && (
           <PortfolioPage
-            onSelectProject={(project) => setSelectedProject(project)}
+            onSelectProject={handleSelectProject}
           />
         )}
 
@@ -93,7 +137,7 @@ export function App() {
 
         {currentTab === 'journal' && (
           <JournalPage
-            onSelectArticle={(article) => setSelectedArticle(article)}
+            onSelectArticle={handleSelectArticle}
           />
         )}
 
@@ -116,13 +160,17 @@ export function App() {
       {/* Interactive Modals */}
       <ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => {
+          setSelectedProject(null);
+        }}
         onOpenEnquiry={() => handleOpenEnquiry('Weddings')}
       />
 
       <ArticleModal
         article={selectedArticle}
-        onClose={() => setSelectedArticle(null)}
+        onClose={() => {
+          setSelectedArticle(null);
+        }}
         onOpenEnquiry={() => handleOpenEnquiry('Weddings')}
       />
     </div>
