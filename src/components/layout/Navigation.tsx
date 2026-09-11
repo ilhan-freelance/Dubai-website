@@ -77,8 +77,8 @@ export const Navigation: React.FC<NavigationProps> = ({
                   <span className="w-3.5 h-[1.8px] bg-[#1A1D20] group-hover:bg-[#3B5649] transition-colors rounded-full" />
                 </div>
               )}
-              <span className="text-xs sm:text-sm font-sans font-semibold text-[#1A1D20] group-hover:text-[#3B5649] transition-colors">
-                {dropdownOpen ? 'Close' : 'Menu'}
+              <span className="text-xs sm:text-xs font-sans font-bold uppercase tracking-[0.18em] text-[#1A1D20] group-hover:text-[#3B5649] transition-colors">
+                {dropdownOpen ? 'Close' : 'Explore'}
               </span>
             </button>
 
