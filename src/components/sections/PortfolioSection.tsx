@@ -25,6 +25,49 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
     setActiveIdx(nextIdx);
   };
 
+  const renderFormattedTitle = (title: string, isMain = false) => {
+    const parts = title.split(/\s+weds\s+/i);
+    if (parts.length === 2) {
+      if (isMain) {
+        return (
+          <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
+            <span className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-wide italic leading-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
+              {parts[0]}
+            </span>
+            <span className="font-serif text-base sm:text-xl md:text-2xl font-light italic text-[#E5D5BC] tracking-widest my-1 opacity-90 drop-shadow-md">
+              weds
+            </span>
+            <span className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-wide italic leading-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
+              {parts[1]}
+            </span>
+          </div>
+        );
+      }
+      return (
+        <div className="flex flex-col items-center justify-center space-y-0.5">
+          <span className="font-serif text-lg sm:text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
+            {parts[0]}
+          </span>
+          <span className="font-serif text-xs italic text-[#E5D5BC] tracking-widest opacity-85 my-0.5">
+            weds
+          </span>
+          <span className="font-serif text-lg sm:text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
+            {parts[1]}
+          </span>
+        </div>
+      );
+    }
+    return isMain ? (
+      <h3 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white tracking-wide italic leading-tight drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
+        {title}
+      </h3>
+    ) : (
+      <h4 className="font-serif text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
+        {title}
+      </h4>
+    );
+  };
+
   return (
     <section className="py-8 md:py-12 bg-[#FAF7F2] text-[#212529] relative overflow-hidden px-4 sm:px-6 lg:px-12 border-t border-[#C8C0B5]/30">
       
@@ -58,9 +101,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-between items-center text-center">
                 <span className="text-[10px] tracking-widest text-[#E5D5BC] uppercase font-sans font-semibold">PREVIOUS</span>
                 <div className="space-y-1">
-                  <h4 className="font-serif text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
-                    {PORTFOLIO_PROJECTS[prevIdx].title}
-                  </h4>
+                  {renderFormattedTitle(PORTFOLIO_PROJECTS[prevIdx].title, false)}
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/90 text-[#7A8864] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                   <ChevronLeft className="w-5 h-5" />
@@ -113,14 +154,12 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
                   {/* Fine Editorial Frame Overlay */}
                   <div className="absolute inset-5 border border-white/30 rounded-2xl pointer-events-none group-hover:border-white/50 transition-colors" />
 
-                  {/* Center Highlighted Couple Name ONLY (No Location, No Subtitle) */}
+                  {/* Center Highlighted Couple Name (Weds in Middle, Names Above & Below) */}
                   <div className="absolute inset-0 p-8 sm:p-12 flex flex-col items-center justify-center text-center z-10 space-y-4">
                     <span className="text-xs font-sans tracking-[0.3em] uppercase text-[#E5D5BC] font-semibold opacity-90">
                       CELEBRATION STORY
                     </span>
-                    <h3 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white tracking-wide italic leading-tight drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
-                      {project.title}
-                    </h3>
+                    {renderFormattedTitle(project.title, true)}
                   </div>
                 </div>
               </motion.div>
@@ -138,9 +177,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-between items-center text-center">
                 <span className="text-[10px] tracking-widest text-[#E5D5BC] uppercase font-sans font-semibold">NEXT</span>
                 <div className="space-y-1">
-                  <h4 className="font-serif text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
-                    {PORTFOLIO_PROJECTS[nextIdx].title}
-                  </h4>
+                  {renderFormattedTitle(PORTFOLIO_PROJECTS[nextIdx].title, false)}
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/90 text-[#7A8864] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                   <ChevronRight className="w-5 h-5" />
