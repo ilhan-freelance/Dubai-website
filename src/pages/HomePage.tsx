@@ -2,7 +2,6 @@ import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { AboutSection } from '../components/sections/AboutSection';
 import { FounderStorySection } from '../components/sections/FounderStorySection';
-import { PhotoStripSection } from '../components/sections/PhotoStripSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 import { PortfolioSection } from '../components/sections/PortfolioSection';
 import { WeddingGallerySection } from '../components/sections/WeddingGallerySection';
