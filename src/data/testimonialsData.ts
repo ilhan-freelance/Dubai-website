@@ -12,47 +12,36 @@ export interface TestimonialItem {
 
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
-    id: '1',
-    quote: 'Every detail felt intentional, beautiful, and completely us. Love Details transformed our vision of a Dubai desert wedding into a cinematic reality that our guests still talk about today.',
-    clientNames: 'Sophia & Alexander',
-    eventType: 'Destination Wedding',
-    location: 'Al Maha Desert Resort · Dubai',
+    id: 'hansika-jagan-review',
+    quote: 'Love Details turned our Abu Dhabi sunset mandap dreams into absolute magic. From our first call to our final dance, we did not stress for even a single second!',
+    clientNames: 'Hansika & Jagan',
+    eventType: 'Saadiyat Beach Resort Wedding',
+    location: 'Saadiyat Rotana Resort · Abu Dhabi',
     year: '2025',
-    image: '/portfolio-desert.png',
-    tagline: 'A Magical Desert Sanctuary Vow',
+    image: '/hansika-jagan/hero-couple-crystals.png',
+    tagline: 'Sunset Beach & Crystal Mandap Magic',
     rating: 5
   },
   {
-    id: '2',
-    quote: 'Planning a multi-day celebration from London felt completely effortless. Their artistic direction and calm professionalism set them apart from every other planner in the Middle East.',
-    clientNames: 'Elena & Marcus',
-    eventType: 'Royal Palace Celebration',
-    location: 'One&Only Royal Mirage · Dubai',
+    id: 'abhishek-radhika-review',
+    quote: 'Planning a 350+ guest Dubai wedding felt overwhelming until Love Details took over. The royal red rose mandap was breathtaking, and they made us feel like family throughout.',
+    clientNames: 'Abhishek & Radhika',
+    eventType: 'Grand Waterfront Royal Celebration',
+    location: 'Waterfront Resort & Lawn · Dubai',
     year: '2025',
-    image: '/about-couple-arch.png',
-    tagline: 'Floral Archway Vows',
+    image: '/abhishek-radhika/hero-red-mandap.png',
+    tagline: 'Royal Red Rose Mandap & 3D Monogram',
     rating: 5
   },
   {
-    id: '3',
-    quote: 'In a city where luxury can often feel loud, Love Details brings a rare, refined quiet elegance. They respected our taste, privacy, and guest comfort with white-glove perfection.',
-    clientNames: 'Tariq & Nadya',
-    eventType: 'Waterfront Sunset Soirée',
-    location: 'Bvlgari Resort · Jumeira Bay',
-    year: '2026',
-    image: '/portfolio-dubai.png',
-    tagline: 'Candlelit Haven by the Gulf',
-    rating: 5
-  },
-  {
-    id: '4',
-    quote: 'From the private welcome dinner under the dunes to the grand ballroom gala, execution was flawless. They made our dream wedding feel completely stress-free.',
-    clientNames: 'Chloe & Jonathan',
-    eventType: 'Grand Imperial Wedding',
-    location: 'Emirates Palace · Abu Dhabi',
+    id: 'adit-diva-review',
+    quote: 'From the pink bougainvillea beach ceremony to the epic live concert stage at night, everything felt like a fairytale. We are forever grateful to the Love Details team!',
+    clientNames: 'Adit & Diva',
+    eventType: 'Bougainvillea & Starlight Concert Wedding',
+    location: 'Saadiyat Beach & Grand Ballroom · Dubai',
     year: '2025',
-    image: '/about-couple-laugh.png',
-    tagline: 'Pure Joy & Joyful Memories',
+    image: '/adit-diva/adit-diva-beach.jpg',
+    tagline: 'Bougainvillea Mandap & Live Concert Night',
     rating: 5
   }
 ];

@@ -20,141 +20,79 @@ export interface PortfolioProject {
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
-    id: 'al-maha-desert-romance',
-    title: 'Solstice in the Dunes',
-    subtitle: 'An Intimate Desert Sunset Celebration',
-    category: 'Destination',
-    location: 'Al Maha Desert Resort, Dubai',
-    year: '2026',
-    guestCount: '120 Guests',
-    heroImage: '/portfolio-desert.png',
-    gallery: [
-      '/portfolio-desert.png',
-      '/portfolio-dubai.png',
-      '/portfolio-garden.png',
-      '/portfolio-dance.png',
-      '/portfolio-rings.png'
-    ],
-    summary: 'A sunset gathering where organic beige linens and olive botanicals harmonized with the golden red sands of the Dubai conservation reserve.',
-    storyNarrative: 'Designed for a couple traveling from London, this three-day destination affair blended Arabian hospitality with modern minimalism. Guests gathered under floating linen canopies illuminated by hundreds of hand-poured beeswax candles as evening settled over the desert dunes.',
-    details: {
-      venue: 'Al Maha Luxury Desert Resort',
-      floralDesign: 'Wild Olive Branches, Dried Palm Fronds & Cream Peonies',
-      photographyStyle: 'Warm Golden Hour Editorial',
-      palette: ['#7A8864', '#C8C0B5', '#E5D5BC', '#FAF7F2']
-    }
-  },
-  {
-    id: 'bvlgari-resort-gala',
-    title: 'The Coastal Atelier',
-    subtitle: 'A Contemporary Waterfront Wedding',
+    id: 'hansika-weds-jagan',
+    title: 'Hansika weds Jagan',
+    subtitle: 'Saadiyat Rotana Resort & Villas',
     category: 'Weddings',
-    location: 'Bvlgari Resort, Jumeira Bay Dubai',
-    year: '2025',
-    guestCount: '250 Guests',
-    heroImage: '/portfolio-dubai.png',
+    location: 'Saadiyat Rotana Resort & Villas',
+    year: '5 Feb',
+    guestCount: 'Saadiyat Beach',
+    heroImage: '/hansika-jagan/hero-couple-crystals.png',
     gallery: [
-      '/portfolio-dubai.png',
-      '/about-couple-arch.png',
-      '/portfolio-garden.png',
-      '/portfolio-dance.png'
+      '/hansika-jagan/phoolon-chaadar.jpg',
+      '/hansika-jagan/hug.png',
+      '/hansika-jagan/mandap.jpg',
+      '/hansika-jagan/hands.png',
+      '/hansika-jagan/reception-walk.png'
     ],
-    summary: 'Clean architectural lines, bespoke crystal chandeliers, and subtle travertine textures framing panoramic Arabian Gulf views.',
-    storyNarrative: 'Set on private island grounds, this wedding combined high fashion editorial aesthetics with serene coastal views. Custom mirrored runways and structured botanical walls created an unforgettable open-air sanctuary.',
+    summary: 'A luxurious beachside wedding celebration at Saadiyat Rotana Resort & Villas.',
+    storyNarrative: 'Hansika weds Jagan at Saadiyat Rotana Resort & Villas, Abu Dhabi on 5 Feb.',
     details: {
-      venue: 'Bvlgari Resort Dubai Ballroom & Lawn',
-      floralDesign: 'Sculptural White Orchids & Frosted Olive Foliage',
-      photographyStyle: 'Cinematic High Fashion',
-      palette: ['#C8C0B5', '#FAF7F2', '#7A8864', '#E5BCA9']
+      venue: 'Saadiyat Rotana Resort & Villas',
+      floralDesign: 'Royal Floral Mandap & Ambient Sunset Styling',
+      photographyStyle: 'Fine Art Editorial',
+      palette: ['#8A1C24', '#D4AF37', '#FAF7F2', '#4A6B5B']
     }
   },
   {
-    id: 'one-and-only-mirage',
-    title: 'Palace of Light',
-    subtitle: 'A Royal Heritage Wedding Celebration',
+    id: 'abhishek-weds-radhika',
+    title: 'Abhishek weds Radhika',
+    subtitle: 'Royal Red Floral Mandap & Waterfront Lawn',
     category: 'Weddings',
-    location: 'One&Only Royal Mirage, Dubai',
+    location: 'Waterfront Resort, Dubai',
     year: '2025',
-    guestCount: '400 Guests',
-    heroImage: '/about-couple-arch.png',
+    guestCount: '350 Guests',
+    heroImage: '/abhishek-radhika/hero-red-mandap.png',
     gallery: [
-      '/about-couple-arch.png',
-      '/portfolio-dance.png',
-      '/portfolio-rings.png'
+      '/abhishek-radhika/hero-hashtag.png',
+      '/about-red-mandap.png',
+      '/about-red-arch-hero.png',
+      '/about-red-rose-arch.png',
+      '/about-red-hallway.jpg',
+      '/about-red-mandap-top.png'
     ],
-    summary: 'An extravagant multi-day wedding celebration respecting heritage while infusing modern Parisian couture design.',
-    storyNarrative: 'From an intimate welcome dinner under moonlit palm courts to a grand ballroom banquet, every touch point was hand-crafted by Love Details masters.',
+    summary: 'A magnificent open-air waterfront wedding featuring a monumental red rose mandap and bespoke 3D monogram installation.',
+    storyNarrative: 'Abhishek weds Radhika in an unforgettable Dubai celebration, blending grand floral art installations with serene coastal views.',
     details: {
-      venue: 'The Palace Court at One&Only Royal Mirage',
-      floralDesign: 'Cascading White Hydrangeas & Bisque Roses',
-      photographyStyle: 'Timeless Fine Art',
-      palette: ['#FAF7F2', '#E5D5BC', '#7A8864']
+      venue: 'Waterfront Lawn & Grand Pavilion',
+      floralDesign: 'Monumental Royal Red Rose Mandap',
+      photographyStyle: 'Fine Art Editorial',
+      palette: ['#8A1C24', '#FAF7F2', '#7A8864', '#E5D5BC']
     }
   },
   {
-    id: 'duba-opera-gala',
-    title: 'Symphony of Stones',
-    subtitle: 'An Executive Private Centenary Gala',
-    category: 'Corporate',
-    location: 'Dubai Opera, Downtown Dubai',
+    id: 'adit-weds-diva',
+    title: 'Adit weds Diva',
+    subtitle: 'Bougainvillea Floral Mandap & Waterfront Celebration',
+    category: 'Weddings',
+    location: 'Saadiyat Waterfront Resort, Abu Dhabi & Dubai',
     year: '2025',
-    guestCount: '300 Guests',
-    heroImage: '/portfolio-dance.png',
+    guestCount: '450 Guests',
+    heroImage: '/adit-diva/adit-diva-beach.jpg',
     gallery: [
-      '/portfolio-dance.png',
-      '/portfolio-dubai.png'
+      '/adit-diva/adit-diva-beach.jpg',
+      '/adit-diva/adit-diva-mandap.jpg',
+      '/adit-diva/adit-diva-night.jpg',
+      '/adit-diva/adit-diva-resort.jpg',
+      '/adit-diva/adit-diva-stage.jpg'
     ],
-    summary: 'An elite private gala dinner staged inside the iconic Dubai Opera stage, featuring acoustic violinists and Michelin-star dining.',
-    storyNarrative: 'Bespoke tablescapes crafted from brushed warm stone and muted brass provided the backdrop for international leaders and guests in black-tie attire.',
+    summary: 'An iconic Dubai & Abu Dhabi wedding celebration featuring monumental pink bougainvillea arches, royal blue carpeted aisle, and sunset beachside mandap.',
+    storyNarrative: 'Adit weds Diva in a breath-taking coastal ceremony. Framing the serene turquoise waters with triple floral arches, bespoke blue porcelain urns, and golden seating bowls, Love Details created a landmark celebration of love.',
     details: {
-      venue: 'Dubai Opera Grand Stage',
-      floralDesign: 'Minimalist Olive & Linen Floral Installations',
-      photographyStyle: 'Architectural Editorial',
-      palette: ['#7A8864', '#C8C0B5', '#262822']
-    }
-  },
-  {
-    id: 'jumeirah-al-qasr-soiree',
-    title: 'L’Heure Bleue',
-    subtitle: 'A Private Anniversary Celebration',
-    category: 'Private',
-    location: 'Jumeirah Al Qasr, Dubai',
-    year: '2026',
-    guestCount: '60 Guests',
-    heroImage: '/portfolio-rings.png',
-    gallery: [
-      '/portfolio-rings.png',
-      '/portfolio-garden.png'
-    ],
-    summary: 'An intimate candlelit dining experience along private lagoon canals with personalized calligraphy and live harp music.',
-    storyNarrative: 'Curated for an international family mark of 25 years, focusing on warmth, quiet luxury, and extraordinary guest comfort.',
-    details: {
-      venue: 'Private Pier at Jumeirah Al Qasr',
-      floralDesign: 'Bisque Garden Roses & Warm Champagne Botanicals',
-      photographyStyle: 'Intimate Candlelit Fine Art',
-      palette: ['#E5BCA9', '#FAF7F2', '#C8C0B5']
-    }
-  },
-  {
-    id: 'armani-ballroom-destination',
-    title: 'Monolith of Grace',
-    subtitle: 'A Modern Couture Destination Wedding',
-    category: 'Destination',
-    location: 'Armani Hotel Dubai, Burj Khalifa',
-    year: '2025',
-    guestCount: '180 Guests',
-    heroImage: '/portfolio-garden.png',
-    gallery: [
-      '/portfolio-garden.png',
-      '/about-bridesmaids.png'
-    ],
-    summary: 'Italian craftsmanship meets modern Middle Eastern luxury in an ethereal celebration overlooking the Dubai Fountain.',
-    storyNarrative: 'Combining quiet stone textures with soft warm ambient glow, Love Details transformed the Armani Pavilion into a suspended botanical oasis.',
-    details: {
-      venue: 'Armani Hotel Dubai Pavilion',
-      floralDesign: 'Olive Leaves, Ivory Anemones & Warm Stone Accents',
-      photographyStyle: 'Modern Architectural Romance',
-      palette: ['#FAF7F2', '#7A8864', '#C8C0B5']
+      venue: 'Saadiyat Waterfront Lawn & Grand Beach Sanctuary',
+      floralDesign: 'Monumental Pink Bougainvillea Arches & Blue Porcelain Styling',
+      photographyStyle: 'Cinematic Editorial Beachside Fine Art',
+      palette: ['#E63946', '#1D3557', '#C9A96E', '#FAF7F2']
     }
   }
 ];

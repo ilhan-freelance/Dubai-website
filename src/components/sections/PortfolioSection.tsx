@@ -12,150 +12,139 @@ interface PortfolioSectionProps {
 export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProject }) => {
   const [activeIdx, setActiveIdx] = useState(0);
 
+  const project = PORTFOLIO_PROJECTS[activeIdx];
+
   const prevIdx = (activeIdx - 1 + PORTFOLIO_PROJECTS.length) % PORTFOLIO_PROJECTS.length;
   const nextIdx = (activeIdx + 1) % PORTFOLIO_PROJECTS.length;
 
-  const handlePrev = () => setActiveIdx(prevIdx);
-  const handleNext = () => setActiveIdx(nextIdx);
+  const handlePrev = () => {
+    setActiveIdx(prevIdx);
+  };
+  
+  const handleNext = () => {
+    setActiveIdx(nextIdx);
+  };
 
   return (
-    <section className="py-12 md:py-16 lg:min-h-[85vh] bg-white text-[#212529] relative overflow-hidden px-6 border-t border-gray-100 flex items-center">
+    <section className="py-8 md:py-12 bg-[#FAF7F2] text-[#212529] relative overflow-hidden px-4 sm:px-6 lg:px-12 border-t border-[#C8C0B5]/30">
       
-      {/* Side Decorative Botanical Leaf Branch Watermarks in Sage Green */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block -ml-8">
-        <svg className="w-56 h-[400px] text-[#8DA999]" viewBox="0 0 160 300" fill="currentColor">
-          <path d="M10 280 Q 70 150 140 20" stroke="currentColor" strokeWidth="2.5" fill="none" />
-          <path d="M40 220 Q 15 200 10 185 Q 35 190 40 220 Z" />
-          <path d="M60 180 Q 90 160 95 145 Q 70 150 60 180 Z" />
-          <path d="M80 140 Q 55 120 50 105 Q 75 110 80 140 Z" />
-          <path d="M100 100 Q 130 80 135 65 Q 110 70 100 100 Z" />
-          <path d="M120 60 Q 95 40 90 25 Q 115 30 120 60 Z" />
-        </svg>
-      </div>
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block -mr-8 scale-x-[-1]">
-        <svg className="w-56 h-[400px] text-[#8DA999]" viewBox="0 0 160 300" fill="currentColor">
-          <path d="M10 280 Q 70 150 140 20" stroke="currentColor" strokeWidth="2.5" fill="none" />
-          <path d="M40 220 Q 15 200 10 185 Q 35 190 40 220 Z" />
-          <path d="M60 180 Q 90 160 95 145 Q 70 150 60 180 Z" />
-          <path d="M80 140 Q 55 120 50 105 Q 75 110 80 140 Z" />
-          <path d="M100 100 Q 130 80 135 65 Q 110 70 100 100 Z" />
-          <path d="M120 60 Q 95 40 90 25 Q 115 30 120 60 Z" />
-        </svg>
+      {/* Background Watermark Accent */}
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none select-none text-center">
+        <span className="font-serif text-[100px] sm:text-[150px] md:text-[180px] tracking-[0.2em] uppercase text-[#262822] block leading-none font-light">
+          CELEBRATIONS
+        </span>
       </div>
 
-      <div className="max-w-7xl mx-auto space-y-10 relative z-10 w-full">
+      <div className="max-w-6xl mx-auto space-y-6 relative z-10 w-full">
         
-        {/* Header */}
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <span className="text-xs sm:text-sm font-sans font-semibold tracking-[0.3em] uppercase text-[#4A6B5B] block">
-            FEATURED CASE STUDIES
-          </span>
-          <h2 className="font-['Playfair_Display'] text-4xl sm:text-6xl font-normal text-[#212529] tracking-tight leading-tight">
+        {/* Section Header (Stylish & Grand) */}
+        <div className="text-center max-w-3xl mx-auto pb-2">
+          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-[#262822] tracking-tight leading-tight italic">
             Iconic Dubai Celebrations
           </h2>
-          <p className="text-xs sm:text-sm text-[#212529]/75 font-sans leading-relaxed">
-            Explore complete event narratives — from venue transformations to bespoke guest experiences across Dubai's most prestigious landmarks.
-          </p>
         </div>
 
-        {/* 3-Card Carousel Gallery (Left, Center Featured, Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+        {/* 3-Card Carousel Showcase (Larger Grand Scale) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           
           {/* Left Preview Card */}
           <div className="lg:col-span-3 hidden lg:block relative group cursor-pointer" onClick={handlePrev}>
-            <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative opacity-70 group-hover:opacity-100 transition-all duration-500">
+            <div className="w-full h-[360px] md:h-[400px] rounded-2xl overflow-hidden border border-[#C8C0B5]/40 shadow-lg relative bg-black group-hover:shadow-2xl transition-all duration-300">
               <img
                 src={PORTFOLIO_PROJECTS[prevIdx].heroImage}
                 alt={PORTFOLIO_PROJECTS[prevIdx].title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-70 filter blur-[1.5px] group-hover:opacity-85 transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <button
-                  onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-white/90 text-[#4A6B5B] flex items-center justify-center shadow-md hover:scale-110 transition-transform cursor-pointer"
-                  aria-label="Previous"
-                >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-between items-center text-center">
+                <span className="text-[10px] tracking-widest text-[#E5D5BC] uppercase font-sans font-semibold">PREVIOUS</span>
+                <div className="space-y-1">
+                  <h4 className="font-serif text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
+                    {PORTFOLIO_PROJECTS[prevIdx].title}
+                  </h4>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/90 text-[#7A8864] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                   <ChevronLeft className="w-5 h-5" />
-                </button>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Center Featured Card */}
-          <div className="lg:col-span-6">
+          {/* Main Showcase Card (Center - Enlarged Grand View) */}
+          <div className="lg:col-span-6 relative">
+            
+            {/* Mobile Navigation Arrows */}
+            <button
+              onClick={handlePrev}
+              className="lg:hidden absolute left-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/95 text-[#262822] flex items-center justify-center shadow-md cursor-pointer border border-[#C8C0B5]/40"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#7A8864]" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-white/95 text-[#262822] flex items-center justify-center shadow-md cursor-pointer border border-[#C8C0B5]/40"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5 text-[#7A8864]" />
+            </button>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIdx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6 }}
-                onClick={() => onSelectProject(PORTFOLIO_PROJECTS[activeIdx])}
-                className="w-full aspect-[16/10] rounded-2xl overflow-hidden border-2 border-white shadow-xl relative group cursor-pointer"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="w-full rounded-3xl overflow-hidden shadow-2xl relative cursor-pointer group border border-[#C8C0B5]/50"
+                onClick={() => onSelectProject(project)}
               >
-                <img
-                  src={PORTFOLIO_PROJECTS[activeIdx].heroImage}
-                  alt={PORTFOLIO_PROJECTS[activeIdx].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                {/* Front of Card: Subtle Blurred Background Image with Highlighted Couple Name */}
+                <div className="w-full h-[480px] sm:h-[540px] md:h-[580px] relative overflow-hidden rounded-3xl bg-[#1E201B]">
+                  {/* Subtle Blurred Background Image */}
+                  <img
+                    src={project.heroImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center filter blur-[2px] sm:blur-[2px] transition-all duration-700 ease-out"
+                  />
 
-                <div className="absolute bottom-5 left-5 right-5 text-white space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-sans uppercase tracking-widest text-white font-semibold bg-[#3B5649]/90 px-3 py-0.5 rounded-full backdrop-blur-md inline-block">
-                      {PORTFOLIO_PROJECTS[activeIdx].location} · {PORTFOLIO_PROJECTS[activeIdx].category}
+                  {/* Dark Elegant Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/80 transition-colors" />
+
+                  {/* Fine Editorial Frame Overlay */}
+                  <div className="absolute inset-5 border border-white/30 rounded-2xl pointer-events-none group-hover:border-white/50 transition-colors" />
+
+                  {/* Center Highlighted Couple Name ONLY (No Location, No Subtitle) */}
+                  <div className="absolute inset-0 p-8 sm:p-12 flex flex-col items-center justify-center text-center z-10 space-y-4">
+                    <span className="text-xs font-sans tracking-[0.3em] uppercase text-[#E5D5BC] font-semibold opacity-90">
+                      CELEBRATION STORY
                     </span>
-                    <span className="text-[9px] font-sans uppercase tracking-wider text-[#E8D4A8] bg-black/40 px-2.5 py-0.5 rounded-full backdrop-blur-md hidden sm:inline-block border border-[#E8D4A8]/30">
-                      Read Full Story →
-                    </span>
+                    <h3 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-white tracking-wide italic leading-tight drop-shadow-[0_10px_25px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
+                      {project.title}
+                    </h3>
                   </div>
-                  <h3 className="font-['Playfair_Display'] text-xl sm:text-3xl font-normal text-white">
-                    {PORTFOLIO_PROJECTS[activeIdx].title}
-                  </h3>
-                  <p className="text-xs text-white/80 font-serif italic line-clamp-1">
-                    {PORTFOLIO_PROJECTS[activeIdx].subtitle}
-                  </p>
                 </div>
               </motion.div>
             </AnimatePresence>
-
-            {/* Mobile Nav Controls */}
-            <div className="flex lg:hidden justify-center items-center gap-4 mt-4">
-              <button
-                onClick={handlePrev}
-                className="p-2.5 rounded-full bg-[#3B5649] text-white cursor-pointer shadow-sm"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <span className="text-xs font-sans font-medium text-[#212529]">
-                {activeIdx + 1} / {PORTFOLIO_PROJECTS.length}
-              </span>
-              <button
-                onClick={handleNext}
-                className="p-2.5 rounded-full bg-[#3B5649] text-white cursor-pointer shadow-sm"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
 
           {/* Right Preview Card */}
           <div className="lg:col-span-3 hidden lg:block relative group cursor-pointer" onClick={handleNext}>
-            <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative opacity-70 group-hover:opacity-100 transition-all duration-500">
+            <div className="w-full h-[360px] md:h-[400px] rounded-2xl overflow-hidden border border-[#C8C0B5]/40 shadow-lg relative bg-black group-hover:shadow-2xl transition-all duration-300">
               <img
                 src={PORTFOLIO_PROJECTS[nextIdx].heroImage}
                 alt={PORTFOLIO_PROJECTS[nextIdx].title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-70 filter blur-[1.5px] group-hover:opacity-85 transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <button
-                  onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-white/90 text-[#4A6B5B] flex items-center justify-center shadow-md hover:scale-110 transition-transform cursor-pointer"
-                  aria-label="Next"
-                >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-between items-center text-center">
+                <span className="text-[10px] tracking-widest text-[#E5D5BC] uppercase font-sans font-semibold">NEXT</span>
+                <div className="space-y-1">
+                  <h4 className="font-serif text-xl font-light italic text-[#FAF7F2] drop-shadow-md leading-tight">
+                    {PORTFOLIO_PROJECTS[nextIdx].title}
+                  </h4>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/90 text-[#7A8864] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                   <ChevronRight className="w-5 h-5" />
-                </button>
+                </div>
               </div>
             </div>
           </div>
@@ -166,3 +155,5 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
     </section>
   );
 };
+
+

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Sparkles, Quote } from 'lucide-react';
+import React from 'react';
+import { Quote } from 'lucide-react';
 import { AnimatedSection } from '../common/AnimatedSection';
 
 interface FounderStorySectionProps {
@@ -8,7 +7,6 @@ interface FounderStorySectionProps {
 }
 
 export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onOpenEnquiry }) => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <section className="pt-12 md:pt-16 pb-4 md:pb-6 bg-[#FAF8F6] text-[#212529] relative overflow-hidden px-6 border-t border-gray-200 flex flex-col justify-center">
@@ -42,57 +40,15 @@ export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onOpen
         {/* Main Grid: Left Video Player Placeholder | Right Editorial Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left: Video Player Placeholder Card (7 cols) */}
+          {/* Left: Founders Portrait Card (7 cols) */}
           <div className="lg:col-span-7">
             <AnimatedSection direction="right">
-              <div
-                onClick={() => setIsVideoOpen(true)}
-                className="w-full aspect-16/9 rounded-2xl overflow-hidden border-2 border-white shadow-xl relative group cursor-pointer bg-gray-900"
-              >
-                {/* Background Poster Image */}
+              <div className="w-full rounded-3xl overflow-hidden border-4 border-white ring-2 ring-[#C9A96E]/30 shadow-2xl relative bg-[#FAF7F2] group gold-border-glow aspect-[16/10]">
                 <img
-                  src="/hero_about_atelier.png"
-                  alt="Love Details Founders Story Video"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                  src="/founders-menka-priti.jpg"
+                  alt="Love Details Founders Menka & Priti in Dubai"
+                  className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
                 />
-
-                {/* Gradient Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
-
-                {/* Glowing Play Button Center */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center space-y-3">
-                  <div className="relative flex items-center justify-center">
-                    <span className="animate-ping absolute inline-flex h-16 w-16 rounded-full bg-[#C9A96E] opacity-50"></span>
-                    
-                    <button
-                      aria-label="Play Founders Story Video"
-                      className="w-16 h-16 rounded-full bg-white/95 text-[#1F382B] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform cursor-pointer border border-[#C9A96E] z-10"
-                    >
-                      <Play className="w-6 h-6 fill-[#1F382B] ml-1" />
-                    </button>
-                  </div>
-
-                  <div className="text-center space-y-0.5">
-                    <span className="text-[11px] uppercase tracking-[0.2em] text-[#E8D4A8] font-semibold font-sans block">
-                      FOUNDERS' FILM
-                    </span>
-                    <span className="text-[10px] text-white/70 font-serif italic block">
-                      3 Min · Behind The Atelier Vision
-                    </span>
-                  </div>
-                </div>
-
-                {/* Bottom Tag */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-[11px] font-serif italic z-10">
-                  <span className="bg-black/60 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20">
-                    Dubai Atelier
-                  </span>
-                  <div className="flex items-center space-x-1 text-[#E8D4A8]">
-                    <Sparkles className="w-3 h-3 text-[#C9A96E]" />
-                    <span>Couture Direction</span>
-                  </div>
-                </div>
-
               </div>
             </AnimatedSection>
           </div>
@@ -144,47 +100,6 @@ export const FounderStorySection: React.FC<FounderStorySectionProps> = ({ onOpen
         </div>
 
       </div>
-
-      {/* ── VIDEO MODAL POPUP ── */}
-      <AnimatePresence>
-        {isVideoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
-            onClick={() => setIsVideoOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl aspect-16/9 bg-black rounded-3xl overflow-hidden shadow-2xl border border-[#C9A96E]/40"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setIsVideoOpen(false)}
-                className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30 hover:bg-white hover:text-black transition-all cursor-pointer"
-                aria-label="Close video"
-              >
-                <X className="w-6 h-6" />
-              </button>
-
-              {/* Video Player */}
-              <video
-                autoPlay
-                controls
-                className="w-full h-full object-cover"
-              >
-                <source src="/hero-video.mp4" type="video/mp4" />
-                Your browser does not support video playback.
-              </video>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
     </section>
   );

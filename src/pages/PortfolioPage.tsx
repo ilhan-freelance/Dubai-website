@@ -176,36 +176,15 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onSelectProject })
                 <img
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+                  className="w-full h-full object-cover filter blur-md group-hover:blur-xs transition-all duration-700 opacity-80 group-hover:opacity-95"
                 />
-                
-                {/* Floating Glassmorphism Badge */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-serif text-[#7A8864] border border-[#C8C0B5]/40 shadow-md font-bold">
-                  {project.category}
-                </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity" />
                 
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
-                  <div className="flex items-center space-x-2 text-[11px] text-[#E5D5BC]">
-                    <MapPin className="w-3 h-3 text-[#D4AF37]" />
-                    <span className="truncate">{project.location}</span>
-                  </div>
-
-                  <h3 className="font-serif text-2xl font-light text-white group-hover:text-[#D4AF37] transition-colors leading-snug">
+                <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center text-white z-10">
+                  <h3 className="font-serif text-3xl sm:text-4xl font-normal italic text-[#FAF7F2] drop-shadow-xl bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent">
                     {project.title}
                   </h3>
-
-                  <div className="pt-2 flex items-center justify-between text-xs text-[#E5D5BC] group-hover:text-white border-t border-white/20">
-                    <span className="flex items-center space-x-1">
-                      <Users className="w-3.5 h-3.5 text-[#7A8864]" />
-                      <span>{project.guestCount}</span>
-                    </span>
-                    
-                    <span className="button-editorial flex items-center gap-1 text-[#D4AF37] font-bold">
-                      VIEW STORY <ArrowUpRight className="w-4 h-4" />
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>

@@ -13,7 +13,7 @@ const SERVICES = [
     phase: 'Phase 01',
     tagline: 'End-to-End Atelier Production',
     title: 'Full Wedding Planning',
-    image: '/service-planning.png',
+    image: '/services/full-planning-couture.jpg',
     icon: Crown,
     description: 'Complete 360° management from initial vision boards to final send-off, handling every vendor contract and guest touchpoint.',
     highlights: [
@@ -28,7 +28,7 @@ const SERVICES = [
     phase: 'Phase 02',
     tagline: 'Design & Vendor Refinement',
     title: 'Partial Coordination',
-    image: '/service-coordination.png',
+    image: '/services/partial-coordination-couture.jpg',
     icon: Palette,
     description: 'Tailored for couples with a booked venue who require Dubai atelier styling, elite supplier audits, and master scheduling.',
     highlights: [
@@ -43,7 +43,7 @@ const SERVICES = [
     phase: 'Phase 03',
     tagline: 'White-Glove On-Site Directing',
     title: 'Day-of Management',
-    image: '/service-day-of.png',
+    image: '/services/day-of-management-couture.jpg',
     icon: ShieldCheck,
     description: 'Flawless on-site execution directing every single minute of your runsheet, technical cues, and vendor arrivals.',
     highlights: [

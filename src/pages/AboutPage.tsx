@@ -9,41 +9,32 @@ interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
   return (
-    <div className="pt-24 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden">
+    <div className="pt-4 sm:pt-6 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden">
       
       {/* ── HERO SECTION WITH PROMINENT HERO IMAGE ── */}
-      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 pb-16 space-y-10">
+      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-0 pb-10 space-y-6">
         <div className="absolute top-10 right-10 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D4AF37]/10 rounded-full filter blur-3xl pointer-events-none" />
 
+        {/* Centered Stylish Heading */}
         <AnimatedSection direction="up">
-          <div className="max-w-4xl space-y-6">
-            <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#7A8864]" />
-              <span className="micro-label text-[#7A8864] tracking-[0.3em]">
-                THE LOVE DETAILS ATELIER · DUBAI & UAE
-              </span>
-            </div>
-            
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-[#262822] leading-[1.15] tracking-tight">
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-[#262822] leading-[1.18] tracking-tight">
               “Behind Every Extraordinary <br />
               <span className="italic text-[#7A8864] font-normal">Celebration Is a Story.”</span>
             </h1>
-            
-            <p className="text-lg md:text-xl font-serif italic text-[#7A8864] max-w-3xl leading-relaxed border-l-2 border-[#7A8864]/40 pl-6 py-1">
-              We believe the finest celebrations are defined not by excess, but by intention, spatial harmony, artistic restraint, and genuine human emotion.
-            </p>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864] to-transparent mx-auto opacity-75 mt-4" />
           </div>
         </AnimatedSection>
 
-        {/* Hero Banner Image */}
+        {/* Hero Banner Image directly below title */}
         <AnimatedSection direction="up" delay={0.2}>
-          <div className="w-full aspect-21/9 rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
+          <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
             <motion.img
               whileHover={{ scale: 1.04 }}
               transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              src="/hero_about_atelier.png"
-              alt="Love Details Dubai Atelier Setting"
+              src="/philosophy-hero-bougainvillea.jpg"
+              alt="Love Details Waterfront Bougainvillea Ceremony Setup"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />

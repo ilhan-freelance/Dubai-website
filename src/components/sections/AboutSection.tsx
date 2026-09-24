@@ -29,7 +29,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
           {/* ── LEFT COLUMN: 3 OVERLAPPING WEDDING PHOTOS (4 cols) ── */}
           <div className="lg:col-span-4 relative flex flex-col items-center lg:items-end gap-3 sm:gap-4">
             
-            {/* Photo 1: Top Hero Arch Frame */}
+            {/* Photo 1: Top Red Architectural Arch & Chandelier Frame */}
             <motion.div
               initial={{ opacity: 0, y: 30, rotate: -2 }}
               whileInView={{ opacity: 1, y: 0, rotate: -2 }}
@@ -39,13 +39,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-full max-w-[280px] sm:max-w-xs xl:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white ring-2 ring-[#C9A96E]/40 shadow-2xl relative bg-white group gold-border-glow"
             >
               <img
-                src="/about-couple-arch.png"
-                alt="Grand Floral Wedding Arch"
+                src="/about-red-arch-hero.png"
+                alt="Grand Crimson Rose Arches & Chandeliers"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>
 
-            {/* Photo 2: Middle Desert Sunset Card */}
+            {/* Photo 2: Middle Pop Art Dining Table Card */}
             <motion.div
               initial={{ opacity: 0, x: -30, y: 15 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -55,13 +55,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-4/5 max-w-[220px] sm:max-w-xs aspect-[16/10] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-12 sm:-mt-16 lg:-mr-6 z-20 relative group"
             >
               <img
-                src="/portfolio-desert.png"
-                alt="Dubai Desert Sunset Wedding"
+                src="/about-pop-table.jpg"
+                alt="Pop-Art Theme Dining Experience"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>
 
-            {/* Photo 3: Bottom Bridesmaids Photo */}
+            {/* Photo 3: Bottom Santorini Blue Gate Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -71,8 +71,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-3/4 max-w-[180px] sm:max-w-[210px] aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-10 sm:-mt-12 lg:-mr-10 z-30 relative group"
             >
               <img
-                src="/about-bridesmaids.png"
-                alt="Bridal Party Elegance"
+                src="/minds-santorini-arch.jpg"
+                alt="Santorini-Inspired Arch & Hat Installation"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>
@@ -122,7 +122,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
           {/* ── RIGHT COLUMN: 3 OVERLAPPING WEDDING PHOTOS (4 cols) ── */}
           <div className="lg:col-span-4 relative flex flex-col items-center lg:items-start gap-3 sm:gap-4">
             
-            {/* Photo 4: Top Hero Ballroom Frame */}
+            {/* Photo 4: Top Red Mandap Canopy */}
             <motion.div
               initial={{ opacity: 0, y: 30, rotate: 2 }}
               whileInView={{ opacity: 1, y: 0, rotate: 2 }}
@@ -132,13 +132,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-full max-w-[280px] sm:max-w-xs xl:max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white ring-2 ring-[#C9A96E]/40 shadow-2xl relative bg-white group gold-border-glow"
             >
               <img
-                src="/portfolio-dubai.png"
-                alt="Bvlgari Resort Waterfront Gala"
+                src="/about-red-mandap.png"
+                alt="Red Floral Beachfront Mandap Canopy"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>
 
-            {/* Photo 5: Middle Dance Celebration Card */}
+            {/* Photo 5: Middle Rainbow Stage Card */}
             <motion.div
               initial={{ opacity: 0, x: 30, y: 15 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -148,13 +148,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-4/5 max-w-[220px] sm:max-w-xs aspect-[16/10] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-12 sm:-mt-16 lg:-ml-6 z-20 relative group"
             >
               <img
-                src="/portfolio-dance.png"
-                alt="Midnight Dance Gala"
+                src="/about-rainbow-stage.jpg"
+                alt="Vibrant Rainbow Stage & Floral Decor"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>
 
-            {/* Photo 6: Bottom Groom Attire Card */}
+            {/* Photo 6: Bottom Evil Eye & Floral Ceiling Canopy Card (Opposite Blue Gate) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -164,8 +164,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onLearnMore }) => {
               className="w-3/4 max-w-[180px] sm:max-w-[210px] aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white -mt-10 sm:-mt-12 lg:-ml-10 z-30 relative group"
             >
               <img
-                src="/about-groom.png"
-                alt="Black-Tie Royal Groom"
+                src="/about-evil-eye-canopy.jpg"
+                alt="Evil Eye & Dreamcatcher Ceiling Canopy Installation"
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
               />
             </motion.div>

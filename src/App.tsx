@@ -7,7 +7,6 @@ import { CustomCursor } from './components/common/CustomCursor';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
-import { PortfolioPage } from './pages/PortfolioPage';
 import { PackagesPage } from './pages/PackagesPage';
 import { VenuesPage } from './pages/VenuesPage';
 import { JournalPage } from './pages/JournalPage';
@@ -22,7 +21,7 @@ import type { PortfolioProject } from './data/portfolioData';
 import type { JournalArticle } from './data/journalData';
 import { TopAnnouncementBar } from './components/layout/TopAnnouncementBar';
 
-const VALID_TABS = ['home', 'about', 'services', 'portfolio', 'gallery', 'packages', 'venues', 'journal', 'testimonials', 'contact'];
+const VALID_TABS = ['home', 'about', 'services', 'gallery', 'packages', 'venues', 'journal', 'testimonials', 'contact'];
 
 function getTabFromHash(): string {
   const hash = window.location.hash.replace('#', '').trim().toLowerCase();
@@ -111,12 +110,6 @@ export function App() {
         {currentTab === 'services' && (
           <ServicesPage
             onOpenEnquiry={(category) => handleOpenEnquiry(category || 'Weddings')}
-          />
-        )}
-
-        {currentTab === 'portfolio' && (
-          <PortfolioPage
-            onSelectProject={handleSelectProject}
           />
         )}
 

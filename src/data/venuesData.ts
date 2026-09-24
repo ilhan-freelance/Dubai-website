@@ -12,26 +12,15 @@ export interface VenueItem {
 
 export const UAE_VENUES: VenueItem[] = [
   {
-    id: 'armani-hotel-dubai',
-    name: 'Armani Hotel Dubai',
-    location: 'Downtown Dubai',
+    id: 'ritz-carlton-dubai',
+    name: 'The Ritz-Carlton, Dubai',
+    location: 'JBR, Dubai',
     region: 'Dubai',
-    capacity: 'Up to 450 Guests',
-    setting: 'Urban Elegance & Fountain Views',
-    image: '/portfolio-dubai.png',
-    description: 'Designed by Giorgio Armani himself, offering clean minimalist stone aesthetics, high-end hospitality, and iconic views of the Dubai Fountain.',
-    highlights: ['Outdoor Ballroom Terrace', 'Minimalist Italian Aesthetic', 'Direct Fountain Overlook']
-  },
-  {
-    id: 'bvlgari-resort-dubai',
-    name: 'Bvlgari Resort & Residences',
-    location: 'Jumeira Bay Island, Dubai',
-    region: 'Dubai',
-    capacity: 'Up to 300 Guests',
-    setting: 'Private Island Waterfront Sanctuary',
-    image: '/portfolio-garden.png',
-    description: 'Exuding Mediterranean charm on a secluded island in Dubai. Features private marina lawns, travertine architecture, and breathtaking sunset panoramas.',
-    highlights: ['Private Island Setting', 'Exclusive Yacht Marina', 'Bespoke Ballroom & Lawns']
+    capacity: 'Up to 600 Guests',
+    setting: 'Oceanfront Gardens & Venetian Architecture',
+    image: '/venues/ritz-carlton-dubai.jpg',
+    description: 'Set on private Arabian Gulf shores with lush manicured lawns, Mediterranean arches, and romantic sunset oceanfront vistas.',
+    highlights: ['Private Beachfront Lawns', 'Grand Ballroom Terrace', 'Ain Dubai Skyline View']
   },
   {
     id: 'one-and-only-royal-mirage',
@@ -40,63 +29,41 @@ export const UAE_VENUES: VenueItem[] = [
     region: 'Dubai',
     capacity: 'Up to 500 Guests',
     setting: 'Palatial Arabian Beach Gardens',
-    image: '/about-couple-arch.png',
+    image: '/venues/one-only-royal-mirage.jpg',
     description: 'Intricate Arabian courtyard architecture set amongst 65 acres of lush beachfront gardens, ornate arches, and moonlit palm courts.',
     highlights: ['Private Beach Promenade', 'Ornate Moorish Architecture', 'Secluded Garden Amphi-theatre']
   },
   {
-    id: 'al-maha-desert-resort',
-    name: 'Al Maha Conservation Resort',
-    location: 'Dubai Desert Conservation Reserve',
+    id: 'atlantis-the-palm',
+    name: 'Atlantis, The Palm',
+    location: 'Palm Jumeirah, Dubai',
     region: 'Dubai',
-    capacity: 'Up to 150 Guests',
-    setting: 'Luxury Desert Dunes & Oasis',
-    image: '/portfolio-desert.png',
-    description: 'Nestled among rolling golden sand dunes and indigenous gazelle habitats, perfect for ultra-exclusive, candlelit desert celebrations.',
-    highlights: ['Private Reserve Access', 'Starlit Dune Dinners', 'Bedouin Luxe Styling']
+    capacity: 'Up to 2,000 Guests',
+    setting: 'Iconic Oceanfront Landmark & Royal Ballrooms',
+    image: '/venues/atlantis-the-palm.jpg',
+    description: 'An internationally renowned ocean resort on Palm Jumeirah offering grand imperial ballrooms, private royal beach lawns, and breathtaking sea views.',
+    highlights: ['Royal Asateer Ballroom', 'Private Oceanfront Lawn', 'Iconic Palm Architecture']
   },
   {
-    id: 'jumeirah-al-qasr',
-    name: 'Jumeirah Al Qasr',
-    location: 'Madinat Jumeirah, Dubai',
+    id: 'five-palm-jumeirah',
+    name: 'FIVE Palm Jumeirah',
+    location: 'Palm Jumeirah, Dubai',
     region: 'Dubai',
-    capacity: 'Up to 400 Guests',
-    setting: 'Palace Waterways & Private Pier',
-    image: '/portfolio-dance.png',
-    description: 'Designed in the style of a Sheikh’s summer residence, connected by tranquil abra canals, grand staircases, and pristine private beaches.',
-    highlights: ['Canal Boat Arrival', 'Celeste Ocean Pier', 'Grand Imperial Ballroom']
+    capacity: 'Up to 450 Guests',
+    setting: 'Modern Luxury Waterfront & Marina Views',
+    image: '/venues/five-palm-jumeirah.jpg',
+    description: 'Dynamic luxury resort boasting spectacular skyline views of Dubai Marina, chic infinity pool terraces, and contemporary event spaces.',
+    highlights: ['Skyline Horizon View', 'Penthouse Celebration Suites', 'Private Beach Club']
   },
   {
-    id: 'mandarin-oriental-jumeira',
-    name: 'Mandarin Oriental Jumeira',
-    location: 'Jumeirah Beach, Dubai',
+    id: 'grand-hyatt-dubai',
+    name: 'Grand Hyatt Dubai',
+    location: 'Garhoud, Dubai',
     region: 'Dubai',
-    capacity: 'Up to 350 Guests',
-    setting: 'Modern Beachfront Sophistication',
-    image: '/portfolio-rings.png',
-    description: 'Chic coastal architecture with glass-enclosed ballrooms opening directly onto manicured seaside lawns and tranquil waters.',
-    highlights: ['Direct Sea View Ballroom', 'Canopy of Light Installation', 'Michelin Culinary Options']
-  },
-  {
-    id: 'emirates-palace-mandarin',
-    name: 'Emirates Palace Mandarin Oriental',
-    location: 'Corniche, Abu Dhabi',
-    region: 'Abu Dhabi',
-    capacity: 'Up to 1000 Guests',
-    setting: 'Palatial Grandeur & Private Bay',
-    image: '/service-planning.png',
-    description: 'An iconic landmark of Arabian splendour featuring gold leaf domes, marble courtyards, and a 1.3km private white-sand beach.',
-    highlights: ['Grand Dome Auditorium', 'Royal Suite Dining', '1.3km Private Beach']
-  },
-  {
-    id: 'ritz-carlton-ras-al-khaimah',
-    name: 'The Ritz-Carlton Al Wadi Desert',
-    location: 'Ras Al Khaimah',
-    region: 'Other UAE',
-    capacity: 'Up to 200 Guests',
-    setting: 'Desert Valley & Falconry Reserve',
-    image: '/portfolio-garden.png',
-    description: 'A secluded desert valley offering intimate sunset terraces, vintage fire pits, and rustic luxury for intimate gatherings.',
-    highlights: ['Moonlit Valley Dinners', 'Private Pool Villas', 'Falconry & Stargazing Lawn']
+    capacity: 'Up to 3,000 Guests',
+    setting: 'City Resort & Royal Convention Ballrooms',
+    image: '/venues/grand-hyatt-dubai.jpg',
+    description: 'Set amidst 37 acres of tropical landscaped gardens and resort pools, featuring some of Dubai’s most grand and versatile royal celebration halls.',
+    highlights: ['Baniyas Royal Ballroom', 'Tropical Resort Pool Gardens', 'Grand High-Ceiling Architecture']
   }
 ];

@@ -48,8 +48,8 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenEnquiry }) => {
               className="absolute top-0 left-4 w-44 sm:w-56 aspect-4/5 rounded-2xl overflow-hidden border-2 border-[#C9A96E]/30 shadow-lg z-10"
             >
               <img
-                src="/portfolio-dance.png"
-                alt="Dubai Wedding Celebration"
+                src="/faq-question-mark.png"
+                alt="Frequently Asked Questions - Love Details"
                 className="w-full h-full object-cover"
               />
             </motion.div>

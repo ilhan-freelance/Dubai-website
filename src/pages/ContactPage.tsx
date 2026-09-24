@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2, Upload, Sparkles, ShieldCheck } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Mail, MapPin, Phone, MessageCircle, Send, CheckCircle2, Upload, ShieldCheck } from 'lucide-react';
 import { AnimatedSection } from '../components/common/AnimatedSection';
 
 export const ContactPage: React.FC = () => {
@@ -30,57 +29,21 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden">
+    <div className="pt-14 sm:pt-16 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden">
       
-      {/* ── PAGE HERO SECTION WITH HERO IMAGE ── */}
-      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 pb-12 space-y-10">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
+      {/* ── PAGE HERO SECTION (SINGLE LINE HEADING, REDUCED TOP PADDING) ── */}
+      <section className="relative max-w-5xl mx-auto px-4 sm:px-8 pt-2 pb-6 text-center space-y-3">
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
 
         <AnimatedSection direction="up">
-          <div className="space-y-6">
-            <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#7A8864]" />
-              <span className="micro-label text-[#7A8864] tracking-[0.3em]">
-                GET IN TOUCH · ATELIER COMMISSION
-              </span>
-            </div>
-
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-[#262822] leading-[1.15] tracking-tight">
-              Tell Us About Your <br />
-              <span className="italic text-[#7A8864]">Celebration.</span>
+          <div className="space-y-3 text-center">
+            <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#262822] leading-tight tracking-tight text-center sm:whitespace-nowrap">
+              Tell Us About Your <span className="italic text-[#7A8864]">Celebration.</span>
             </h1>
             
-            <p className="text-base sm:text-xl text-[#262822]/80 max-w-3xl font-serif leading-relaxed border-l-2 border-[#7A8864]/40 pl-6 py-1">
+            <p className="text-sm sm:text-lg text-[#262822]/80 max-w-2xl mx-auto font-serif leading-relaxed text-center italic">
               We accept a strictly limited number of wedding and event commissions each year to ensure uncompromising artistic direction and personal producer care.
             </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Hero Image Banner */}
-        <AnimatedSection direction="up" delay={0.2}>
-          <div className="w-full aspect-21/9 rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
-            <motion.img
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-              src="/hero_contact_atelier.png"
-              alt="Love Details Dubai Atelier Consultation"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
-            
-            <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-[#D4AF37]/40 shadow-lg text-xs font-serif text-[#946B00] flex items-center space-x-2 font-bold">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#7A8864] animate-pulse" />
-              <span>CONFIDENTIAL CONSULTATION</span>
-            </div>
-
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-white gap-2 text-xs font-serif italic">
-              <span className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
-                Jumeira Bay & Downtown Atelier Office, Dubai
-              </span>
-              <span className="text-[#E5D5BC] bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
-                Global Video Consultation Available
-              </span>
-            </div>
           </div>
         </AnimatedSection>
       </section>

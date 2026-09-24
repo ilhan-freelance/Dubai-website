@@ -26,7 +26,7 @@ export const FeaturedPortfolio: React.FC<FeaturedPortfolioProps> = ({
         ).slice(0, 5);
 
   return (
-    <section className="bg-[#FAF7F2] text-[#262822] py-28 md:py-40 border-t border-[#C8C0B5]/40 relative overflow-hidden">
+    <section className="bg-[#FAF7F2] text-[#262822] py-12 md:py-16 border-t border-[#C8C0B5]/40 relative overflow-hidden">
       
       {/* Background Watermark */}
       <div className="absolute top-10 left-6 pointer-events-none select-none opacity-[0.03]">
@@ -98,30 +98,19 @@ export const FeaturedPortfolio: React.FC<FeaturedPortfolioProps> = ({
                       transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                       src={project.heroImage}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover filter blur-md group-hover:blur-xs transition-all duration-700"
                     />
                     
                     {/* Editorial Frame Overlay */}
                     <div className="absolute inset-0 border-[10px] border-[#FAF7F2]/20 pointer-events-none group-hover:border-[#FAF7F2]/40 transition-colors" />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent opacity-90 transition-opacity" />
 
-                    <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white z-10">
-                      <div className="space-y-1">
-                        <span className="micro-label text-[#E5D5BC]">
-                          {project.category} · {project.location}
-                        </span>
-                        <h3 className={`font-serif font-light ${isLarge ? 'text-3xl md:text-4xl' : 'text-2xl'}`}>
-                          {project.title}
-                        </h3>
-                        <p className="text-xs text-white/70 italic font-serif line-clamp-1 hidden sm:block">
-                          {project.subtitle}
-                        </p>
-                      </div>
-                      <span className="button-editorial text-xs text-[#E5D5BC] group-hover:text-white flex items-center gap-1 shrink-0 ml-4">
-                        View Story <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </span>
+                    <div className="absolute inset-0 p-6 flex justify-center items-center text-center text-white z-10">
+                      <h3 className={`font-serif font-normal italic text-[#FAF7F2] drop-shadow-xl bg-gradient-to-r from-white via-[#F5E6C8] to-[#E5D5BC] bg-clip-text text-transparent ${isLarge ? 'text-4xl md:text-5xl' : 'text-3xl'}`}>
+                        {project.title}
+                      </h3>
                     </div>
                   </div>
                 </div>

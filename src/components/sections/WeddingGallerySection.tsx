@@ -5,20 +5,18 @@ interface WeddingGallerySectionProps {
   onOpenFullGallery: () => void;
 }
 
-// Single continuous list of photos with varied widths (No Grid, Single Row)
+// All 10 client celebration moment photos
 const SINGLE_ROW_PHOTOS = [
-  { img: '/portfolio-dubai.png', width: 'w-[360px]' },
-  { img: '/about-couple-arch.png', width: 'w-[240px]' },
-  { img: '/portfolio-garden.png', width: 'w-[420px]' },
-  { img: '/about-couple-laugh.png', width: 'w-[280px]' },
-  { img: '/portfolio-dance.png', width: 'w-[340px]' },
-  { img: '/portfolio-rings.png', width: 'w-[220px]' },
-  { img: '/portfolio-desert.png', width: 'w-[400px]' },
-  { img: '/about-bridesmaids.png', width: 'w-[260px]' },
-  { img: '/hero-aisle.png', width: 'w-[310px]' },
-  { img: '/about-groom.png', width: 'w-[370px]' },
-  { img: '/hero_journal_editorial.png', width: 'w-[230px]' },
-  { img: '/hero_venues_dubai.png', width: 'w-[350px]' }
+  { img: '/moments-gold/moment-1-dj-neon.png', width: 'w-[380px]' },
+  { img: '/moments-gold/moment-2-red-canopy.jpg', width: 'w-[440px]' },
+  { img: '/moments-gold/moment-3-cybertruck-dj.png', width: 'w-[360px]' },
+  { img: '/moments-gold/moment-4-blossom-arch.png', width: 'w-[320px]' },
+  { img: '/moments-gold/moment-5-gold-hall.png', width: 'w-[420px]' },
+  { img: '/moments-gold/moment-6-poolside-floral.jpg', width: 'w-[400px]' },
+  { img: '/moments-gold/moment-7-magenta-dj-stage.jpg', width: 'w-[340px]' },
+  { img: '/moments-gold/moment-8-pink-tent-runway.jpg', width: 'w-[390px]' },
+  { img: '/moments-gold/moment-9-turtle-bay-entrance.jpg', width: 'w-[430px]' },
+  { img: '/moments-gold/moment-10-dhol-night-bhatias.jpg', width: 'w-[350px]' }
 ];
 
 // Duplicate for 100% seamless infinite loop

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TESTIMONIALS_DATA } from '../data/testimonialsData';
-import { Quote, ArrowRight, Sparkles, Star, Award } from 'lucide-react';
+import { Quote, ArrowRight, Sparkles, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedSection } from '../components/common/AnimatedSection';
 
@@ -63,7 +63,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenEnquir
 
             <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between text-white gap-2 text-xs font-serif italic">
               <span className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20">
-                Memories Crafted Across Dubai & International Sanctuaries
+                Memories Crafted Across Dubai &amp; International Sanctuaries
               </span>
               <span className="text-[#E5D5BC] bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
                 100% Verified Client Reviews
@@ -114,9 +114,6 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenEnquir
                     alt={item.clientNames}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-xs font-serif text-[#E5D5BC] border border-white/20">
-                    {item.location}
-                  </div>
                 </div>
               </div>
             )}
@@ -128,12 +125,6 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenEnquir
                   : 'lg:col-span-12 max-w-4xl mx-auto text-center'
               } ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
             >
-              <div className="flex items-center space-x-1 text-[#D4AF37]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-current" />
-                ))}
-              </div>
-
               <Quote className="w-12 h-12 text-[#7A8864]/50" />
 
               <blockquote className="font-serif text-2xl sm:text-3xl md:text-4xl font-light leading-relaxed text-[#262822] italic border-l-4 border-[#7A8864] pl-6 py-2">
@@ -144,11 +135,6 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenEnquir
                 <cite className="not-italic font-serif text-2xl text-[#7A8864] block font-normal">
                   — {item.clientNames}
                 </cite>
-                <div className="inline-flex items-center space-x-2 bg-[#7A8864]/10 border border-[#7A8864]/30 px-4 py-1.5 rounded-full text-xs font-sans text-[#7A8864]">
-                  <span>{item.eventType}</span>
-                  <span>·</span>
-                  <span>{item.location} ({item.year})</span>
-                </div>
               </div>
             </div>
           </div>

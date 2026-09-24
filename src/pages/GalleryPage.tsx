@@ -1,165 +1,181 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowLeft } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
 
 interface GalleryPageProps {
   onOpenEnquiry: () => void;
   onNavigateHome: () => void;
 }
 
-interface GalleryItem {
+export interface GalleryItem {
   id: string;
   image: string;
   title: string;
-  aspect: string;
+  category: 'DJ & Nightlife' | 'Canopies & Arches' | 'Outdoor & Resorts' | 'Cultural Nights';
+  location: string;
 }
 
-// 40+ Dense Photo Wall Array matching the reference screenshot
-const GALLERY_ITEMS: GalleryItem[] = [
-  { id: 'g1', image: '/portfolio-dubai.png', title: 'Emirates Palace Royal Gala', aspect: 'aspect-[3/4]' },
-  { id: 'g2', image: '/about-couple-arch.png', title: 'Cascading Hydrangea Arch', aspect: 'aspect-[4/5]' },
-  { id: 'g3', image: '/portfolio-garden.png', title: 'Bvlgari Resort Lawn', aspect: 'aspect-[3/4]' },
-  { id: 'g4', image: '/about-couple-laugh.png', title: 'Sunset Dune Romance', aspect: 'aspect-[3/5]' },
-  { id: 'g5', image: '/portfolio-dance.png', title: 'Midnight Crystal Reception', aspect: 'aspect-[4/5]' },
-  { id: 'g6', image: '/portfolio-rings.png', title: 'Solstice Ring Details', aspect: 'aspect-[3/4]' },
-  { id: 'g7', image: '/portfolio-desert.png', title: 'Al Maha Desert Dinner', aspect: 'aspect-[2/3]' },
-  { id: 'g8', image: '/about-bridesmaids.png', title: 'Bridal Party Toast', aspect: 'aspect-[4/5]' },
-  { id: 'g9', image: '/hero-aisle.png', title: 'Floral Aisle Entry', aspect: 'aspect-[3/4]' },
-  { id: 'g10', image: '/about-groom.png', title: 'Groom Preparations', aspect: 'aspect-[3/5]' },
-  { id: 'g11', image: '/hero_journal_editorial.png', title: 'Couture Tablescape', aspect: 'aspect-[4/5]' },
-  { id: 'g12', image: '/hero_venues_dubai.png', title: 'Royal Court Pavilion', aspect: 'aspect-[3/4]' },
-  { id: 'g13', image: '/hero_about_atelier.png', title: 'Atelier Styling Session', aspect: 'aspect-[2/3]' },
-  { id: 'g14', image: '/hero_services_atelier.png', title: 'Palace Stage Production', aspect: 'aspect-[4/5]' },
-  { id: 'g15', image: '/hero_testimonials_trust.png', title: 'Oceanfront Vows', aspect: 'aspect-[3/4]' },
-  { id: 'g16', image: '/hero_packages_scope.png', title: 'Champagne Tower Toast', aspect: 'aspect-[3/5]' },
-  { id: 'g17', image: '/hero_portfolio_archive.png', title: 'Architectural Lighting', aspect: 'aspect-[4/5]' },
-  { id: 'g18', image: '/hero_contact_atelier.png', title: 'VIP Guest Concierge', aspect: 'aspect-[3/4]' },
-  { id: 'g19', image: '/service-planning.png', title: 'Floral Installation', aspect: 'aspect-[2/3]' },
-  { id: 'g20', image: '/service-coordination.png', title: 'Grand Staircase Entry', aspect: 'aspect-[4/5]' },
-  { id: 'g21', image: '/service-day-of.png', title: 'Candlelit Alfresco Table', aspect: 'aspect-[3/4]' },
-  { id: 'g22', image: '/about-couple-arch.png', title: 'Hydrangea Mandap Decor', aspect: 'aspect-[3/5]' },
-  { id: 'g23', image: '/portfolio-dubai.png', title: 'Burj Al Arab Ballroom', aspect: 'aspect-[4/5]' },
-  { id: 'g24', image: '/about-couple-laugh.png', title: 'Desert Sunset Portraits', aspect: 'aspect-[3/4]' },
-  { id: 'g25', image: '/portfolio-garden.png', title: 'Coastal Glasshouse Lawn', aspect: 'aspect-[2/3]' },
-  { id: 'g26', image: '/portfolio-dance.png', title: 'Sparkler First Dance', aspect: 'aspect-[4/5]' },
-  { id: 'g27', image: '/portfolio-rings.png', title: 'Custom Ring Box Details', aspect: 'aspect-[3/4]' },
-  { id: 'g28', image: '/portfolio-desert.png', title: 'Firefly Dune Evening', aspect: 'aspect-[3/5]' },
-  { id: 'g29', image: '/about-bridesmaids.png', title: 'Bridesmaid Gown Details', aspect: 'aspect-[4/5]' },
-  { id: 'g30', image: '/hero-aisle.png', title: 'Candlelit Runway Aisle', aspect: 'aspect-[3/4]' },
-  { id: 'g31', image: '/about-groom.png', title: 'Tuxedo Styling Suite', aspect: 'aspect-[2/3]' },
-  { id: 'g32', image: '/hero_journal_editorial.png', title: 'Gold Calligraphy Stationery', aspect: 'aspect-[4/5]' },
-  { id: 'g33', image: '/hero_venues_dubai.png', title: 'Palm Jumeirah Terrace', aspect: 'aspect-[3/4]' },
-  { id: 'g34', image: '/hero_about_atelier.png', title: 'Bridal Veil Fitting', aspect: 'aspect-[3/5]' },
-  { id: 'g35', image: '/hero_services_atelier.png', title: 'Midnight Gala Fireworks', aspect: 'aspect-[4/5]' },
-  { id: 'g36', image: '/hero_testimonials_trust.png', title: 'Couples Sunset Toast', aspect: 'aspect-[3/4]' }
+const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'm-adit-diva-beach',
+    image: '/adit-diva/adit-diva-beach.jpg',
+    title: 'Adit & Diva Bougainvillea Beach Arches',
+    category: 'Canopies & Arches',
+    location: 'Saadiyat Beach Sanctuary'
+  },
+  {
+    id: 'm-adit-diva-mandap',
+    image: '/adit-diva/adit-diva-mandap.jpg',
+    title: 'Adit & Diva Pastel Mandap & Waterfront Lawn',
+    category: 'Canopies & Arches',
+    location: 'Saadiyat Beach Sanctuary'
+  },
+  {
+    id: 'm-adit-diva-night',
+    image: '/adit-diva/adit-diva-night.jpg',
+    title: 'Adit & Diva Starlight Canopy Gala Night',
+    category: 'DJ & Nightlife',
+    location: 'Waterfront Estate, Abu Dhabi'
+  },
+  {
+    id: 'm-adit-diva-resort',
+    image: '/adit-diva/adit-diva-resort.jpg',
+    title: 'Adit & Diva Luxury Beachfront Resort & Cabanas',
+    category: 'Outdoor & Resorts',
+    location: 'Saadiyat Beach Resort'
+  },
+  {
+    id: 'm-adit-diva-stage',
+    image: '/adit-diva/adit-diva-stage.jpg',
+    title: 'Adit & Diva Concert Stage & Night Lighting',
+    category: 'DJ & Nightlife',
+    location: 'Grand Ballroom Pavilion, Dubai'
+  },
+  {
+    id: 'm1',
+    image: '/moments-gold/moment-1-dj-neon.png',
+    title: 'Abhishek Ki Baraat DJ Neon Setup',
+    category: 'DJ & Nightlife',
+    location: 'Dubai Desert Sanctuary'
+  },
+  {
+    id: 'm2',
+    image: '/moments-gold/moment-2-red-canopy.jpg',
+    title: 'Grand Red Floral Canopy & Palace Facade',
+    category: 'Canopies & Arches',
+    location: 'Emirates Palace, Abu Dhabi'
+  },
+  {
+    id: 'm3',
+    image: '/moments-gold/moment-3-cybertruck-dj.png',
+    title: 'Cybertruck Sound System & DJ Station',
+    category: 'DJ & Nightlife',
+    location: 'Private Dubai Estate'
+  },
+  {
+    id: 'm4',
+    image: '/moments-gold/moment-4-blossom-arch.png',
+    title: 'Pastel Blossom Entrance Arch & Veil',
+    category: 'Canopies & Arches',
+    location: 'Jumeirah Beach Hotel'
+  },
+  {
+    id: 'm5',
+    image: '/moments-gold/moment-5-gold-hall.png',
+    title: 'Gold Chandelier & Lush Botanical Canopy',
+    category: 'Canopies & Arches',
+    location: 'Armani Hotel Ballroom'
+  },
+  {
+    id: 'm6',
+    image: '/moments-gold/moment-6-poolside-floral.jpg',
+    title: 'Poolside Pergola Floral Arch & Pampas Grass',
+    category: 'Outdoor & Resorts',
+    location: 'Anantara The Palm Dubai'
+  },
+  {
+    id: 'm7',
+    image: '/moments-gold/moment-7-magenta-dj-stage.jpg',
+    title: 'Bougainvillea Magenta Stage & DJ Console',
+    category: 'DJ & Nightlife',
+    location: 'Saadiyat Island Resort'
+  },
+  {
+    id: 'm8',
+    image: '/moments-gold/moment-8-pink-tent-runway.jpg',
+    title: 'Royal Pink & Gold Arabian Canopy Walkway',
+    category: 'Canopies & Arches',
+    location: 'The Ritz-Carlton Dubai'
+  },
+  {
+    id: 'm9',
+    image: '/moments-gold/moment-9-turtle-bay-entrance.jpg',
+    title: 'Turtle Bay Resort Floral Entrance & Pathway',
+    category: 'Outdoor & Resorts',
+    location: 'Park Hyatt Saadiyat'
+  },
+  {
+    id: 'm10',
+    image: '/moments-gold/moment-10-dhol-night-bhatias.jpg',
+    title: "Dhol Night Hosted by Bhatia's - Grand Celebration",
+    category: 'Cultural Nights',
+    location: 'Taj Exotica Resort & Spa'
+  }
 ];
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenEnquiry, onNavigateHome }) => {
-  const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
-
   return (
-    <div className="pt-20 pb-20 bg-white text-[#212529] min-h-screen">
+    <div className="pt-6 sm:pt-8 pb-20 bg-[#FAF7F2] text-[#212529] min-h-screen">
       
-      {/* ── MINIMAL TOP HEADER (Matching User Screenshot) ── */}
-      <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 pb-6 flex items-center justify-between border-b border-gray-100 mb-4">
+      {/* ── TOP HEADER ── */}
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-6 flex flex-col md:flex-row items-center justify-between border-b border-[#C8C0B5]/40 mb-10 gap-6">
         <button
           onClick={onNavigateHome}
-          className="px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-full text-xs font-sans font-semibold uppercase tracking-wider text-[#212529] inline-flex items-center space-x-2 transition-all cursor-pointer border border-gray-200"
+          className="px-5 py-2.5 bg-white hover:bg-[#7A8864] hover:text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider text-[#212529] inline-flex items-center space-x-2 transition-all cursor-pointer border border-[#C8C0B5]/50 shadow-xs shrink-0"
         >
-          <ArrowLeft className="w-4 h-4 text-[#3B5649]" />
+          <ArrowLeft className="w-4 h-4 text-[#7A8864]" />
           <span>Back to Home</span>
         </button>
 
-        <h1 className="font-['Playfair_Display'] text-2xl sm:text-4xl font-normal text-[#212529] tracking-tight">
-          Client Diaries
-        </h1>
+        {/* Stylish Underlined Editorial Header: Client Diaries */}
+        <div className="text-center">
+          <div className="relative inline-block pb-3">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-[#262822] tracking-tight italic leading-tight">
+              Client Diaries
+            </h1>
+            {/* Elegant Luxury Gold & Olive Underline Accent */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 sm:w-48 h-1 bg-gradient-to-r from-transparent via-[#7A8864] to-transparent rounded-full shadow-sm" />
+          </div>
+        </div>
 
         <button
           onClick={onOpenEnquiry}
-          className="px-5 py-2 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-xs"
+          className="px-6 py-2.5 bg-[#7A8864] hover:bg-[#687553] text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-md shrink-0"
         >
           Inquire
         </button>
       </header>
 
-      {/* ── DENSE 4-COLUMN MASONRY PHOTO WALL (Exact Match with Reference Image) ── */}
-      <main className="max-w-7xl mx-auto px-2 sm:px-4">
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-2 sm:gap-2.5 space-y-2 sm:space-y-2.5">
-          {GALLERY_ITEMS.map((item) => (
-            <div
+      {/* ── UNCONSTRAINED NATURAL PHOTO WALL (NO FRAMES, NO CAPTIONS, NO CLICKS) ── */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {INITIAL_GALLERY_ITEMS.map((item, idx) => (
+            <motion.div
               key={item.id}
-              onClick={() => setLightboxItem(item)}
-              className="break-inside-avoid overflow-hidden rounded-lg sm:rounded-xl relative group cursor-pointer bg-gray-100 border border-gray-100"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.03 }}
+              className="break-inside-avoid overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300"
             >
-              <motion.img
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.4 }}
+              <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-auto object-cover block"
+                className="w-full h-auto object-contain rounded-2xl block"
               />
-              
-              {/* Soft Subtle Hover Vignette & Title */}
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                <span className="font-['Playfair_Display'] text-xs font-normal text-white drop-shadow-md">
-                  {item.title}
-                </span>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </main>
-
-      {/* ── LIGHTBOX ZOOM MODAL ── */}
-      <AnimatePresence>
-        {lightboxItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
-            onClick={() => setLightboxItem(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-w-4xl max-h-[90vh] bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex flex-col justify-between"
-            >
-              <button
-                onClick={() => setLightboxItem(null)}
-                className="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30 hover:bg-white hover:text-black transition-all cursor-pointer"
-                aria-label="Close Lightbox"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="w-full max-h-[75vh] overflow-hidden flex items-center justify-center bg-gray-950">
-                <img
-                  src={lightboxItem.image}
-                  alt={lightboxItem.title}
-                  className="max-w-full max-h-[75vh] object-contain"
-                />
-              </div>
-
-              <div className="p-4 bg-black/90 text-white flex items-center justify-between border-t border-white/10">
-                <h3 className="font-['Playfair_Display'] text-lg font-normal text-white">
-                  {lightboxItem.title}
-                </h3>
-                <button
-                  onClick={() => { setLightboxItem(null); onOpenEnquiry(); }}
-                  className="px-5 py-2 bg-[#3B5649] hover:bg-[#2A3E34] text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider cursor-pointer"
-                >
-                  Book Atelier
-                </button>
-              </div>
-
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
     </div>
   );

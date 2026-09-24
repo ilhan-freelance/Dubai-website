@@ -1,5 +1,15 @@
-// 100+ High Quality Luxury Wedding & Celebration Image URLs from Unsplash
+// 100+ High Quality Luxury Wedding & Celebration Image URLs
 export const WALL_PHOTOS: string[] = [
+  '/moments-gold/moment-1-dj-neon.png',
+  '/moments-gold/moment-2-red-canopy.jpg',
+  '/moments-gold/moment-3-cybertruck-dj.png',
+  '/moments-gold/moment-4-blossom-arch.png',
+  '/moments-gold/moment-5-gold-hall.png',
+  '/moments-gold/moment-6-poolside-floral.jpg',
+  '/moments-gold/moment-7-magenta-dj-stage.jpg',
+  '/moments-gold/moment-8-pink-tent-runway.jpg',
+  '/moments-gold/moment-9-turtle-bay-entrance.jpg',
+  '/moments-gold/moment-10-dhol-night-bhatias.jpg',
   'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=300&q=80',
   'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=300&q=80',
   'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=300&q=80',

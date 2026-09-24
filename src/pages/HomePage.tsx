@@ -8,8 +8,6 @@ import { PortfolioSection } from '../components/sections/PortfolioSection';
 import { WeddingGallerySection } from '../components/sections/WeddingGallerySection';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FeatureIconsSection } from '../components/sections/FeatureIconsSection';
-import { CommitmentSection } from '../components/sections/CommitmentSection';
-import { WhyChooseUsSection } from '../components/sections/WhyChooseUsSection';
 import { DarkPalaceSection } from '../components/sections/DarkPalaceSection';
 import { FAQSection } from '../components/sections/FAQSection';
 import { NewsletterSection } from '../components/sections/NewsletterSection';
@@ -31,17 +29,14 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 1. Hero Section */}
       <Hero
         onOpenEnquiry={onOpenEnquiry}
-        onExploreWork={() => onNavigate('portfolio')}
+        onExploreWork={() => onNavigate('gallery')}
       />
 
       {/* 2. About Section: The Minds Behind Your Perfect Day */}
       <AboutSection onLearnMore={() => onNavigate('about')} />
 
-      {/* 3. Founder Story Section: Architects of Romance (With Video Placeholder & Modal) */}
+      {/* 3. Founder Story Section: Architects of Romance */}
       <FounderStorySection onOpenEnquiry={onOpenEnquiry} />
-
-      {/* 4. Photo Collage Strip Section */}
-      <PhotoStripSection />
 
       {/* 5. Services Section: Bespoke Planning For Your Special Day */}
       <ServicesSection onSelectService={() => onNavigate('services')} />
@@ -49,7 +44,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 6. Portfolio Section: Visualizing Your Dreams Into Reality */}
       <PortfolioSection
         onSelectProject={onSelectProject}
-        onViewAll={() => onNavigate('portfolio')}
+        onViewAll={() => onNavigate('gallery')}
       />
 
       {/* 7. Wedding Gallery Section: Mosaic of Moments */}
@@ -61,20 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 9. Client Testimonials Section: Love Stories & Celebrations */}
       <Testimonials />
 
-      {/* 10. Our Commitment Section: The Atelier Promise */}
-      <CommitmentSection
-        onExplorePackages={() => onNavigate('packages')}
-        onOpenEnquiry={onOpenEnquiry}
-      />
-
-      {/* 11. Why Choose Us Section */}
-      <WhyChooseUsSection
-        onNavigate={onNavigate}
-        onLearnMore={() => onNavigate('about')}
-        onOpenEnquiry={onOpenEnquiry}
-      />
-
-      {/* 12. Destination Elegance Section: Palaces, Islands & Desert Sanctuaries */}
+      {/* 10. Destination Elegance Section: Palaces, Islands & Desert Sanctuaries */}
       <DarkPalaceSection
         onNavigateVenues={() => onNavigate('venues')}
         onOpenEnquiry={onOpenEnquiry}

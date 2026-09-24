@@ -29,96 +29,71 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="-mt-14 p-6 md:p-12 space-y-12">
+        <div className="-mt-14 p-6 md:p-10 space-y-8">
           
-          {/* Header */}
-          <div className="space-y-4 max-w-3xl">
+          {/* Top Header */}
+          <div className="space-y-2 max-w-3xl">
             <span className="micro-label text-[#7A8864]">
               {project.category} · {project.location}
             </span>
-            <h2 className="font-serif text-4xl md:text-6xl font-light text-[#262822] leading-tight">
+            <h2 className="font-serif text-3xl md:text-5xl font-light text-[#262822] leading-tight">
               {project.title}
             </h2>
-            <p className="font-serif text-xl italic text-[#7A8864]">
+            <p className="font-serif text-base italic text-[#7A8864]">
               {project.subtitle}
             </p>
           </div>
 
           {/* Quick Specs Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-6 border-y border-[#C8C0B5]/40 text-xs">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-y border-[#C8C0B5]/40 text-xs">
             <div>
               <span className="micro-label text-[#C8C0B5] block mb-1">LOCATION</span>
-              <span className="font-serif text-base text-[#262822] flex items-center gap-1">
+              <span className="font-serif text-sm text-[#262822] flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-[#7A8864]" />
                 {project.details.venue}
               </span>
             </div>
             <div>
-              <span className="micro-label text-[#C8C0B5] block mb-1">SCALE</span>
-              <span className="font-serif text-base text-[#262822] flex items-center gap-1">
+              <span className="micro-label text-[#C8C0B5] block mb-1">VENUE</span>
+              <span className="font-serif text-sm text-[#262822] flex items-center gap-1">
                 <Users className="w-3.5 h-3.5 text-[#7A8864]" />
                 {project.guestCount}
               </span>
             </div>
             <div>
-              <span className="micro-label text-[#C8C0B5] block mb-1">YEAR</span>
-              <span className="font-serif text-base text-[#262822] flex items-center gap-1">
+              <span className="micro-label text-[#C8C0B5] block mb-1">DATE / YEAR</span>
+              <span className="font-serif text-sm text-[#262822] flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5 text-[#7A8864]" />
                 {project.year}
               </span>
             </div>
             <div>
-              <span className="micro-label text-[#C8C0B5] block mb-1">BOTANICAL DIRECTION</span>
-              <span className="text-xs text-[#262822]/80 block">
+              <span className="micro-label text-[#C8C0B5] block mb-1">STYLING</span>
+              <span className="text-xs text-[#262822]/80 block truncate">
                 {project.details.floralDesign}
               </span>
             </div>
           </div>
 
-          {/* Hero Main Image */}
-          <div className="w-full aspect-16/9 overflow-hidden">
-            <img
-              src={project.heroImage}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Editorial Narrative */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-            <div className="md:col-span-1 space-y-4">
-              <h3 className="font-serif text-2xl text-[#7A8864] italic">
-                The Narrative
-              </h3>
-              <p className="text-sm text-[#262822]/80 leading-relaxed font-light">
-                {project.summary}
-              </p>
-            </div>
-            <div className="md:col-span-2">
-              <p className="text-base text-[#262822]/90 leading-relaxed font-serif text-justify">
-                {project.storyNarrative}
-              </p>
-            </div>
-          </div>
-
-          {/* Image Sequence / Masonry Gallery */}
-          <div className="space-y-8">
-            <h3 className="micro-label text-[#7A8864] border-b border-[#C8C0B5]/40 pb-3">
-              EDITORIAL GALLERY & ATMOSPHERE
+          {/* Direct Photo Gallery (Front Cover Image Excluded) */}
+          <div className="space-y-6 pt-2">
+            <h3 className="micro-label text-[#7A8864] border-b border-[#C8C0B5]/40 pb-2">
+              CELEBRATION GALLERY
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {project.gallery.map((imgUrl, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {(project.gallery.filter((img) => img !== project.heroImage).length > 0
+                ? project.gallery.filter((img) => img !== project.heroImage)
+                : project.gallery
+              ).map((imgUrl, idx) => (
                 <div
                   key={idx}
-                  className={`overflow-hidden ${
-                    idx % 3 === 0 ? 'md:col-span-2 aspect-21/9' : 'aspect-4/3'
-                  }`}
+                  className="rounded-xl overflow-hidden border border-[#C8C0B5]/30 shadow-lg bg-[#FAF7F2] flex items-center justify-center p-2"
                 >
                   <img
                     src={imgUrl}
-                    alt={`${project.title} detail ${idx + 1}`}
-                    className="w-full h-full object-cover hover:scale-103 transition-transform duration-700"
+                    alt={`${project.title} photo ${idx + 1}`}
+                    className="w-full h-auto max-h-[580px] object-contain rounded-lg block hover:scale-[1.015] transition-transform duration-500"
                   />
                 </div>
               ))}
@@ -126,11 +101,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
 
           {/* Next Steps CTA */}
-          <div className="bg-[#7A8864] text-[#FAF7F2] p-8 md:p-12 text-center space-y-6">
-            <h3 className="font-serif text-3xl md:text-4xl font-light">
+          <div className="bg-[#7A8864] text-[#FAF7F2] p-6 md:p-10 text-center space-y-4 rounded-xl shadow-lg">
+            <h3 className="font-serif text-2xl md:text-3xl font-light">
               Desiring a Celebration of Similar Elevation?
             </h3>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#E5D5BC]">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#E5D5BC]">
               BESPOKE EVENT PLANNING & ART DIRECTION · DUBAI & WORLDWIDE
             </p>
             <div>
@@ -139,10 +114,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   onClose();
                   onOpenEnquiry();
                 }}
-                className="button-editorial px-8 py-3.5 bg-[#FAF7F2] text-[#262822] hover:bg-[#E5D5BC] transition-colors inline-flex items-center space-x-2"
+                className="button-editorial px-7 py-3 bg-[#FAF7F2] text-[#262822] hover:bg-[#E5D5BC] transition-colors inline-flex items-center space-x-2 text-xs"
               >
                 <span>BEGIN YOUR CELEBRATION ENQUIRY</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>

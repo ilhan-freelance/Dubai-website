@@ -59,7 +59,6 @@ export const Navigation: React.FC<NavigationProps> = ({
     { label: 'Home', id: 'home' },
     { label: 'Philosophy', id: 'about' },
     { label: 'Offerings', id: 'services' },
-    { label: 'Experience', id: 'portfolio' },
     { label: 'Destinations', id: 'venues' },
     { label: 'Connect', id: 'contact' },
   ];

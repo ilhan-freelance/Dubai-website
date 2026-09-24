@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Sparkles, MapPin, ArrowRight } from 'lucide-react';
 
 interface DarkPalaceSectionProps {
@@ -10,45 +9,38 @@ interface DarkPalaceSectionProps {
 const DESTINATION_VENUE_BOXES = [
   {
     id: 'venue-1',
-    title: 'Raffles Imperial Palace',
-    category: 'ROYAL PALACE',
-    location: 'Palm Jumeirah, Dubai',
-    image: '/portfolio-dubai.png',
+    title: 'The Ritz-Carlton, Dubai',
+    category: 'LUXURY BEACH RESORT',
+    location: 'JBR, Dubai',
+    image: '/venues/ritz-carlton-dubai.jpg',
   },
   {
     id: 'venue-2',
-    title: 'Al Maha Desert Dunes',
-    category: 'DESERT SANCTUARY',
-    location: 'Dubai Conservation Reserve',
-    image: '/portfolio-desert.png',
+    title: 'One&Only Royal Mirage',
+    category: 'PALATIAL ARABIAN RESORT',
+    location: 'Al Sufouh, Dubai',
+    image: '/venues/one-only-royal-mirage.jpg',
   },
   {
     id: 'venue-3',
-    title: 'Bvlgari Waterfront Lawns',
-    category: 'PRIVATE ISLAND',
-    location: 'Jumeira Bay Island',
-    image: '/portfolio-garden.png',
+    title: 'Atlantis, The Palm',
+    category: 'PALM ISLAND ICON',
+    location: 'Palm Jumeirah, Dubai',
+    image: '/venues/atlantis-the-palm.jpg',
   },
   {
     id: 'venue-4',
-    title: 'Armani Fountain Terrace',
-    category: 'URBAN ICONIC',
-    location: 'Downtown Dubai',
-    image: '/portfolio-dance.png',
+    title: 'FIVE Palm Jumeirah',
+    category: 'MODERN WATERFRONT LIFESTYLE',
+    location: 'Palm Jumeirah, Dubai',
+    image: '/venues/five-palm-jumeirah.jpg',
   },
   {
     id: 'venue-5',
-    title: 'One&Only Royal Mirage',
-    category: 'ARABIAN BEACH',
-    location: 'Al Sufouh, Dubai',
-    image: '/about-couple-arch.png',
-  },
-  {
-    id: 'venue-6',
-    title: 'Jumeirah Al Qasr Pier',
-    category: 'PALACE CANAL',
-    location: 'Madinat Jumeirah',
-    image: '/portfolio-rings.png',
+    title: 'Grand Hyatt Dubai',
+    category: 'CITY RESORT & ROYAL BALLROOM',
+    location: 'Garhoud, Dubai',
+    image: '/venues/grand-hyatt-dubai.jpg',
   },
 ];
 
@@ -61,11 +53,35 @@ export const DarkPalaceSection: React.FC<DarkPalaceSectionProps> = ({ onNavigate
     }
   };
 
-  // Create duplicate set for seamless infinite vertical scroll
-  const verticalTrackItems = [...DESTINATION_VENUE_BOXES, ...DESTINATION_VENUE_BOXES];
+  // Create duplicate sets for seamless infinite vertical scroll
+  const verticalTrackItems = [
+    ...DESTINATION_VENUE_BOXES,
+    ...DESTINATION_VENUE_BOXES,
+    ...DESTINATION_VENUE_BOXES,
+  ];
 
   return (
     <section className="py-14 md:py-20 bg-[#FAF8F6] text-[#1A1D20] px-4 sm:px-6 md:px-10 relative overflow-hidden border-t border-[#C9A96E]/20">
+      <style>{`
+        @keyframes marqueeVertical {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, -33.333%, 0);
+          }
+        }
+        .animate-vertical-marquee {
+          animation: marqueeVertical 28s linear infinite;
+          will-change: transform;
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+        .animate-vertical-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto">
         {/* Single Outer Frame Container */}
         <div className="bg-white rounded-3xl border border-[#C9A96E]/40 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center min-h-[500px] md:min-h-[540px]">
@@ -107,29 +123,22 @@ export const DarkPalaceSection: React.FC<DarkPalaceSectionProps> = ({ onNavigate
             {/* Bottom Fade Gradient Mask */}
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/90 to-transparent z-10 pointer-events-none" />
 
-            {/* Single Vertical Moving Track (Top to Down) */}
+            {/* GPU Hardware Accelerated Track */}
             <div className="w-full h-full overflow-hidden">
-              <motion.div
-                animate={{ y: ['0%', '-50%'] }}
-                transition={{
-                  duration: 24,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-                className="flex flex-col gap-6"
-              >
+              <div className="animate-vertical-marquee flex flex-col gap-6">
                 {verticalTrackItems.map((venue, idx) => (
                   <div
                     key={`v-single-${venue.id}-${idx}`}
                     onClick={handleAction}
-                    className="cursor-pointer rounded-2xl overflow-hidden bg-white border border-[#C9A96E]/35 shadow-lg p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 transition-all hover:border-[#3B5649]/50"
+                    className="cursor-pointer rounded-2xl overflow-hidden bg-white border border-[#C9A96E]/35 shadow-lg p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 transition-all hover:border-[#3B5649]/50 hover:shadow-xl"
                   >
-                    {/* Venue Image Thumbnail - High-Impact Luxury Aspect */}
+                    {/* Venue Image Thumbnail */}
                     <div className="w-full sm:w-44 h-36 sm:h-28 rounded-xl overflow-hidden bg-gray-900 shrink-0 relative shadow-inner">
                       <img
                         src={venue.image}
                         alt={venue.title}
                         className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                        loading="eager"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                     </div>
@@ -147,7 +156,7 @@ export const DarkPalaceSection: React.FC<DarkPalaceSectionProps> = ({ onNavigate
                     </div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
           </div>

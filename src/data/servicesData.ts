@@ -16,7 +16,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     title: 'Weddings',
     tagline: 'From intimate vows to grand multi-day celebrations',
     description: 'We bring together artistic direction, bespoke spatial design, and flawless execution so every moment feels entirely authentic to your personal narrative.',
-    image: '/service-planning.png',
+    image: '/services/full-planning-couture.jpg',
     keyInclusions: [
       'Full End-to-End Creative Direction & Moodboarding',
       'Architectural Spatial Design & Tablescape Styling',
@@ -33,7 +33,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     title: 'Destination Weddings',
     tagline: 'Immersive multi-day travel celebrations in Dubai & beyond',
     description: 'Seamless travel coordination, curated welcome soirees, desert sunset rituals, and farewell brunches for international couples and their guests.',
-    image: '/portfolio-desert.png',
+    image: '/venues/atlantis-the-palm.jpg',
     keyInclusions: [
       'Complete Multi-Day Itinerary Planning',
       'VIP Travel & Luxury Transfers Coordination',
@@ -50,7 +50,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     title: 'Corporate Events',
     tagline: 'High-profile galas, product reveals & brand ateliers',
     description: 'Elevating corporate gatherings into sophisticated brand experiences that command respect, captivate high-net-worth guests, and linger in memory.',
-    image: '/service-coordination.png',
+    image: '/services/partial-coordination-couture.jpg',
     keyInclusions: [
       'Architectural Stage & Scenic Environment Design',
       'High-Level Protocol & Diplomatic Host Logistics',
@@ -67,7 +67,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     title: 'Private Celebrations',
     tagline: 'Milestone birthdays, anniversary dinners & private soirees',
     description: 'Transforming private estates, luxury yachts, and exclusive desert camps into intimate sanctuaries of warmth, candlelit beauty, and hospitality.',
-    image: '/service-day-of.png',
+    image: '/services/day-of-management-couture.jpg',
     keyInclusions: [
       'Intimate Atmosphere & Candlelight Curation',
       'Private Estate & Secret Venue Transformation',
