@@ -57,21 +57,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
   return (
     <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
-      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED) ── */}
-      <section className="relative w-full pt-0 pb-8 sm:pb-12">
+      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED WITH GRADUAL FADE) ── */}
+      <section className="relative w-full pt-0 pb-0">
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18] shadow-md">
+          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
             <img
               src="/hero_philosophy_story.png"
               alt="Love Details Atelier Philosophy"
               className="w-full h-full object-cover"
             />
+            {/* Smooth gradual bottom fade merging into page background */}
+            <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 md:h-44 bg-gradient-to-t from-[#FAF8F6] via-[#FAF8F6]/60 to-transparent pointer-events-none" />
           </div>
         </AnimatedSection>
       </section>
 
-      {/* ── 2. SINGLE LINE MAIN HEADING ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-2 pb-16 text-center space-y-4">
+      {/* ── 2. SINGLE LINE MAIN HEADING (POSITIONED BELOW HERO FRAME) ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 sm:pt-14 md:pt-20 pb-20 sm:pb-24 text-center space-y-4">
         <AnimatedSection direction="up">
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
             Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
