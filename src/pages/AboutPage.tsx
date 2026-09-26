@@ -74,10 +74,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       {/* ── 2. SINGLE LINE MAIN HEADING ── */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-2 pb-16 text-center space-y-4">
         <AnimatedSection direction="up">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 text-[#7A8864] text-xs micro-label tracking-[0.25em] mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>OUR PHILOSOPHY &amp; 10-YEAR JOURNEY</span>
-          </div>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
             Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
           </h1>
