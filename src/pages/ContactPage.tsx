@@ -29,21 +29,17 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-14 sm:pt-16 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden">
+    <div className="pt-2 sm:pt-4 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden">
       
       {/* ── PAGE HERO SECTION (SINGLE LINE HEADING, REDUCED TOP PADDING) ── */}
-      <section className="relative max-w-5xl mx-auto px-4 sm:px-8 pt-2 pb-6 text-center space-y-3">
+      <section className="relative max-w-5xl mx-auto px-4 sm:px-8 pt-0 pb-4 text-center space-y-3">
         <div className="absolute top-4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
 
         <AnimatedSection direction="up">
-          <div className="space-y-3 text-center">
+          <div className="text-center">
             <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#262822] leading-tight tracking-tight text-center sm:whitespace-nowrap">
               Tell Us About Your <span className="italic text-[#7A8864]">Celebration.</span>
             </h1>
-            
-            <p className="text-sm sm:text-lg text-[#262822]/80 max-w-2xl mx-auto font-serif leading-relaxed text-center italic">
-              We accept a strictly limited number of wedding and event commissions each year to ensure uncompromising artistic direction and personal producer care.
-            </p>
           </div>
         </AnimatedSection>
       </section>
