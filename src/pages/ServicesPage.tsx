@@ -146,6 +146,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
             );
           })}
         </div>
+      </section>
     </div>
   );
 };
