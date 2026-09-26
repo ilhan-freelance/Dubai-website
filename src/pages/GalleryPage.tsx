@@ -125,10 +125,10 @@ const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenEnquiry, onNavigateHome }) => {
   return (
-    <div className="pt-6 sm:pt-8 pb-20 bg-[#FAF7F2] text-[#212529] min-h-screen">
+    <div className="pt-2 sm:pt-4 pb-20 bg-[#FAF7F2] text-[#212529] min-h-screen">
       
       {/* ── TOP HEADER ── */}
-      <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-6 flex flex-col md:flex-row items-center justify-between border-b border-[#C8C0B5]/40 mb-10 gap-6">
+      <header className="max-w-7xl mx-auto px-4 sm:px-6 pt-0 pb-6 flex flex-col md:flex-row items-center justify-between border-b border-[#C8C0B5]/40 mb-10 gap-6">
         <button
           onClick={onNavigateHome}
           className="px-5 py-2.5 bg-white hover:bg-[#7A8864] hover:text-white rounded-full text-xs font-sans font-semibold uppercase tracking-wider text-[#212529] inline-flex items-center space-x-2 transition-all cursor-pointer border border-[#C8C0B5]/50 shadow-xs shrink-0"

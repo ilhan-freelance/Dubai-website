@@ -17,8 +17,6 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
         <AnimatedSection direction="up">
           <div className="w-full relative bg-[#1A1C18]">
             <motion.img
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               src="/hero_venues_dubai_palm.png"
               alt="Dubai Palm Island Luxury Venue Showcase"
               className="w-full h-auto block"

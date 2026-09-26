@@ -17,10 +17,10 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onOpenEnquiry }) => 
   ];
 
   return (
-    <div className="pt-24 pb-28 bg-white text-[#212529] overflow-hidden">
+    <div className="pt-6 sm:pt-8 pb-28 bg-white text-[#212529] overflow-hidden">
       
       {/* ── PAGE HERO SECTION WITH HERO IMAGE ── */}
-      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 pb-12 space-y-10">
+      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-2 pb-12 space-y-10">
         <div className="absolute top-10 right-10 w-96 h-96 bg-[#4A6B5B]/10 rounded-full filter blur-3xl pointer-events-none" />
 
         <AnimatedSection direction="up">
