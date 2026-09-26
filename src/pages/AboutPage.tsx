@@ -66,8 +66,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               alt="Love Details Atelier Philosophy"
               className="w-full h-full object-cover"
             />
-            {/* Smooth gradual bottom fade merging into page background */}
-            <div className="absolute inset-x-0 bottom-0 h-28 sm:h-36 md:h-44 bg-gradient-to-t from-[#FAF8F6] via-[#FAF8F6]/60 to-transparent pointer-events-none" />
+            {/* Subtle bottom edge fade merging into page background */}
+            <div className="absolute inset-x-0 bottom-0 h-8 sm:h-12 bg-gradient-to-t from-[#FAF8F6] to-transparent pointer-events-none" />
           </div>
         </AnimatedSection>
       </section>
