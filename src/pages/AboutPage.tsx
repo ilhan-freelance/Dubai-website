@@ -66,7 +66,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               alt="Love Details Atelier Philosophy"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F6] via-transparent to-black/20" />
           </div>
         </AnimatedSection>
       </section>
@@ -77,7 +76,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
             Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
           </h1>
-          <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/60 to-transparent mx-auto mt-4" />
         </AnimatedSection>
       </section>
 
