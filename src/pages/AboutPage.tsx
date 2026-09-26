@@ -57,17 +57,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
   return (
     <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
-      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED WITH GRADUAL FADE) ── */}
-      <section className="relative w-full pt-0 pb-0">
+      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED WITH DOWNWARD MASK FADE) ── */}
+      <section className="relative w-full pt-0 pb-0 bg-[#FAF8F6]">
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
+          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] relative group bg-[#FAF8F6]">
             <img
               src="/hero_philosophy_story.png"
               alt="Love Details Atelier Philosophy"
               className="w-full h-full object-cover"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
+              }}
             />
-            {/* Subtle bottom edge fade merging into page background */}
-            <div className="absolute inset-x-0 bottom-0 h-8 sm:h-12 bg-gradient-to-t from-[#FAF8F6] to-transparent pointer-events-none" />
           </div>
         </AnimatedSection>
       </section>
