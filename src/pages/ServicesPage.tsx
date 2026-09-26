@@ -13,9 +13,9 @@ const EVENTS_MANAGED = [
     title: 'Weddings',
     image: '/offering_weddings.png',
     lines: [
-      'Bespoke mandap architecture, waterfront floral installations, and full-scale spatial design.',
-      'From intimate beach vows to grand multi-day royal celebrations across Dubai & Abu Dhabi.',
-      'Complete end-to-end master production, artisan curation, and VIP guest concierge care.'
+      'Bespoke mandap architecture, waterfront floral design, and full-scale spatial curation.',
+      'From intimate beach vows to grand multi-day royal wedding galas in Dubai & Abu Dhabi.',
+      'Complete end-to-end master production, artisan curation, and VIP concierge protocol.'
     ]
   },
   {
@@ -23,9 +23,9 @@ const EVENTS_MANAGED = [
     title: 'Private Parties',
     image: '/offering_private_parties.png',
     lines: [
-      'Intimate villa poolside lounge setups, warm ambient illumination, and bespoke party styling.',
-      'Crafted for discerning hosts seeking exclusive entertainment, mixology bars, and gourmet dining.',
-      'Full spatial transformation with signature floral features, acoustic sound, and seamless execution.'
+      'Intimate villa poolside lounge setups, warm ambient illumination, and party styling.',
+      'Crafted for discerning hosts seeking exclusive entertainment and fine gourmet dining.',
+      'Full spatial transformation with signature floral art, live acoustics, and execution.'
     ]
   },
   {
@@ -33,9 +33,9 @@ const EVENTS_MANAGED = [
     title: 'Religious Events',
     image: '/offering_religious_events.png',
     lines: [
-      'Sacred traditional ceremonies adorned with fresh marigolds, jasmine, and regal silk drapes.',
-      'Authentic ritual aesthetics, brass diya lighting, and custom mandap & pooja architecture.',
-      'Respectful cultural heritage planning with precision timing, floral art, and guest protocol.'
+      'Sacred traditional ceremonies adorned with marigolds, jasmine, and silk draping.',
+      'Authentic ritual aesthetics, brass diya illumination, and custom pooja architecture.',
+      'Respectful cultural heritage planning with precision timing and VIP guest protocol.'
     ]
   },
   {
@@ -43,9 +43,9 @@ const EVENTS_MANAGED = [
     title: 'Corporate Events',
     image: '/offering_corporate_events.png',
     lines: [
-      'High-impact executive galas, brand launches, and VIP summits in iconic Dubai ballrooms.',
-      'Sophisticated architectural lighting, bespoke banquet styling, and custom stage design.',
-      'Delivering flawless corporate hospitality, production management, and brand storytelling.'
+      'High-impact executive galas, brand launches, and VIP summits in Dubai ballrooms.',
+      'Sophisticated architectural lighting, bespoke banquet styling, and stage design.',
+      'Delivering flawless corporate hospitality, event production, and brand narrative.'
     ]
   },
   {
@@ -53,9 +53,9 @@ const EVENTS_MANAGED = [
     title: 'Milestone Birthdays',
     image: '/offering_milestone_birthdays.png',
     lines: [
-      'Glamorous milestone 30th, 50th, and special age celebrations in luxury rooftop venues.',
-      'Custom neon installation, ambient lighting design, champagne towers, and live DJ production.',
-      'Creating vibrant, unforgettable party atmospheres tailored to your personal aesthetic.'
+      'Glamorous milestone 30th and 50th birthday galas hosted in luxury rooftop venues.',
+      'Custom neon installation, ambient lighting design, and live acoustic DJ production.',
+      'Creating vibrant, unforgettable party atmospheres tailored to your personal taste.'
     ]
   },
   {
@@ -63,8 +63,8 @@ const EVENTS_MANAGED = [
     title: 'Celebrations',
     image: '/offering_celebrations.png',
     lines: [
-      'Custom-commissioned floral arches, candlelit pathways, and romantic anniversary settings.',
-      'Specialized decor for proposals, vow renewals, baby showers, and intimate family milestones.',
+      'Custom-commissioned floral arches, candlelit pathways, and anniversary settings.',
+      'Specialized decor for proposals, vow renewals, and intimate family milestone events.',
       'Transforming every special occasion into a timeless, photogenic luxury experience.'
     ]
   }
@@ -125,8 +125,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
 
                   {/* Text Editorial Block */}
                   <div
-                    className={`lg:col-span-6 space-y-6 ${
-                      isEven ? 'lg:order-2' : 'lg:order-1'
+                    className={`lg:col-span-6 space-y-6 max-w-xl ${
+                      isEven ? 'lg:order-2 lg:pl-4' : 'lg:order-1 lg:pr-4'
                     }`}
                   >
                     <div className="space-y-3">
@@ -138,7 +138,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
 
                     <div className="space-y-3.5 font-serif text-base sm:text-lg text-[#262822]/85 border-l-2 border-[#7A8864]/40 pl-5 py-1 leading-relaxed">
                       {event.lines.map((line, idx) => (
-                        <p key={idx}>
+                        <p key={idx} className="leading-snug">
                           {line}
                         </p>
                       ))}
