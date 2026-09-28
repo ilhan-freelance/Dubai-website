@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { AnimatedSection } from '../components/common/AnimatedSection';
 
 interface ServicesPageProps {
@@ -56,15 +56,42 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
   return (
     <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden">
       
-      {/* ── PAGE HERO SECTION WITH HERO IMAGE ── */}
-      <section className="relative w-full pt-0 pb-16">
+      {/* ── PAGE HERO SECTION WITH EDITORIAL BANNER ── */}
+      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-6 sm:pt-10 pb-12 space-y-8 text-center">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
+
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#7A8864]" />
+              <span className="micro-label text-[#7A8864] tracking-[0.3em]">
+                ATELIER OFFERINGS &amp; SERVICES
+              </span>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] leading-tight tracking-tight">
+              Curated Event Verticals &amp; <span className="italic text-[#7A8864]">Bespoke Planning.</span>
+            </h1>
+            <p className="text-sm sm:text-lg text-[#262822]/80 font-serif italic max-w-2xl mx-auto">
+              From intimate beach vows to multi-day royal wedding galas across Dubai &amp; Abu Dhabi.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* Hero Image Banner */}
+        <AnimatedSection direction="up" delay={0.2}>
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
             <motion.img
               src="/offerings_hero_section.png"
               alt="Love Details Atelier Services Planning"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 text-white">
+              <span className="font-serif text-xs sm:text-sm tracking-wider uppercase text-[#E5D5BC]">
+                Atelier Scope &bull; Multi-Day Weddings &amp; Galas
+              </span>
+            </div>
           </div>
         </AnimatedSection>
       </section>

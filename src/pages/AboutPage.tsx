@@ -45,26 +45,41 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
   return (
     <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
-      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED WITH DOWNWARD MASK FADE) ── */}
-      <section className="relative w-full pt-0 pb-0 bg-[#FAF8F6]">
+      {/* ── PAGE HERO SECTION WITH EDITORIAL BANNER ── */}
+      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-6 sm:pt-10 pb-12 space-y-8 text-center">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
+
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative group bg-[#FAF8F6]">
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#7A8864]" />
+              <span className="micro-label text-[#7A8864] tracking-[0.3em]">
+                OUR PHILOSOPHY &amp; STORY
+              </span>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] leading-tight tracking-tight">
+              Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
+            </h1>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/50 to-transparent mx-auto mt-4" />
+          </div>
+        </AnimatedSection>
+
+        {/* Hero Image Banner */}
+        <AnimatedSection direction="up" delay={0.2}>
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
             <img
               src="/hero_philosophy_story.png"
               alt="Love Details Atelier Philosophy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 text-white">
+              <span className="font-serif text-xs sm:text-sm tracking-wider uppercase text-[#E5D5BC]">
+                Atelier Philosophy &bull; Dubai &amp; Global Destinations
+              </span>
+            </div>
           </div>
-        </AnimatedSection>
-      </section>
-
-      {/* ── 2. SINGLE LINE MAIN HEADING (POSITIONED BELOW HERO FRAME) ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-10 text-center space-y-4">
-        <AnimatedSection direction="up">
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
-            Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
-          </h1>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/50 to-transparent mx-auto mt-6" />
         </AnimatedSection>
       </section>
 
