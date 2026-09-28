@@ -60,7 +60,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#FAF7F2] text-[#262822] w-full max-w-3xl border border-[#C8C0B5] shadow-2xl relative p-6 md:p-12 my-auto"
+        className="bg-[#FAF7F2] text-[#262822] w-full max-w-3xl border border-[#C8C0B5] shadow-2xl relative p-6 md:p-12 my-auto max-h-[90vh] overflow-y-auto rounded-3xl"
       >
         
         {/* Close Button */}

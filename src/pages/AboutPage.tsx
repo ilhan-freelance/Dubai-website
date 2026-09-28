@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Heart, ArrowRight, Quote, MapPin, Calendar, Compass, ShieldCheck, Star, Layers, Users, Award, CheckCircle2, ChevronRight, MessageSquare, GlassWater } from 'lucide-react';
+import React from 'react';
+import { Sparkles, Heart, ArrowRight, Quote, MapPin, Calendar, Compass, Star, CheckCircle2, MessageSquare, GlassWater } from 'lucide-react';
 import { AnimatedSection } from '../components/common/AnimatedSection';
 
 interface AboutPageProps {
   onOpenEnquiry: () => void;
 }
 
-const BEHIND_THE_SCENES_SERVICES = [
-  { icon: Sparkles, title: 'Spatial Mapping & Décor', desc: 'Bespoke architectural renders, floral design & ambient lighting maps.' },
-  { icon: Layers, title: 'Production Engineering', desc: 'Custom stage fabrication, acoustic alignment & structural engineering.' },
-  { icon: Star, title: 'Couture Entertainment', desc: 'Curating international artists, master musicians, DJs & theatrical acts.' },
-  { icon: Heart, title: 'VIP Guest Concierge', desc: 'Luxury RSVP management, protocol handling & personalized hospitality.' },
-  { icon: Compass, title: 'Charter & Fleet Logistics', desc: 'Chauffeur fleets, private transfers & seamless arrival coordination.' },
-  { icon: Award, title: 'Authentic Ritual Mandaps', desc: 'Deep mastery of traditional Indian wedding ceremonies & sacred aesthetics.' },
-  { icon: Users, title: 'Artisan & Culinary Curation', desc: 'Collaborating with celebrity chefs, master patissiers & elite photographers.' },
-  { icon: ShieldCheck, title: 'Day-of Producer Care', desc: 'Direct, hands-on producer leadership ensuring zero stress for the couple.' },
-];
+
 
 const TIMELINE_MILESTONES = [
   {
@@ -52,8 +42,6 @@ const TIMELINE_MILESTONES = [
 ];
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
-  const [activeTab, setActiveTab] = useState<'menka' | 'preeti'>('menka');
-
   return (
     <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
@@ -65,21 +53,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
               src="/hero_philosophy_story.png"
               alt="Love Details Atelier Philosophy"
               className="w-full h-full object-cover"
-              style={{
-                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
-              }}
             />
           </div>
         </AnimatedSection>
       </section>
 
       {/* ── 2. SINGLE LINE MAIN HEADING (POSITIONED BELOW HERO FRAME) ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 sm:pt-14 md:pt-20 pb-20 sm:pb-24 text-center space-y-4">
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-10 text-center space-y-4">
         <AnimatedSection direction="up">
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
             Behind Every Extraordinary Celebration <span className="italic text-[#7A8864]">Is a Story.</span>
           </h1>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/50 to-transparent mx-auto mt-6" />
         </AnimatedSection>
       </section>
 
@@ -88,7 +73,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
         
         <AnimatedSection direction="up">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="micro-label text-[#7A8864] tracking-[0.3em]">MEET THE FOUNDERS</span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#262822]">
               Menka &amp; Preeti
             </h2>
@@ -98,139 +82,90 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
           </div>
         </AnimatedSection>
 
-        {/* Founder Spotlight Banner */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        {/* Founder Spotlight Banner (Left: Menka, Center: Image, Right: Preeti) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Authentic Founders Image */}
-          <div className="lg:col-span-6">
+          {/* Left: Menka Box */}
+          <div className="lg:col-span-4 flex flex-col justify-between">
             <AnimatedSection direction="up">
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#D4AF37]/30 via-[#7A8864]/30 to-[#D4AF37]/30 rounded-3xl blur-md opacity-70 group-hover:opacity-100 transition duration-1000"></div>
-                <div className="relative w-full aspect-[4/3] overflow-hidden rounded-3xl border-2 border-[#D4AF37]/40 shadow-2xl bg-[#1A1C18]">
-                  <img
-                    src="/founders-menka-priti.jpg"
-                    alt="Love Details Founders Menka & Preeti"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md border border-white/20 p-4 rounded-2xl text-white">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-serif text-base font-medium">Menka &amp; Preeti</p>
-                        <p className="text-xs text-[#E5D5BC] font-serif">Co-Founders &amp; Creative Directors</p>
-                      </div>
-                      <span className="px-3 py-1 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] micro-label tracking-widest rounded-full">
-                        SINCE 2016
-                      </span>
+              <div className="bg-white p-7 sm:p-8 rounded-3xl border border-[#C8C0B5]/60 shadow-md space-y-5 h-full flex flex-col justify-between hover:border-[#7A8864]/60 transition-colors">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 border-b border-[#C8C0B5]/30 pb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#7A8864]/10 flex items-center justify-center text-[#7A8864]">
+                      <Sparkles className="w-5 h-5" />
                     </div>
+                    <div>
+                      <h3 className="font-serif text-2xl font-light text-[#262822]">Menka</h3>
+                      <p className="text-xs font-serif text-[#7A8864] font-medium">Spatial Producer &amp; Event Strategist</p>
+                    </div>
+                  </div>
+
+                  <p className="font-serif text-sm text-[#262822]/85 leading-relaxed">
+                    Born and raised in Dubai, Menka has been in the events industry since 2006. Starting with major exhibitions and corporate client management, she later pivoted to high-end private celebrations. Planning her own Dubai wedding in 2008 gave her a profound, firsthand understanding of what couples experience.
+                  </p>
+                </div>
+
+                <div className="space-y-2 pt-4 border-t border-[#C8C0B5]/30">
+                  <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
+                    <span><strong>20+ Years in Dubai:</strong> Deep venue relationships across top resorts &amp; private estates.</span>
+                  </div>
+                  <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
+                    <span><strong>Logistical Precision:</strong> Spatial blueprints, budget safeguards &amp; seamless execution.</span>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
           </div>
 
-          {/* Founder Roles Tabs & Details */}
-          <div className="lg:col-span-6 space-y-6">
-            <AnimatedSection direction="up">
-              
-              {/* Tab Selector Buttons */}
-              <div className="flex bg-[#EFECE6] p-1.5 rounded-2xl border border-[#C8C0B5]/60">
-                <button
-                  onClick={() => setActiveTab('menka')}
-                  className={`flex-1 py-3 px-4 rounded-xl text-xs font-serif font-semibold tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 ${
-                    activeTab === 'menka'
-                      ? 'bg-white text-[#262822] shadow-md border border-[#C8C0B5]/40'
-                      : 'text-[#262822]/70 hover:text-[#262822]'
-                  }`}
-                >
-                  <Sparkles className="w-4 h-4 text-[#7A8864]" />
-                  <span>MENKA — EVENTS BY EXPERIENCE</span>
-                </button>
-                <button
-                  onClick={() => setActiveTab('preeti')}
-                  className={`flex-1 py-3 px-4 rounded-xl text-xs font-serif font-semibold tracking-wider transition-all duration-300 flex items-center justify-center space-x-2 ${
-                    activeTab === 'preeti'
-                      ? 'bg-white text-[#262822] shadow-md border border-[#C8C0B5]/40'
-                      : 'text-[#262822]/70 hover:text-[#262822]'
-                  }`}
-                >
-                  <Heart className="w-4 h-4 text-[#7A8864]" />
-                  <span>PREETI — WEDDINGS WITH A HEART</span>
-                </button>
+          {/* Center: Authentic Founders Image */}
+          <div className="lg:col-span-4 flex flex-col justify-center">
+            <AnimatedSection direction="up" delay={0.1}>
+              <div className="relative group h-full flex flex-col justify-center">
+                <div className="absolute -inset-2 bg-gradient-to-r from-[#D4AF37]/30 via-[#7A8864]/30 to-[#D4AF37]/30 rounded-3xl blur-md opacity-70 group-hover:opacity-100 transition duration-1000"></div>
+                <div className="relative w-full h-full min-h-[380px] aspect-[4/5] overflow-hidden rounded-3xl border-2 border-[#D4AF37]/40 shadow-2xl bg-[#1A1C18]">
+                  <img
+                    src="/founders-menka-priti.jpg"
+                    alt="Love Details Founders Menka & Preeti"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
               </div>
+            </AnimatedSection>
+          </div>
 
-              {/* Dynamic Content Display */}
-              <AnimatePresence mode="wait">
-                {activeTab === 'menka' ? (
-                  <motion.div
-                    key="menka"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white p-8 rounded-3xl border border-[#C8C0B5]/60 shadow-md space-y-5"
-                  >
-                    <div className="flex items-center space-x-3 border-b border-[#C8C0B5]/30 pb-4">
-                      <div className="w-10 h-10 rounded-full bg-[#7A8864]/10 flex items-center justify-center text-[#7A8864]">
-                        <Sparkles className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-2xl font-light text-[#262822]">Menka</h3>
-                        <p className="text-xs font-serif text-[#7A8864] font-medium">Spatial Producer &amp; Event Strategist</p>
-                      </div>
+          {/* Right: Preeti Box */}
+          <div className="lg:col-span-4 flex flex-col justify-between">
+            <AnimatedSection direction="up" delay={0.2}>
+              <div className="bg-white p-7 sm:p-8 rounded-3xl border border-[#C8C0B5]/60 shadow-md space-y-5 h-full flex flex-col justify-between hover:border-[#7A8864]/60 transition-colors">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 border-b border-[#C8C0B5]/30 pb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#7A8864]/10 flex items-center justify-center text-[#7A8864]">
+                      <Heart className="w-5 h-5" />
                     </div>
-
-                    <p className="font-serif text-sm text-[#262822]/85 leading-relaxed">
-                      Born and raised in Dubai, Menka has been in the events industry since 2006. Starting with major exhibitions and corporate client management, she later pivoted to high-end private celebrations. Planning her own Dubai wedding in 2008 gave her a profound, firsthand understanding of what couples experience.
-                    </p>
-
-                    <div className="space-y-2 pt-2 border-t border-[#C8C0B5]/30">
-                      <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
-                        <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
-                        <span><strong>20+ Years in Dubai:</strong> Deep venue relationships across top resorts &amp; private estates.</span>
-                      </div>
-                      <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
-                        <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
-                        <span><strong>Logistical Precision:</strong> Spatial blueprints, budget safeguards &amp; seamless execution.</span>
-                      </div>
+                    <div>
+                      <h3 className="font-serif text-2xl font-light text-[#262822]">Preeti</h3>
+                      <p className="text-xs font-serif text-[#7A8864] font-medium">Creative Director &amp; Stylist</p>
                     </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="preeti"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white p-8 rounded-3xl border border-[#C8C0B5]/60 shadow-md space-y-5"
-                  >
-                    <div className="flex items-center space-x-3 border-b border-[#C8C0B5]/30 pb-4">
-                      <div className="w-10 h-10 rounded-full bg-[#7A8864]/10 flex items-center justify-center text-[#7A8864]">
-                        <Heart className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-2xl font-light text-[#262822]">Preeti</h3>
-                        <p className="text-xs font-serif text-[#7A8864] font-medium">Creative Director &amp; Stylist</p>
-                      </div>
-                    </div>
+                  </div>
 
-                    <p className="font-serif text-sm text-[#262822]/85 leading-relaxed">
-                      Preeti brings extensive experience from Delhi, where she spearheaded high-profile weddings before moving to Dubai. Her deep mastery of Indian celebrations, ritual aesthetics, floral design, family dynamics, and emotional wedding styling brings a heartfelt perspective to Love Details.
-                    </p>
+                  <p className="font-serif text-sm text-[#262822]/85 leading-relaxed">
+                    Preeti brings extensive experience from Delhi, where she spearheaded high-profile weddings before moving to Dubai. Her deep mastery of Indian celebrations, ritual aesthetics, floral design, family dynamics, and emotional wedding styling brings a heartfelt perspective to Love Details.
+                  </p>
+                </div>
 
-                    <div className="space-y-2 pt-2 border-t border-[#C8C0B5]/30">
-                      <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
-                        <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
-                        <span><strong>Ritual Expertise:</strong> Authentic Indian Mandap architecture &amp; tradition curation.</span>
-                      </div>
-                      <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
-                        <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
-                        <span><strong>Heartfelt Care:</strong> Warm family touch, guest concierge &amp; sensory decor styling.</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
+                <div className="space-y-2 pt-4 border-t border-[#C8C0B5]/30">
+                  <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
+                    <span><strong>Ritual Expertise:</strong> Authentic Indian Mandap architecture &amp; tradition curation.</span>
+                  </div>
+                  <div className="flex items-start space-x-2 text-xs font-serif text-[#262822]/80">
+                    <CheckCircle2 className="w-4 h-4 text-[#7A8864] shrink-0 mt-0.5" />
+                    <span><strong>Heartfelt Care:</strong> Warm family touch, guest concierge &amp; sensory decor styling.</span>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
 
@@ -295,7 +230,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 <div className="lg:col-span-6">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-3xl border border-[#D4AF37]/35 shadow-2xl relative bg-[#1A1C18]">
                     <img
-                      src="/about-pop-table.jpg"
+                      src="/philosophy_story_dinner.png"
                       alt="Love Details Dinner Story 2015"
                       className="w-full h-full object-cover"
                     />
@@ -331,8 +266,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 <div className="lg:col-span-6 lg:order-1">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-3xl border border-[#D4AF37]/35 shadow-2xl relative bg-[#1A1C18]">
                     <img
-                      src="/about-yellow-lantern.png"
-                      alt="Love Details Intimate First Event Journey"
+                      src="/philosophy_decade_craft.png"
+                      alt="Love Details Decade of Craft & First Event Journey"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -367,7 +302,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 <div className="lg:col-span-6">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-3xl border border-[#D4AF37]/35 shadow-2xl relative bg-[#1A1C18]">
                     <img
-                      src="/about-red-mandap.png"
+                      src="/philosophy_wedding_mandap.png"
                       alt="Love Details Mandap & Production Craft"
                       className="w-full h-full object-cover"
                     />
@@ -403,8 +338,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
                 <div className="lg:col-span-6 lg:order-1">
                   <div className="w-full aspect-[4/3] overflow-hidden rounded-3xl border border-[#D4AF37]/35 shadow-2xl relative bg-[#1A1C18]">
                     <img
-                      src="/about-couple-laugh.png"
-                      alt="Love Details Joyful Couple Moment"
+                      src="/what-luxury-means-to-us.png"
+                      alt="Love Details What Luxury Means To Us"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -461,60 +396,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
 
       </section>
 
-      {/* ── 6. BEHIND THE SCENES: WHAT WE HANDLE ── */}
-      <section className="bg-[#FAF7F2] border-y border-[#C8C0B5]/40 py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 space-y-16">
-          
-          <AnimatedSection direction="up">
-            <div className="text-center space-y-3 max-w-3xl mx-auto">
-              <span className="micro-label text-[#7A8864] tracking-[0.3em]">BEHIND THE SCENES</span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-light text-[#262822]">
-                What Happens Behind a <span className="italic text-[#7A8864]">Love Details Event</span>
-              </h2>
-              <div className="w-16 h-0.5 bg-[#7A8864]/40 mx-auto mt-3" />
-              <p className="font-serif text-base text-[#262822]/80 leading-relaxed">
-                A wedding may look effortless on the day, but behind it is months of spatial design, detailed coordination, and an entire producer team bringing every element to life.
-              </p>
-            </div>
-          </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left 8 Pillars Grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {BEHIND_THE_SCENES_SERVICES.map((item, idx) => {
-                const IconComp = item.icon;
-                return (
-                  <div key={idx} className="bg-white p-6 rounded-2xl border border-[#C8C0B5]/50 shadow-xs space-y-2 group hover:border-[#7A8864]/60 transition-colors">
-                    <div className="w-9 h-9 rounded-full bg-[#7A8864]/10 flex items-center justify-center text-[#7A8864]">
-                      <IconComp className="w-4.5 h-4.5" />
-                    </div>
-                    <h3 className="font-serif text-lg font-light text-[#262822]">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs font-serif text-[#262822]/75 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right Image */}
-            <div className="lg:col-span-5">
-              <div className="w-full aspect-[4/5] overflow-hidden rounded-3xl border border-[#D4AF37]/35 shadow-2xl relative bg-[#1A1C18]">
-                <img
-                  src="/about-bridesmaids.png"
-                  alt="Love Details Behind The Scenes Production"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
 
       {/* ── 7. DESTINATIONS & MILESTONES STRIP ── */}
       <section className="bg-white border-b border-[#C8C0B5]/40 py-16">

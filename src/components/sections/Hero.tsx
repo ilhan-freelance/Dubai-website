@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
         >
           <div className="hidden sm:block w-8 sm:w-20 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-white/90 shrink-0" />
           <span
-            className="font-['Great_Vibes'] text-2xl sm:text-4xl md:text-5xl font-normal text-white whitespace-nowrap drop-shadow-xl tracking-wide leading-none py-1"
+            className="font-['Great_Vibes'] text-2xl sm:text-4xl md:text-5xl font-normal text-white text-center sm:whitespace-nowrap drop-shadow-xl tracking-wide leading-tight py-1"
             style={{ textShadow: '0 2px 14px rgba(0,0,0,0.95)' }}
           >
             Dubai's Premier Luxury Wedding Atelier

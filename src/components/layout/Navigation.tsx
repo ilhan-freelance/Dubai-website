@@ -142,23 +142,23 @@ export const Navigation: React.FC<NavigationProps> = ({
           {/* ── DEAD CENTER: BRAND LOGO (HD RESOLUTION, NO CUTOFF) ── */}
           <div
             onClick={() => handleItemClick('home')}
-            className="cursor-pointer group flex items-center gap-3 select-none absolute left-1/2 -translate-x-1/2 z-10 shrink-0 py-1"
+            className="cursor-pointer group flex items-center gap-1.5 sm:gap-3 select-none absolute left-1/2 -translate-x-1/2 z-10 shrink-0 py-1"
           >
             {/* Crisp HD Monogram Emblem */}
             <img
               src="/logo-hd-emblem.png"
               alt="Love Details HD Monogram Emblem"
-              className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-xs"
+              className="h-8 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-xs"
             />
 
             <div className="h-6 sm:h-7 w-[1px] bg-[#C9A96E]/40 hidden sm:block" />
 
-            <div className="flex flex-col text-left">
-              <span className="font-serif text-base sm:text-lg md:text-xl font-bold tracking-[0.24em] text-[#1A1D20] uppercase leading-none group-hover:text-[#3B5649] transition-colors">
+            <div className="hidden min-[380px]:flex flex-col text-left">
+              <span className="font-serif text-xs min-[440px]:text-sm sm:text-lg md:text-xl font-bold tracking-[0.16em] sm:tracking-[0.24em] text-[#1A1D20] uppercase leading-none group-hover:text-[#3B5649] transition-colors whitespace-nowrap">
                 LOVE DETAILS
               </span>
-              <span className="text-[9px] sm:text-[10px] font-sans font-bold tracking-[0.32em] text-[#C9A96E] uppercase leading-none flex items-center gap-1 mt-1">
-                DUBAI <Sparkles className="w-2.5 h-2.5 text-[#C9A96E]" /> ATELIER
+              <span className="text-[8px] sm:text-[10px] font-sans font-bold tracking-[0.22em] sm:tracking-[0.32em] text-[#C9A96E] uppercase leading-none flex items-center gap-0.5 sm:gap-1 mt-0.5 sm:mt-1 whitespace-nowrap">
+                DUBAI <Sparkles className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-[#C9A96E]" /> ATELIER
               </span>
             </div>
           </div>
