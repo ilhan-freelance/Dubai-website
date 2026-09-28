@@ -12,45 +12,28 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
   return (
     <div className="pt-0 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden">
       
-      {/* ── PAGE HERO SECTION WITH EDITORIAL BANNER ── */}
-      <section className="relative max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-6 sm:pt-10 pb-12 space-y-8 text-center">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
-
+      {/* ── 100% EDGE-TO-EDGE FULL WIDTH HERO IMAGE BANNER ── */}
+      <section className="w-full pt-0 pb-4 sm:pb-8">
         <AnimatedSection direction="up">
-          <div className="space-y-4 max-w-3xl mx-auto">
-            <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-[#7A8864]/10 border border-[#7A8864]/25 shadow-xs">
-              <Compass className="w-3.5 h-3.5 text-[#7A8864]" />
-              <span className="micro-label text-[#7A8864] tracking-[0.3em]">
-                DUBAI &amp; GCC LUXURY SANCTUARIES
-              </span>
-            </div>
-
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] leading-tight tracking-tight">
-              Venue Selection &amp; <span className="italic text-[#7A8864]">Atelier Curation.</span>
-            </h1>
-            <p className="text-sm sm:text-lg text-[#262822]/80 font-serif italic max-w-2xl mx-auto">
-              Premier resort lawns, private desert dunes, beach havens &amp; iconic Dubai ballrooms.
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Hero Image Banner */}
-        <AnimatedSection direction="up" delay={0.2}>
-          <div className="w-full aspect-[16/10] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
+          <div className="w-full relative bg-[#1A1C18]">
             <motion.img
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               src="/hero_venues_dubai_palm.png"
               alt="Dubai Palm Island Luxury Venue Showcase"
-              className="w-full h-full object-cover"
+              className="w-full h-auto block"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 text-white">
-              <span className="font-serif text-xs sm:text-sm tracking-wider uppercase text-[#E5D5BC] flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
-                Palm Jumeirah &bull; Dubai &bull; Abu Dhabi &bull; Ras Al Khaimah
-              </span>
-            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ── PAGE TITLE SECTION (PUSHED DOWN BELOW HERO IMAGE) ── */}
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-8 md:px-16 pt-2 pb-10 sm:pb-16 text-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
+
+        <AnimatedSection direction="up" delay={0.1}>
+          <div className="space-y-2 text-center">
+            <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#262822] leading-tight tracking-tight text-center sm:whitespace-nowrap">
+              Venue Selection &amp; <span className="italic text-[#7A8864]">Atelier Curation.</span>
+            </h1>
           </div>
         </AnimatedSection>
       </section>
