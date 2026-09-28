@@ -48,7 +48,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenEnquiry }) => {
       {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED WITH DOWNWARD MASK FADE) ── */}
       <section className="relative w-full pt-0 pb-0 bg-[#FAF8F6]">
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] relative group bg-[#FAF8F6]">
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative group bg-[#FAF8F6]">
             <img
               src="/hero_philosophy_story.png"
               alt="Love Details Atelier Philosophy"

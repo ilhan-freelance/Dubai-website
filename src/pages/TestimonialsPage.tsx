@@ -46,7 +46,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenEnquir
 
         {/* Hero Image Banner */}
         <AnimatedSection direction="up" delay={0.2}>
-          <div className="w-full aspect-21/9 rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
+          <div className="w-full aspect-[16/10] sm:aspect-21/9 rounded-3xl overflow-hidden border border-[#D4AF37]/40 shadow-2xl relative group bg-[#1A1C18]">
             <motion.img
               whileHover={{ scale: 1.04 }}
               transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}

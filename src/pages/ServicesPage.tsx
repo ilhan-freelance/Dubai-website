@@ -59,7 +59,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
       {/* ── PAGE HERO SECTION WITH HERO IMAGE ── */}
       <section className="relative w-full pt-0 pb-16">
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[21/9] sm:aspect-[24/9] md:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
             <motion.img
               src="/offerings_hero_section.png"
               alt="Love Details Atelier Services Planning"
