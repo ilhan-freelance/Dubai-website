@@ -10,37 +10,34 @@ interface VenuesPageProps {
 
 export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
   return (
-    <div className="pt-0 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden">
+    <div className="pt-0 pb-20 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
-      {/* ── 100% EDGE-TO-EDGE FULL WIDTH HERO IMAGE BANNER ── */}
-      <section className="w-full pt-0 pb-4 sm:pb-8">
+      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED MATCHING PHILOSOPHY PAGE) ── */}
+      <section className="relative w-full pt-0 pb-0 bg-[#FAF8F6]">
         <AnimatedSection direction="up">
-          <div className="w-full relative bg-[#1A1C18]">
-            <motion.img
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative group bg-[#FAF8F6]">
+            <img
               src="/hero_venues_dubai_palm.png"
               alt="Dubai Palm Island Luxury Venue Showcase"
-              className="w-full h-auto block"
+              className="w-full h-full object-cover"
             />
           </div>
         </AnimatedSection>
       </section>
 
-      {/* ── PAGE TITLE SECTION (PUSHED DOWN BELOW HERO IMAGE) ── */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-8 md:px-16 pt-2 pb-10 sm:pb-16 text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#7A8864]/10 rounded-full filter blur-3xl pointer-events-none" />
-
-        <AnimatedSection direction="up" delay={0.1}>
-          <div className="space-y-2 text-center">
-            <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#262822] leading-tight tracking-tight text-center sm:whitespace-nowrap">
-              Venue Selection &amp; <span className="italic text-[#7A8864]">Atelier Curation.</span>
-            </h1>
-          </div>
+      {/* ── 2. SINGLE LINE MAIN HEADING (POSITIONED BELOW HERO FRAME) ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-10 text-center space-y-4">
+        <AnimatedSection direction="up">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
+            Venue Selection &amp; <span className="italic text-[#7A8864]">Atelier Curation.</span>
+          </h1>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/50 to-transparent mx-auto mt-6" />
         </AnimatedSection>
       </section>
 
-      {/* ── VENUES GRID ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 space-y-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* ── 3. VENUES GRID ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pb-16 space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           {UAE_VENUES.map((venue) => (
             <div
               key={venue.id}
@@ -66,7 +63,7 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
                   </div>
                 </div>
 
-                <div className="px-6 md:px-8 space-y-4">
+                <div className="px-5 sm:px-8 space-y-4">
                   <div className="flex justify-between items-start">
                     <div>
                       <h2 className="font-serif text-2xl sm:text-3xl font-light text-[#262822] group-hover:text-[#7A8864] transition-colors">
@@ -79,7 +76,7 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
                     </div>
                   </div>
 
-                  <p className="text-xs md:text-sm text-[#262822]/80 font-serif leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#262822]/80 font-serif leading-relaxed">
                     {venue.description}
                   </p>
 
@@ -96,7 +93,7 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
                 </div>
               </div>
 
-              <div className="px-6 md:px-8 py-6 mt-6 border-t border-[#C8C0B5]/30 bg-[#FAF7F2]">
+              <div className="px-5 sm:px-8 py-5 mt-6 border-t border-[#C8C0B5]/30 bg-[#FAF7F2]">
                 <button
                   onClick={onOpenEnquiry}
                   className="w-full button-editorial px-5 py-3.5 rounded-full border border-[#7A8864]/50 bg-white text-[#262822] hover:bg-[#7A8864] hover:text-white transition-all flex items-center justify-center space-x-2 cursor-pointer text-xs font-bold shadow-xs hover:shadow-md"
@@ -111,15 +108,15 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
         </div>
       </section>
 
-      {/* ── BESPOKE VENUE SCOUTING BANNER ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-20">
-        <div className="bg-gradient-to-r from-[#262822] via-[#33352D] to-[#262822] text-[#FAF7F2] p-12 rounded-3xl border border-[#D4AF37]/35 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 text-[#D4AF37]">
+      {/* ── 4. BESPOKE VENUE SCOUTING BANNER ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-8 pb-12">
+        <div className="bg-gradient-to-r from-[#262822] via-[#33352D] to-[#262822] text-[#FAF7F2] p-8 sm:p-12 rounded-3xl border border-[#D4AF37]/35 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="space-y-3 max-w-2xl text-center md:text-left">
+            <div className="inline-flex items-center space-x-2 text-[#D4AF37] justify-center md:justify-start">
               <Compass className="w-4 h-4" />
               <span className="micro-label tracking-[0.25em]">BESPOKE VENUE SCOUTING</span>
             </div>
-            <h2 className="font-serif text-3xl font-light">Looking for a Private Estate or Unlisted Location?</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl font-light">Looking for a Private Estate or Unlisted Location?</h2>
             <p className="text-xs sm:text-sm text-[#E5D5BC]/80 font-sans leading-relaxed">
               Our Dubai producers hold exclusive access permits to private palaces, royal desert retreats, and unlisted beachfront sanctuaries across the UAE.
             </p>
@@ -127,7 +124,7 @@ export const VenuesPage: React.FC<VenuesPageProps> = ({ onOpenEnquiry }) => {
 
           <button
             onClick={onOpenEnquiry}
-            className="button-editorial px-8 py-4 bg-[#D4AF37] text-[#262822] hover:bg-[#c49f2e] transition-colors rounded-full font-bold text-xs shrink-0 shadow-lg cursor-pointer"
+            className="w-full sm:w-auto button-editorial px-8 py-4 bg-[#D4AF37] text-[#262822] hover:bg-[#c49f2e] transition-colors rounded-full font-bold text-xs shrink-0 shadow-lg cursor-pointer flex items-center justify-center"
           >
             REQUEST BESPOKE SCOUTING
           </button>

@@ -54,13 +54,13 @@ const EVENTS_MANAGED = [
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => {
   return (
-    <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden">
+    <div className="pt-0 pb-28 bg-[#FAF8F6] text-[#262822] overflow-hidden selection:bg-[#7A8864] selection:text-white">
       
-      {/* ── PAGE HERO SECTION WITH HERO IMAGE ── */}
-      <section className="relative w-full pt-0 pb-16">
+      {/* ── 1. CINEMATIC HERO BANNER IMAGE (FULL BLEED MATCHING PHILOSOPHY PAGE) ── */}
+      <section className="relative w-full pt-0 pb-0 bg-[#FAF8F6]">
         <AnimatedSection direction="up">
-          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] overflow-hidden relative group bg-[#1A1C18]">
-            <motion.img
+          <div className="w-full aspect-[16/10] sm:aspect-[21/9] md:aspect-[24/9] lg:aspect-[28/9] relative group bg-[#FAF8F6]">
+            <img
               src="/offerings_hero_section.png"
               alt="Love Details Atelier Services Planning"
               className="w-full h-full object-cover"
@@ -69,24 +69,25 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
         </AnimatedSection>
       </section>
 
-      {/* ── EVENTS MANAGED SECTION ── */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-10 sm:pt-14 md:pt-16 pb-20 space-y-12">
+      {/* ── 2. SINGLE LINE MAIN HEADING (POSITIONED BELOW HERO FRAME) ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-10 text-center space-y-4">
         <AnimatedSection direction="up">
-          <div className="text-center mb-4 sm:mb-8">
-            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-light text-[#262822] tracking-tight leading-snug">
-              Our Curated Atelier Offerings &amp; <span className="italic text-[#7A8864]">Event Verticals</span>
-            </h2>
-            <div className="w-16 h-0.5 bg-[#7A8864]/40 mx-auto mt-3" />
-          </div>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight leading-tight">
+            Our Curated Atelier Offerings &amp; <span className="italic text-[#7A8864]">Event Verticals.</span>
+          </h1>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#7A8864]/50 to-transparent mx-auto mt-6" />
         </AnimatedSection>
+      </section>
 
+      {/* ── 3. EVENTS MANAGED SECTION ── */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 pb-24 space-y-12">
         {/* Alternating Editorial Sections */}
-        <div className="space-y-20 sm:space-y-28">
+        <div className="space-y-16 sm:space-y-24 md:space-y-28">
           {EVENTS_MANAGED.map((event, index) => {
             const isEven = index % 2 === 0;
             return (
               <AnimatedSection key={event.id} direction="up">
-                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${index === 0 ? 'pt-4 sm:pt-6' : 'border-t border-[#C8C0B5]/40 pt-16 sm:pt-20'}`}>
+                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${index === 0 ? 'pt-2 sm:pt-6' : 'border-t border-[#C8C0B5]/40 pt-12 sm:pt-20'}`}>
                   
                   {/* Image Block */}
                   <div
@@ -107,24 +108,24 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
 
                   {/* Text Editorial Block */}
                   <div
-                    className={`lg:col-span-6 space-y-6 max-w-xl ${
+                    className={`lg:col-span-6 space-y-5 sm:space-y-6 max-w-xl ${
                       isEven ? 'lg:order-2 lg:pl-4' : 'lg:order-1 lg:pr-4'
                     }`}
                   >
-                    <div className="space-y-3">
-                      <h3 className="font-serif text-4xl sm:text-6xl font-light text-[#262822] tracking-tight">
+                    <div className="space-y-2.5 sm:space-y-3">
+                      <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-[#262822] tracking-tight">
                         {event.title}
-                      </h3>
-                      <div className="w-14 h-0.5 bg-[#7A8864]/50 mt-3" />
+                      </h2>
+                      <div className="w-14 h-0.5 bg-[#7A8864]/50 mt-2 sm:mt-3" />
                     </div>
 
-                    <p className="font-serif text-base sm:text-lg text-[#262822]/85 border-l-2 border-[#7A8864]/40 pl-5 py-1 leading-relaxed text-pretty">
+                    <p className="font-serif text-sm sm:text-base md:text-lg text-[#262822]/85 border-l-2 border-[#7A8864]/40 pl-4 sm:pl-5 py-1 leading-relaxed text-pretty">
                       {event.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2.5 pt-1">
+                    <div className="flex flex-wrap gap-2 sm:gap-2.5 pt-1">
                       {event.tags.map((tag, idx) => (
-                        <span key={idx} className="px-3.5 py-1.5 bg-[#7A8864]/10 text-[#7A8864] rounded-full text-xs font-serif tracking-wide border border-[#7A8864]/20">
+                        <span key={idx} className="px-3 sm:px-3.5 py-1 sm:py-1.5 bg-[#7A8864]/10 text-[#7A8864] rounded-full text-xs font-serif tracking-wide border border-[#7A8864]/20">
                           {tag}
                         </span>
                       ))}
@@ -133,10 +134,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiry }) => 
                     <div className="pt-2">
                       <button
                         onClick={() => onOpenEnquiry(event.title)}
-                        className="button-editorial px-8 py-4 bg-[#7A8864] text-[#FAF7F2] hover:bg-[#5C674A] transition-all inline-flex items-center space-x-3 rounded-full shadow-lg cursor-pointer hover:scale-[1.02]"
+                        className="w-full sm:w-auto button-editorial px-6 sm:px-8 py-3.5 sm:py-4 bg-[#7A8864] text-[#FAF7F2] hover:bg-[#5C674A] transition-all inline-flex items-center justify-center space-x-3 rounded-full shadow-lg cursor-pointer hover:scale-[1.02]"
                       >
                         <span>ENQUIRE FOR {event.title.toUpperCase()}</span>
-                        <ArrowRight className="w-4 h-4" />
+                        <ArrowRight className="w-4 h-4 text-[#E8D4A8]" />
                       </button>
                     </div>
                   </div>
