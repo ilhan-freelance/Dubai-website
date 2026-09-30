@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry }) => 
                 </svg>
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/lovedetailsae"
                 target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-full bg-[#EAF0EC] border border-[#8DA999]/30 text-[#4A6B5B] flex items-center justify-center hover:bg-[#4A6B5B] hover:text-white transition-colors"
