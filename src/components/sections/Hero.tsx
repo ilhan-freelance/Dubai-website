@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={scrollRef} className="relative w-full min-h-screen flex flex-col justify-center items-center text-center overflow-hidden">
+    <section ref={scrollRef} className="relative w-full min-h-screen flex flex-col justify-end items-center text-center overflow-hidden pb-28 sm:pb-36 md:pb-40">
 
       {/* ── BACKGROUND: Dubai luxury wedding video ── */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -55,7 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onExploreWork }) => {
       ))}
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-8 pt-16 sm:pt-24 md:pt-32">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 space-y-8">
 
         {/* Cursive Single Line Headline in White */}
         <motion.div
